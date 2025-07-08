@@ -1,0 +1,52 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model User {
+  id    Int     @id @default(autoincrement())
+  email String  @unique
+  name  String?
+  role  String  @default("user")
+}
+
+model Post {
+  id          Int      @id @default(autoincrement())
+  title       String
+  slug        String   @unique
+  content     Json
+  publishedAt DateTime?
+}
+
+model Event {
+  id          Int      @id @default(autoincrement())
+  title       String
+  date        DateTime
+  type        String
+  description String
+}
+
+model Reel {
+  id        Int      @id @default(autoincrement())
+  igId      String   @unique
+  embedHtml String
+  createdAt DateTime
+}
+
+model Horoscope {
+  id          Int      @id @default(autoincrement())
+  sign        String
+  period      String
+  content     Json
+  publishedAt DateTime
+}

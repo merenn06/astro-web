@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  html {
+    @apply bg-white text-black dark:bg-black dark:text-white;
+  }
+  body {
+    @apply min-h-screen font-sans antialiased;
+  }
+}
