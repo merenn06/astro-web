@@ -57,21 +57,21 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       };
     }
 
-    const description = post.excerpt || 
+    const description = post.excerpt ? post.excerpt.slice(0, 155) : 
       (typeof post.content === 'string' ? post.content.slice(0, 155) : 'Astroloji yazısı') + '...';
     
     const domain = process.env.DOMAIN || 'localhost:3000';
     const url = `https://${domain}/blog/${post.slug}`;
 
     return {
-      title: `${post.title} | Astrolog Dilek Alkan Kara`,
+      title: `${post.title} | Astrolog Dilek Alkan`,
       description,
       alternates: {
         canonical: url,
       },
       openGraph: {
         title: post.title,
-        description,
+        description: post.excerpt ? post.excerpt.slice(0, 200) : description,
         type: 'article',
         url,
         publishedTime: post.publishedAt?.toISOString(),

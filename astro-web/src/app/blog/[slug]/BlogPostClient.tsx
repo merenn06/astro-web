@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { Calendar, ArrowLeft, ArrowRight } from 'lucide-react';
 import { renderToString } from 'react-dom/server';
 import NewsletterForm from '@/components/NewsletterForm';
+import ShareButtons from '@/components/ShareButtons';
 
 interface Post {
   id: string;
@@ -197,6 +198,9 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
             className="prose prose-lg max-w-none"
             dangerouslySetInnerHTML={{ __html: renderedContent }}
           />
+          
+          {/* Share Buttons */}
+          <ShareButtons title={post.title} excerpt={post.excerpt || undefined} />
         </div>
       </article>
 
