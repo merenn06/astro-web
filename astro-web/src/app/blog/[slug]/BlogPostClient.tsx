@@ -1,6 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Calendar, ArrowLeft, ArrowRight } from 'lucide-react';
 import { renderToString } from 'react-dom/server';
 
@@ -83,7 +84,9 @@ function renderTipTapContent(content: any): string {
     if (node.type === 'image') {
       const src = node.attrs?.src || '';
       const alt = node.attrs?.alt || '';
-      return `<img src="${src}" alt="${alt}" class="max-w-full h-auto rounded-lg mb-4" />`;
+      const width = node.attrs?.width || 800;
+      const height = node.attrs?.height || 600;
+      return `<img src="${src}" alt="${alt}" width="${width}" height="${height}" class="max-w-full h-auto rounded-lg mb-4" loading="lazy" />`;
     }
 
     if (node.content) {
@@ -159,10 +162,14 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
       <article className="bg-white rounded-lg shadow-sm border overflow-hidden">
         {post.coverImage && (
           <div className="aspect-video overflow-hidden">
-            <img
+            <Image
               src={post.coverImage}
               alt={post.title}
+              width={1280}
+              height={720}
               className="w-full h-full object-cover"
+              priority
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1280px"
             />
           </div>
         )}

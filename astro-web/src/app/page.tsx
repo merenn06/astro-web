@@ -1,7 +1,44 @@
+import { Metadata } from 'next';
 import { prisma } from '@/lib/prisma';
 import { Star, Calendar, Instagram, Mail, Twitter, Youtube } from 'lucide-react';
 import HomeReelGrid from '@/components/HomeReelGrid';
 import Footer from '@/components/Footer';
+
+// ISR - Revalidate every 60 seconds
+export const revalidate = 60;
+
+// Generate metadata for SEO
+export async function generateMetadata(): Promise<Metadata> {
+  const domain = process.env.DOMAIN || 'localhost:3000';
+  
+  return {
+    title: 'Astrolog Dilek Alkan Kara - Gökyüzünün Sırlarını Keşfedin',
+    description: 'Gökyüzünün sırlarını keşfedin, geleceğinizi aydınlatın. Burç yorumları, astroloji danışmanlığı ve günlük horoskoplar.',
+    alternates: {
+      canonical: `https://${domain}`,
+    },
+    openGraph: {
+      title: 'Astrolog Dilek Alkan Kara - Gökyüzünün Sırlarını Keşfedin',
+      description: 'Gökyüzünün sırlarını keşfedin, geleceğinizi aydınlatın. Burç yorumları, astroloji danışmanlığı ve günlük horoskoplar.',
+      type: 'website',
+      url: `https://${domain}`,
+      images: [
+        {
+          url: `https://${domain}/og-image.jpg`,
+          width: 1200,
+          height: 630,
+          alt: 'Astrolog Dilek Alkan Kara',
+        }
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: 'Astrolog Dilek Alkan Kara - Gökyüzünün Sırlarını Keşfedin',
+      description: 'Gökyüzünün sırlarını keşfedin, geleceğinizi aydınlatın. Burç yorumları, astroloji danışmanlığı ve günlük horoskoplar.',
+      images: [`https://${domain}/og-image.jpg`],
+    },
+  };
+}
 
 async function getData() {
   const today = new Date();

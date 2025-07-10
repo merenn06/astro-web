@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import { prisma } from '@/lib/prisma';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ChevronRight, Star, Calendar } from 'lucide-react';
@@ -37,6 +38,8 @@ const PERIOD_NAMES: Record<Period, string> = {
   haftalik: 'Haftalık'
 };
 
+
+
 // Generate static params for all possible combinations
 export async function generateStaticParams() {
   const params: { period: Period; sign: Sign }[] = [];
@@ -48,6 +51,59 @@ export async function generateStaticParams() {
   }
   
   return params;
+}
+
+// Generate metadata for SEO
+export async function generateMetadata({ 
+  params 
+}: { 
+  params: { period: string; sign: string } 
+}): Promise<Metadata> {
+  const { period, sign } = params;
+  
+  // Validate parameters
+  if (!VALID_PERIODS.includes(period as Period) || !VALID_SIGNS.includes(sign as Sign)) {
+    return {
+      title: 'Burç Yorumu Bulunamadı | Astrolog Dilek Alkan Kara',
+      description: 'Aradığınız burç yorumu bulunamadı.',
+    };
+  }
+
+  const signName = SIGN_NAMES[sign as Sign];
+  const periodName = PERIOD_NAMES[period as Period];
+  const title = `${signName} ${periodName} Burç Yorumu | Astrolog Dilek Alkan Kara`;
+  const description = `${signName} burcu ${periodName.toLowerCase()} yorumu. ${signName} burcunun günlük/haftalık astroloji yorumu ve gelecek tahminleri.`;
+  
+  const domain = process.env.DOMAIN || 'localhost:3000';
+  const url = `https://${domain}/horoscope/${period}/${sign}`;
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: url,
+    },
+    openGraph: {
+      title,
+      description,
+      type: 'article',
+      url,
+      images: [
+        {
+          url: `https://${domain}/horoscope-${sign}.jpg`,
+          width: 1200,
+          height: 630,
+          alt: `${signName} Burç Yorumu`,
+        }
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [`https://${domain}/horoscope-${sign}.jpg`],
+    },
+  };
 }
 
 // Fetch horoscope data

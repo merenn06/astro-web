@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image';
 import { Play } from 'lucide-react';
 import { format } from 'date-fns';
 import { tr } from 'date-fns/locale';
@@ -16,11 +17,14 @@ export function ReelCard({ title, thumbnail, createdAt, onClick }: ReelCardProps
       className="relative rounded-2xl overflow-hidden shadow-xl cursor-pointer group transition-transform hover:scale-105 bg-white dark:bg-gray-900 border border-purple-100 dark:border-purple-900"
       onClick={onClick}
     >
-      <img
+      <Image
         src={thumbnail}
         alt={title}
+        width={400}
+        height={600}
         className="w-full h-64 object-cover group-hover:brightness-75 transition-all aspect-[2/3]"
         loading="lazy"
+        sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
       />
       <div className="absolute inset-0 flex flex-col justify-end p-4 bg-gradient-to-t from-black/70 via-black/30 to-transparent">
         <div className="flex items-center gap-2 mb-2">
