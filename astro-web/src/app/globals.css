@@ -65,3 +65,29 @@
   @apply inline-block px-6 py-3 rounded-xl border-2 border-primary/30 text-primary dark:text-primary hover:bg-primary/5 transition-all duration-300 font-semibold shadow-lg focus:ring-4 focus:ring-primary/30;
 }
 
+/* Moon Phase Calendar scrollbar hiding */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;  /* Safari and Chrome */
+}
+
+/* Moon Phase Calendar animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out;
+}
+

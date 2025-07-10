@@ -3,6 +3,9 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { Calendar, Clock } from 'lucide-react';
+import dynamic from 'next/dynamic';
+
+const MoonPhase = dynamic(() => import('@/app/components/MoonPhaseServer'), { ssr: false });
 
 interface Post {
   id: string;
@@ -110,6 +113,11 @@ export default function BlogPageClient() {
         <p className="text-xl text-gray-600 max-w-2xl mx-auto">
           Astroloji ve kişisel gelişim yazıları. Burç yorumları, astroloji rehberleri ve daha fazlası.
         </p>
+      </div>
+
+      {/* Moon Phase Calendar */}
+      <div className="mb-8">
+        <MoonPhase />
       </div>
 
       {/* Category Filter */}

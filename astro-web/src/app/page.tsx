@@ -4,6 +4,9 @@ import { Star, Calendar, Instagram, Mail, Twitter, Youtube } from 'lucide-react'
 import HomeReelGrid from '@/components/HomeReelGrid';
 import Footer from '@/components/Footer';
 import NewsletterForm from '@/components/NewsletterForm';
+import dynamic from 'next/dynamic';
+
+const MoonPhase = dynamic(() => import('@/app/components/MoonPhaseServer'), { ssr: false });
 
 // ISR - Revalidate every 60 seconds
 export const revalidate = 60;
@@ -106,6 +109,13 @@ export default async function Page() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Moon Phase Calendar */}
+      <section className="py-14 px-4">
+        <div className="max-w-6xl mx-auto">
+          <MoonPhase />
         </div>
       </section>
 
