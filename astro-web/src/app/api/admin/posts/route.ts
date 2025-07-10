@@ -1,5 +1,5 @@
 import { prisma } from '@/lib/prisma';
-import { NextResponse } from 'next/server';
+import { NextResponse, NextRequest } from 'next/server';
 import { checkRateLimit } from '@/lib/ratelimit';
 
 // GET /api/admin/posts?page=1&status=draft|published&query=search
@@ -8,6 +8,7 @@ export async function GET(req: Request) {
     const { searchParams } = new URL(req.url);
     const page = parseInt(searchParams.get('page') || '1', 10);
     const status = searchParams.get('status') || 'all';
+    const category = searchParams.get('category') || 'all';
     const query = searchParams.get('query')?.trim() || '';
     const limit = 10;
     const skip = (page - 1) * limit;
@@ -23,6 +24,7 @@ export async function GET(req: Request) {
     
     if (status === 'draft') where.isPublished = false;
     if (status === 'published') where.isPublished = true;
+    if (category !== 'all') where.category = category;
 
     const [posts, total] = await Promise.all([
       prisma.post.findMany({
@@ -38,6 +40,7 @@ export async function GET(req: Request) {
           coverImage: true,
           isPublished: true,
           publishedAt: true,
+          category: true,
           createdAt: true,
           updatedAt: true,
         },
@@ -58,7 +61,7 @@ export async function GET(req: Request) {
 }
 
 // POST /api/admin/posts
-export async function POST(req: Request) {
+export async function POST(req: NextRequest) {
   try {
     // Rate limiting
     const rateLimitResult = await checkRateLimit(req);
@@ -70,7 +73,7 @@ export async function POST(req: Request) {
     }
 
     const body = await req.json();
-    const { title, excerpt, content, coverImage, isPublished = false } = body;
+    const { title, excerpt, content, coverImage, category = 'MONTHLY', isPublished = false } = body;
 
     // Validation
     if (!title?.trim()) {
@@ -103,6 +106,7 @@ export async function POST(req: Request) {
         excerpt: excerpt?.trim() || null,
         content,
         coverImage: coverImage || null,
+        category,
         isPublished,
         publishedAt: isPublished ? new Date() : null,
       },

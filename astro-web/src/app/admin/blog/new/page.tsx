@@ -14,6 +14,7 @@ export default function NewBlogPostPage() {
     excerpt: '',
     content: { type: 'doc', content: [] },
     coverImage: '',
+    category: 'MONTHLY' as 'MONTHLY' | 'RETRO' | 'TIP',
     isPublished: false,
   });
 
@@ -144,6 +145,22 @@ export default function NewBlogPostPage() {
               className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
               placeholder="Yazının kısa özeti..."
             />
+          </div>
+
+          {/* Category */}
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Kategori *
+            </label>
+            <select
+              value={formData.category}
+              onChange={(e) => setFormData(prev => ({ ...prev, category: e.target.value as 'MONTHLY' | 'RETRO' | 'TIP' }))}
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+            >
+              <option value="MONTHLY">Aylık Yorum</option>
+              <option value="RETRO">Retro Rehberi</option>
+              <option value="TIP">Ritüel / İpucu</option>
+            </select>
           </div>
 
           {/* Cover Image */}

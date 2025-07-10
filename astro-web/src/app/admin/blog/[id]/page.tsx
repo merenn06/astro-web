@@ -15,6 +15,7 @@ interface Post {
   coverImage: string | null;
   isPublished: boolean;
   publishedAt: string | null;
+  category: 'MONTHLY' | 'RETRO' | 'TIP';
   createdAt: string;
   updatedAt: string;
 }
@@ -29,6 +30,7 @@ export default function EditBlogPostPage({ params }: { params: { id: string } })
     excerpt: '',
     content: { type: 'doc', content: [] },
     coverImage: '',
+    category: 'MONTHLY' as 'MONTHLY' | 'RETRO' | 'TIP',
     isPublished: false,
   });
   const [hasChanges, setHasChanges] = useState(false);
@@ -55,6 +57,7 @@ export default function EditBlogPostPage({ params }: { params: { id: string } })
           excerpt: postData.excerpt || '',
           content: postData.content,
           coverImage: postData.coverImage || '',
+          category: postData.category || 'MONTHLY',
           isPublished: postData.isPublished,
         });
       } catch (error) {
@@ -307,6 +310,22 @@ export default function EditBlogPostPage({ params }: { params: { id: string } })
             <div className="text-sm text-gray-500 mt-1">
               {formData.excerpt.length}/200 karakter
             </div>
+          </div>
+
+          {/* Category */}
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Kategori *
+            </label>
+            <select
+              value={formData.category}
+              onChange={(e) => updateFormData({ category: e.target.value as 'MONTHLY' | 'RETRO' | 'TIP' })}
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+            >
+              <option value="MONTHLY">Aylık Yorum</option>
+              <option value="RETRO">Retro Rehberi</option>
+              <option value="TIP">Ritüel / İpucu</option>
+            </select>
           </div>
 
           {/* Cover Image */}

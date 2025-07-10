@@ -8,7 +8,7 @@ async function main() {
   // Demo blog post
   await prisma.post.upsert({
     where: { slug: 'temmuz-2025-astroloji-genel-gorunum' },
-    update: {},
+    update: { category: 'MONTHLY' },
     create: {
       title: 'Temmuz 2025 Astroloji Genel Görünüm',
       slug: 'temmuz-2025-astroloji-genel-gorunum',
@@ -99,8 +99,14 @@ async function main() {
       coverImage: '/uploads/temmuz2025.jpg',
       isPublished: true,
       publishedAt: new Date(),
+      category: 'MONTHLY',
     },
   });
+
+  // Diğer örnek güncellemeler
+  await prisma.post.updateMany({ where: { slug: 'merkur-retrosu-iletisim-ve-teknoloji' }, data: { category: 'RETRO' } });
+  await prisma.post.updateMany({ where: { slug: 'ayin-burclar-uzerindeki-etkisi' }, data: { category: 'TIP' } });
+  await prisma.post.updateMany({ where: { slug: 'burclarin-gunluk-yorumlari-2024' }, data: { category: 'MONTHLY' } });
 
   console.log('✅ Blog post seeded successfully!');
   console.log('📝 Created: Temmuz 2025 Astroloji Genel Görünüm');

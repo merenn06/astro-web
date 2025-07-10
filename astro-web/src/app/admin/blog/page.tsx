@@ -12,6 +12,7 @@ interface Post {
   coverImage: string | null;
   isPublished: boolean;
   publishedAt: string | null;
+  category: 'MONTHLY' | 'RETRO' | 'TIP';
   createdAt: string;
   updatedAt: string;
 }
@@ -21,6 +22,7 @@ export default function AdminBlogPage() {
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
   const [statusFilter, setStatusFilter] = useState('all');
+  const [categoryFilter, setCategoryFilter] = useState('all');
   const [page, setPage] = useState(1);
   const [total, setTotal] = useState(0);
 
@@ -31,6 +33,7 @@ export default function AdminBlogPage() {
         page: page.toString(),
         ...(searchQuery && { query: searchQuery }),
         ...(statusFilter !== 'all' && { status: statusFilter }),
+        ...(categoryFilter !== 'all' && { category: categoryFilter }),
       });
 
       const response = await fetch(`/api/admin/posts?${params}`);
@@ -48,7 +51,7 @@ export default function AdminBlogPage() {
 
   useEffect(() => {
     fetchPosts();
-  }, [page, searchQuery, statusFilter]);
+  }, [page, searchQuery, statusFilter, categoryFilter]);
 
   const handlePublishToggle = async (postId: string, currentStatus: boolean) => {
     try {
@@ -96,6 +99,19 @@ export default function AdminBlogPage() {
     });
   };
 
+  const getCategoryDisplay = (category: string) => {
+    switch (category) {
+      case 'MONTHLY':
+        return { label: 'Aylık Yorum', color: 'bg-blue-100 text-blue-800' };
+      case 'RETRO':
+        return { label: 'Retro Rehberi', color: 'bg-purple-100 text-purple-800' };
+      case 'TIP':
+        return { label: 'Ritüel / İpucu', color: 'bg-green-100 text-green-800' };
+      default:
+        return { label: category, color: 'bg-gray-100 text-gray-800' };
+    }
+  };
+
   return (
     <div className="max-w-7xl mx-auto px-4 py-8">
       <div className="flex justify-between items-center mb-8">
@@ -133,6 +149,16 @@ export default function AdminBlogPage() {
             <option value="published">Yayında</option>
             <option value="draft">Taslak</option>
           </select>
+          <select
+            value={categoryFilter}
+            onChange={(e) => setCategoryFilter(e.target.value)}
+            className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+          >
+            <option value="all">Tüm Kategoriler</option>
+            <option value="MONTHLY">Aylık Yorum</option>
+            <option value="RETRO">Retro Rehberi</option>
+            <option value="TIP">Ritüel / İpucu</option>
+          </select>
         </div>
       </div>
 
@@ -149,6 +175,9 @@ export default function AdminBlogPage() {
                 <tr>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                     Başlık
+                  </th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    Kategori
                   </th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                     Durum
@@ -175,6 +204,13 @@ export default function AdminBlogPage() {
                           </div>
                         )}
                       </div>
+                    </td>
+                    <td className="px-6 py-4">
+                      <span
+                        className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${getCategoryDisplay(post.category).color}`}
+                      >
+                        {getCategoryDisplay(post.category).label}
+                      </span>
                     </td>
                     <td className="px-6 py-4">
                       <span

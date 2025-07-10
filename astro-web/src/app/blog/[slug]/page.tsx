@@ -35,6 +35,19 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         slug: params.slug,
         isPublished: true,
       },
+      select: {
+        id: true,
+        title: true,
+        slug: true,
+        excerpt: true,
+        content: true,
+        coverImage: true,
+        isPublished: true,
+        publishedAt: true,
+        createdAt: true,
+        updatedAt: true,
+        category: true,
+      },
     });
 
     if (!post) {
@@ -72,7 +85,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
           }
         ] : [],
         authors: ['Dilek Alkan Kara'],
-        section: 'Astroloji',
+        section: post.category === 'MONTHLY' ? 'Aylık Yorum' : post.category === 'RETRO' ? 'Retro Rehberi' : post.category === 'TIP' ? 'Ritüel / İpucu' : '',
+        tags: [post.category === 'MONTHLY' ? 'Aylık Yorum' : post.category === 'RETRO' ? 'Retro Rehberi' : post.category === 'TIP' ? 'Ritüel / İpucu' : ''],
       },
       twitter: {
         card: 'summary_large_image',

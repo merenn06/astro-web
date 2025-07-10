@@ -10,6 +10,7 @@ interface Post {
   slug: string;
   excerpt: string | null;
   coverImage: string | null;
+  category: 'MONTHLY' | 'RETRO' | 'TIP';
   publishedAt: string;
   createdAt: string;
 }
@@ -21,11 +22,18 @@ export default function BlogPageClient() {
   const [page, setPage] = useState(1);
   const [total, setTotal] = useState(0);
   const [hasMore, setHasMore] = useState(true);
+  const [selectedCategory, setSelectedCategory] = useState('');
 
   const fetchPosts = async (pageNum: number, append = false) => {
     try {
       setLoading(true);
-      const response = await fetch(`/api/posts?page=${pageNum}&limit=10`);
+      const params = new URLSearchParams({
+        page: pageNum.toString(),
+        limit: '10',
+        ...(selectedCategory && { category: selectedCategory }),
+      });
+      
+      const response = await fetch(`/api/posts?${params}`);
       if (!response.ok) throw new Error('Yazılar alınamadı');
       
       const data = await response.json();
@@ -48,7 +56,9 @@ export default function BlogPageClient() {
 
   useEffect(() => {
     const currentPage = parseInt(searchParams.get('page') || '1', 10);
+    const category = searchParams.get('category') || '';
     setPage(currentPage);
+    setSelectedCategory(category);
     fetchPosts(currentPage);
   }, [searchParams]);
 
@@ -66,6 +76,25 @@ export default function BlogPageClient() {
     });
   };
 
+  const getCategoryDisplay = (category: string) => {
+    switch (category) {
+      case 'MONTHLY':
+        return { label: 'Aylık Yorum', color: 'bg-blue-100 text-blue-800' };
+      case 'RETRO':
+        return { label: 'Retro Rehberi', color: 'bg-purple-100 text-purple-800' };
+      case 'TIP':
+        return { label: 'Ritüel / İpucu', color: 'bg-green-100 text-green-800' };
+      default:
+        return { label: category, color: 'bg-gray-100 text-gray-800' };
+    }
+  };
+
+  const handleCategoryChange = (category: string) => {
+    setSelectedCategory(category);
+    setPage(1);
+    fetchPosts(1);
+  };
+
   if (loading && posts.length === 0) {
     return (
       <div className="max-w-7xl mx-auto px-4 py-8">
@@ -81,6 +110,45 @@ export default function BlogPageClient() {
         <p className="text-xl text-gray-600 max-w-2xl mx-auto">
           Astroloji ve kişisel gelişim yazıları. Burç yorumları, astroloji rehberleri ve daha fazlası.
         </p>
+      </div>
+
+      {/* Category Filter */}
+      <div className="mb-8">
+        {/* Desktop Tabs */}
+        <div className="hidden md:flex justify-center gap-1 bg-gray-100 p-1 rounded-lg">
+          {[
+            { key: '', label: 'Tümü' },
+            { key: 'monthly', label: 'Aylık Yorum' },
+            { key: 'retro', label: 'Retro Rehberi' },
+            { key: 'tip', label: 'Ritüel / İpucu' },
+          ].map((tab) => (
+            <button
+              key={tab.key}
+              onClick={() => handleCategoryChange(tab.key)}
+              className={`px-6 py-3 rounded-md font-medium transition-colors ${
+                selectedCategory === tab.key
+                  ? 'bg-white text-purple-600 shadow-sm'
+                  : 'text-gray-600 hover:text-gray-900'
+              }`}
+            >
+              {tab.label}
+            </button>
+          ))}
+        </div>
+
+        {/* Mobile Dropdown */}
+        <div className="md:hidden">
+          <select
+            value={selectedCategory}
+            onChange={(e) => handleCategoryChange(e.target.value)}
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+          >
+            <option value="">Tümü</option>
+            <option value="monthly">Aylık Yorum</option>
+            <option value="retro">Retro Rehberi</option>
+            <option value="tip">Ritüel / İpucu</option>
+          </select>
+        </div>
       </div>
 
       {posts.length === 0 ? (
@@ -103,9 +171,14 @@ export default function BlogPageClient() {
                   </div>
                 )}
                 <div className="p-6">
-                  <div className="flex items-center text-sm text-gray-500 mb-3">
-                    <Calendar className="w-4 h-4 mr-1" />
-                    {formatDate(post.publishedAt)}
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center text-sm text-gray-500">
+                      <Calendar className="w-4 h-4 mr-1" />
+                      {formatDate(post.publishedAt)}
+                    </div>
+                    <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${getCategoryDisplay(post.category).color}`}>
+                      {getCategoryDisplay(post.category).label}
+                    </span>
                   </div>
                   <h2 className="text-xl font-semibold mb-3 line-clamp-2">
                     <Link href={`/blog/${post.slug}`} className="hover:text-purple-600 transition-colors">
@@ -142,9 +215,14 @@ export default function BlogPageClient() {
                   </div>
                 )}
                 <div className="p-6">
-                  <div className="flex items-center text-sm text-gray-500 mb-3">
-                    <Calendar className="w-4 h-4 mr-1" />
-                    {formatDate(post.publishedAt)}
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center text-sm text-gray-500">
+                      <Calendar className="w-4 h-4 mr-1" />
+                      {formatDate(post.publishedAt)}
+                    </div>
+                    <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${getCategoryDisplay(post.category).color}`}>
+                      {getCategoryDisplay(post.category).label}
+                    </span>
                   </div>
                   <h2 className="text-xl font-semibold mb-3 line-clamp-2">
                     <Link href={`/blog/${post.slug}`} className="hover:text-purple-600 transition-colors">
@@ -181,9 +259,14 @@ export default function BlogPageClient() {
                   </div>
                 )}
                 <div className="p-4">
-                  <div className="flex items-center text-sm text-gray-500 mb-2">
-                    <Calendar className="w-4 h-4 mr-1" />
-                    {formatDate(post.publishedAt)}
+                  <div className="flex items-center justify-between mb-2">
+                    <div className="flex items-center text-sm text-gray-500">
+                      <Calendar className="w-4 h-4 mr-1" />
+                      {formatDate(post.publishedAt)}
+                    </div>
+                    <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${getCategoryDisplay(post.category).color}`}>
+                      {getCategoryDisplay(post.category).label}
+                    </span>
                   </div>
                   <h2 className="text-lg font-semibold mb-2">
                     <Link href={`/blog/${post.slug}`} className="hover:text-purple-600 transition-colors">
