@@ -3,6 +3,7 @@ import { Inter, Playfair_Display } from 'next/font/google'
 import './globals.css'
 import NavBar from '@/components/NavBar'
 import ToasterProvider from '@/components/ToasterProvider'
+import { PushNotificationProvider } from '@/components/PushNotificationProvider'
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -103,8 +104,15 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <meta name="theme-color" content="#1a1a1a" />
+        <link rel="apple-touch-icon" href="/icons/icon-192.png" />
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#4c1d95" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content="AstroRehber" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="msapplication-TileColor" content="#4c1d95" />
+        <meta name="msapplication-TileImage" content="/icons/icon-144.png" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -113,6 +121,7 @@ export default function RootLayout({
         />
       </head>
       <body className={`${inter.className} ${playfair.variable}`}>
+        <PushNotificationProvider />
         <NavBar />
         {children}
         <ToasterProvider />

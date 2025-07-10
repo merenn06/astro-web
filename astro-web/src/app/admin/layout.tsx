@@ -9,6 +9,7 @@ const SIDEBAR_LINKS = [
   { href: '/admin/takvim', label: 'Takvim' },
   { href: '/admin/yorumlar', label: 'Yorumlar' },
   { href: '/admin/danismanlik', label: 'Danışmanlık' },
+  { href: '/admin/notifications', label: 'Bildirimler' },
 ];
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
