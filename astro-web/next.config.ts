@@ -1,7 +1,11 @@
+// astro-web/next.config.ts
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  images: {
+    domains: ['picsum.photos'],
+  },
+  // başka config ayarları buraya
 };
 
 export default nextConfig;
