@@ -1,4 +1,4 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, waitFor, act } from '@testing-library/react';
 import ShareButtons from '../ShareButtons';
 
 // Mock usePathname
@@ -24,9 +24,8 @@ describe('ShareButtons', () => {
     
     expect(screen.getByText('Paylaş:')).toBeInTheDocument();
     expect(screen.getByLabelText('WhatsApp ile paylaş')).toBeInTheDocument();
-    expect(screen.getByLabelText('X (Twitter) ile paylaş')).toBeInTheDocument();
-    expect(screen.getByLabelText('LinkedIn ile paylaş')).toBeInTheDocument();
-    expect(screen.getByLabelText('Facebook ile paylaş')).toBeInTheDocument();
+    expect(screen.getByLabelText('Instagram ile paylaş')).toBeInTheDocument();
+    expect(screen.getByLabelText('Linki kopyala')).toBeInTheDocument();
   });
 
   it('generates correct WhatsApp share URL', () => {
@@ -39,32 +38,16 @@ describe('ShareButtons', () => {
     expect(decodeURIComponent(href || '')).toContain('This is a test excerpt');
   });
 
-  it('generates correct X/Twitter share URL', () => {
+  it('generates correct Instagram share URL', () => {
     render(<ShareButtons {...mockProps} />);
     
-    const twitterButton = screen.getByLabelText('X (Twitter) ile paylaş');
-    const href = twitterButton.getAttribute('href');
-    expect(href).toContain('twitter.com/intent/tweet');
-    expect(decodeURIComponent(href || '')).toContain('Test Blog Post Title');
-  });
-
-  it('generates correct LinkedIn share URL', () => {
-    render(<ShareButtons {...mockProps} />);
-    
-    const linkedinButton = screen.getByLabelText('LinkedIn ile paylaş');
-    const href = linkedinButton.getAttribute('href');
-    expect(href).toContain('linkedin.com/sharing/share-offsite');
+    const instagramButton = screen.getByLabelText('Instagram ile paylaş');
+    const href = instagramButton.getAttribute('href');
+    expect(href).toContain('instagram.com/?url=');
     expect(decodeURIComponent(href || '')).toContain('/blog/test-post');
   });
 
-  it('generates correct Facebook share URL', () => {
-    render(<ShareButtons {...mockProps} />);
-    
-    const facebookButton = screen.getByLabelText('Facebook ile paylaş');
-    const href = facebookButton.getAttribute('href');
-    expect(href).toContain('facebook.com/sharer/sharer.php');
-    expect(decodeURIComponent(href || '')).toContain('/blog/test-post');
-  });
+
 
   it('opens links in new tab with proper attributes', () => {
     render(<ShareButtons {...mockProps} />);
@@ -84,7 +67,7 @@ describe('ShareButtons', () => {
     
     expect((global as any).gtag).toHaveBeenCalledWith('event', 'share_click', {
       event_category: 'engagement',
-      event_label: 'whatsapp',
+      event_label: 'WhatsApp',
       value: 1
     });
   });
@@ -128,13 +111,97 @@ describe('ShareButtons', () => {
     render(<ShareButtons {...mockProps} />);
     
     const whatsappButton = screen.getByLabelText('WhatsApp ile paylaş');
-    const twitterButton = screen.getByLabelText('X (Twitter) ile paylaş');
-    const linkedinButton = screen.getByLabelText('LinkedIn ile paylaş');
-    const facebookButton = screen.getByLabelText('Facebook ile paylaş');
+    const instagramButton = screen.getByLabelText('Instagram ile paylaş');
     
     expect(whatsappButton).toHaveClass('bg-[#25D366]');
-    expect(twitterButton).toHaveClass('bg-black');
-    expect(linkedinButton).toHaveClass('bg-[#0A66C2]');
-    expect(facebookButton).toHaveClass('bg-[#1877F2]');
+    expect(instagramButton).toHaveClass('bg-gradient-to-tr', 'from-[#feda75]', 'via-[#d62976]', 'to-[#4f5bd5]');
+  });
+
+  it('copies link to clipboard when copy button is clicked', async () => {
+    // Mock clipboard API
+    Object.assign(navigator, {
+      clipboard: {
+        writeText: jest.fn().mockResolvedValue(undefined),
+      },
+    });
+
+    render(<ShareButtons {...mockProps} />);
+    
+    const copyButton = screen.getByLabelText('Linki kopyala');
+    fireEvent.click(copyButton);
+    
+    expect(navigator.clipboard.writeText).toHaveBeenCalledWith('https://localhost:3000/blog/test-post');
+  });
+
+  it('tracks analytics when copy button is clicked', async () => {
+    // Mock clipboard API
+    Object.assign(navigator, {
+      clipboard: {
+        writeText: jest.fn().mockResolvedValue(undefined),
+      },
+    });
+
+    render(<ShareButtons {...mockProps} />);
+    
+    const copyButton = screen.getByLabelText('Linki kopyala');
+    
+    await act(async () => {
+      fireEvent.click(copyButton);
+    });
+    
+    await waitFor(() => {
+      expect((global as any).gtag).toHaveBeenCalledWith('event', 'share_click', {
+        event_category: 'engagement',
+        event_label: 'CopyLink',
+        value: 1
+      });
+    });
+  });
+
+  it('shows success message when link is copied', async () => {
+    // Mock clipboard API
+    Object.assign(navigator, {
+      clipboard: {
+        writeText: jest.fn().mockResolvedValue(undefined),
+      },
+    });
+
+    render(<ShareButtons {...mockProps} />);
+    
+    const copyButton = screen.getByLabelText('Linki kopyala');
+    
+    await act(async () => {
+      fireEvent.click(copyButton);
+    });
+    
+    await waitFor(() => {
+      expect(screen.getByText('✓ Link kopyalandı!')).toBeInTheDocument();
+    });
+  });
+
+  it('changes copy button appearance when clicked', async () => {
+    // Mock clipboard API
+    Object.assign(navigator, {
+      clipboard: {
+        writeText: jest.fn().mockResolvedValue(undefined),
+      },
+    });
+
+    render(<ShareButtons {...mockProps} />);
+    
+    const copyButton = screen.getByLabelText('Linki kopyala');
+    
+    // Before click - should have clipboard icon
+    expect(copyButton.querySelector('svg')).toBeInTheDocument();
+    
+    await act(async () => {
+      fireEvent.click(copyButton);
+    });
+    
+    await waitFor(() => {
+      // After click - should have checkmark icon and green background
+      expect(copyButton).toHaveClass('bg-green-500', 'text-white');
+      expect(copyButton.querySelector('path')).toHaveAttribute('d', 'M5 13l4 4L19 7');
+    });
   });
 }); 

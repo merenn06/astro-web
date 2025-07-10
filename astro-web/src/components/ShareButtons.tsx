@@ -1,6 +1,7 @@
 "use client";
 import { usePathname } from "next/navigation";
-import { Facebook, Linkedin, Twitter, Share2, MessageCircle } from "lucide-react";
+import { Clipboard, Instagram, MessageCircle } from "lucide-react";
+import { useState } from "react";
 
 interface ShareButtonsProps {
   title: string;
@@ -11,6 +12,7 @@ export default function ShareButtons({ title, excerpt }: ShareButtonsProps) {
   const pathname = usePathname();
   const domain = process.env.NEXT_PUBLIC_DOMAIN || 'localhost:3000';
   const url = `https://${domain}${pathname}`;
+  const [copied, setCopied] = useState(false);
   
   // Create share text with title and excerpt
   const shareText = excerpt 
@@ -26,25 +28,11 @@ export default function ShareButtons({ title, excerpt }: ShareButtonsProps) {
       ariaLabel: "WhatsApp ile paylaş"
     },
     {
-      name: "X",
-      url: `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(url)}`,
-      Icon: Twitter,
-      color: "bg-black hover:bg-gray-800",
-      ariaLabel: "X (Twitter) ile paylaş"
-    },
-    {
-      name: "LinkedIn",
-      url: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`,
-      Icon: Linkedin,
-      color: "bg-[#0A66C2] hover:bg-[#0d4b8f]",
-      ariaLabel: "LinkedIn ile paylaş"
-    },
-    {
-      name: "Facebook",
-      url: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
-      Icon: Facebook,
-      color: "bg-[#1877F2] hover:bg-[#166fe5]",
-      ariaLabel: "Facebook ile paylaş"
+      name: "Instagram",
+      url: `https://www.instagram.com/?url=${encodeURIComponent(url)}`,
+      Icon: Instagram,
+      color: "bg-gradient-to-tr from-[#feda75] via-[#d62976] to-[#4f5bd5] hover:from-[#f9d56a] hover:via-[#d62976] hover:to-[#4f5bd5]",
+      ariaLabel: "Instagram ile paylaş"
     }
   ];
 
@@ -57,6 +45,29 @@ export default function ShareButtons({ title, excerpt }: ShareButtonsProps) {
       });
     }
   }
+
+  // Copy link function
+  const copyLink = async () => {
+    try {
+      await navigator.clipboard.writeText(url);
+      setCopied(true);
+      trackShare("CopyLink");
+      
+      // Reset copied state after 2 seconds
+      setTimeout(() => setCopied(false), 2000);
+    } catch (error) {
+      console.error('Failed to copy link:', error);
+      // Fallback for older browsers
+      const textArea = document.createElement('textarea');
+      textArea.value = url;
+      document.body.appendChild(textArea);
+      textArea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textArea);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    }
+  };
 
   return (
     <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
@@ -72,14 +83,40 @@ export default function ShareButtons({ title, excerpt }: ShareButtonsProps) {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={ariaLabel}
-              onClick={() => trackShare(name.toLowerCase())}
+              onClick={() => trackShare(name)}
               className={`w-10 h-10 rounded-full flex items-center justify-center text-white transition-all duration-200 hover:scale-110 ${color} shadow-sm hover:shadow-md`}
             >
               <Icon className="w-4 h-4" />
             </a>
           ))}
+          
+          {/* Copy Link Button */}
+          <button
+            onClick={copyLink}
+            aria-label="Linki kopyala"
+            className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110 shadow-sm hover:shadow-md ${
+              copied 
+                ? 'bg-green-500 text-white' 
+                : 'bg-white text-gray-800 border border-gray-300 hover:bg-gray-50 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-600 dark:hover:bg-gray-700'
+            }`}
+          >
+            {copied ? (
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              </svg>
+            ) : (
+              <Clipboard className="w-4 h-4" />
+            )}
+          </button>
         </div>
       </div>
+      
+      {/* Copy success message */}
+      {copied && (
+        <div className="mt-2 text-sm text-green-600 dark:text-green-400 animate-fade-in">
+          ✓ Link kopyalandı!
+        </div>
+      )}
     </div>
   );
 } 
