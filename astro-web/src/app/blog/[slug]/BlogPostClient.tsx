@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Calendar, ArrowLeft, ArrowRight } from 'lucide-react';
 import { renderToString } from 'react-dom/server';
+import NewsletterForm from '@/components/NewsletterForm';
 
 interface Post {
   id: string;
@@ -229,6 +230,21 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
           )}
         </div>
       )}
+
+      {/* Newsletter CTA */}
+      <div className="mt-12 bg-gradient-to-r from-violet-50 to-purple-50 rounded-lg p-8 border border-violet-200">
+        <div className="text-center mb-6">
+          <h3 className="text-2xl font-bold text-gray-900 mb-2">
+            📅 2025 Astro Takvimi
+          </h3>
+          <p className="text-gray-600">
+            Bu yazıyı beğendiyseniz, e-posta bültenimize kaydolun ve 2025 Astro Takvimi PDF'ini ücretsiz indirin!
+          </p>
+        </div>
+        <div className="flex justify-center">
+          <NewsletterForm />
+        </div>
+      </div>
 
       {/* Comments Placeholder */}
       <div className="mt-12 bg-gray-50 rounded-lg p-8 text-center">

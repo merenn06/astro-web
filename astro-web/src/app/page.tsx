@@ -3,6 +3,7 @@ import { prisma } from '@/lib/prisma';
 import { Star, Calendar, Instagram, Mail, Twitter, Youtube } from 'lucide-react';
 import HomeReelGrid from '@/components/HomeReelGrid';
 import Footer from '@/components/Footer';
+import NewsletterForm from '@/components/NewsletterForm';
 
 // ISR - Revalidate every 60 seconds
 export const revalidate = 60;
@@ -139,6 +140,21 @@ export default async function Page() {
                 Bu hafta için özel bir gökyüzü olayı bulunmuyor.
               </p>
             )}
+          </div>
+        </div>
+      </section>
+
+      {/* Newsletter Section */}
+      <section className="py-16 px-4 bg-gradient-to-r from-violet-50 to-purple-50 dark:from-violet-950 dark:to-purple-950">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl font-serif font-bold text-gray-900 dark:text-white mb-6">
+            📅 2025 Astro Takvimi
+          </h2>
+          <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
+            E-posta bültenimize kaydolun ve 2025 Astro Takvimi PDF'ini ücretsiz indirin!
+          </p>
+          <div className="flex justify-center">
+            <NewsletterForm />
           </div>
         </div>
       </section>
