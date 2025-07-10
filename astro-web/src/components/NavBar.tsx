@@ -7,6 +7,7 @@ import { Sun, Moon, Menu, X, ChevronDown } from 'lucide-react';
 const navLinks = [
   { href: '/', label: 'Hakkımda' },
   { href: '/takvim', label: 'Takvim' },
+  { href: '/reels', label: 'Reels' },
   { href: '/yorumlar', label: 'Yorumlar' },
   { href: '/danismanlik', label: 'Danışmanlık' },
   { href: '/blog', label: 'Blog' },

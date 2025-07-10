@@ -6,56 +6,63 @@ async function main() {
   await prisma.reel.deleteMany({});
   
   const reels = [
-    // 3 YouTube embeds
     {
       title: 'Astroloji Reel #1 - Koç Burcu',
+      description: 'Koç burcu için günlük astroloji yorumu',
       thumbnail: 'https://picsum.photos/seed/reel1/400/600',
-      embedUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-      createdAt: new Date(Date.now() - 1 * 86400000),
+      videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4',
+      publishedAt: new Date(Date.now() - 1 * 86400000),
+      calendarUrl: 'https://calendar.google.com/calendar/event?action=TEMPLATE&text=Astroloji+Reel+1&dates=20240101T100000Z/20240101T110000Z',
     },
     {
       title: 'Astroloji Reel #2 - Boğa Burcu',
+      description: 'Boğa burcu için haftalık astroloji rehberi',
       thumbnail: 'https://picsum.photos/seed/reel2/400/600',
-      embedUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-      createdAt: new Date(Date.now() - 2 * 86400000),
+      videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4',
+      publishedAt: new Date(Date.now() - 2 * 86400000),
     },
     {
       title: 'Astroloji Reel #3 - İkizler Burcu',
+      description: 'İkizler burcu için ayın ritüeli',
       thumbnail: 'https://picsum.photos/seed/reel3/400/600',
-      embedUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-      createdAt: new Date(Date.now() - 3 * 86400000),
+      videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4',
+      publishedAt: new Date(Date.now() - 3 * 86400000),
+      calendarUrl: 'https://calendar.google.com/calendar/event?action=TEMPLATE&text=Astroloji+Reel+3&dates=20240103T100000Z/20240103T110000Z',
     },
-    // 2 Instagram embeds
     {
       title: 'Astroloji Reel #4 - Yengeç Burcu',
+      description: 'Yengeç burcu için özel astroloji ipuçları',
       thumbnail: 'https://picsum.photos/seed/reel4/400/600',
-      embedHtml: '<iframe src="https://www.instagram.com/reel/example1/embed" width="400" height="600" frameborder="0" scrolling="no" allowtransparency="true"></iframe>',
-      createdAt: new Date(Date.now() - 4 * 86400000),
+      videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4',
+      publishedAt: new Date(Date.now() - 4 * 86400000),
     },
     {
       title: 'Astroloji Reel #5 - Aslan Burcu',
+      description: 'Aslan burcu için güçlü ritüeller',
       thumbnail: 'https://picsum.photos/seed/reel5/400/600',
-      embedHtml: '<iframe src="https://www.instagram.com/reel/example2/embed" width="400" height="600" frameborder="0" scrolling="no" allowtransparency="true"></iframe>',
-      createdAt: new Date(Date.now() - 5 * 86400000),
+      videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4',
+      publishedAt: new Date(Date.now() - 5 * 86400000),
     },
-    // 3 MP4 videos
     {
       title: 'Astroloji Reel #6 - Başak Burcu',
+      description: 'Başak burcu için detaylı astroloji analizi',
       thumbnail: 'https://picsum.photos/seed/reel6/400/600',
       videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4',
-      createdAt: new Date(Date.now() - 6 * 86400000),
+      publishedAt: new Date(Date.now() - 6 * 86400000),
     },
     {
       title: 'Astroloji Reel #7 - Terazi Burcu',
+      description: 'Terazi burcu için denge ve uyum rehberi',
       thumbnail: 'https://picsum.photos/seed/reel7/400/600',
       videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4',
-      createdAt: new Date(Date.now() - 7 * 86400000),
+      publishedAt: new Date(Date.now() - 7 * 86400000),
     },
     {
       title: 'Astroloji Reel #8 - Akrep Burcu',
+      description: 'Akrep burcu için derin astroloji keşifleri',
       thumbnail: 'https://picsum.photos/seed/reel8/400/600',
       videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4',
-      createdAt: new Date(Date.now() - 8 * 86400000),
+      publishedAt: new Date(Date.now() - 8 * 86400000),
     },
   ];
 
@@ -63,10 +70,9 @@ async function main() {
     await prisma.reel.create({ data: reel });
   }
   
-  console.log('🎬 8 mixed sample reels seeded!');
-  console.log('   - 3 YouTube embeds');
-  console.log('   - 2 Instagram embeds');
-  console.log('   - 3 MP4 videos');
+  console.log('🎬 8 sample reels seeded!');
+  console.log('   - All with videoUrl and descriptions');
+  console.log('   - 2 with calendar URLs');
 }
 
 main()

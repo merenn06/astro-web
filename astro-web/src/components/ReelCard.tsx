@@ -1,39 +1,66 @@
 'use client';
+
+import { Play, Calendar } from 'lucide-react';
 import Image from 'next/image';
-import { Play } from 'lucide-react';
-import { format } from 'date-fns';
-import { tr } from 'date-fns/locale';
 
 interface ReelCardProps {
   title: string;
   thumbnail: string;
-  createdAt: string | Date;
+  publishedAt: string | Date;
+  calendarUrl?: string;
   onClick: () => void;
 }
 
-export function ReelCard({ title, thumbnail, createdAt, onClick }: ReelCardProps) {
+export function ReelCard({ title, thumbnail, publishedAt, calendarUrl, onClick }: ReelCardProps) {
   return (
-    <div
-      className="relative rounded-2xl overflow-hidden shadow-xl cursor-pointer group transition-transform hover:scale-105 bg-white dark:bg-gray-900 border border-purple-100 dark:border-purple-900"
+    <div 
+      className="group relative bg-white rounded-lg shadow-md overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
       onClick={onClick}
     >
-      <Image
-        src={thumbnail}
-        alt={title}
-        width={400}
-        height={600}
-        className="w-full h-64 object-cover group-hover:brightness-75 transition-all aspect-[2/3]"
-        loading="lazy"
-        sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
-      />
-      <div className="absolute inset-0 flex flex-col justify-end p-4 bg-gradient-to-t from-black/70 via-black/30 to-transparent">
-        <div className="flex items-center gap-2 mb-2">
-          <Play className="w-7 h-7 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="currentColor" />
-          <span className="text-white font-semibold text-lg drop-shadow-lg truncate max-w-[70%]">{title}</span>
+      {/* Thumbnail */}
+      <div className="relative aspect-[9/16] overflow-hidden">
+        <Image
+          src={thumbnail}
+          alt={title}
+          fill
+          className="object-cover group-hover:scale-110 transition-transform duration-300"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        />
+        
+        {/* Play Button Overlay */}
+        <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-30 transition-colors flex items-center justify-center">
+          <div className="bg-white bg-opacity-90 rounded-full p-3 group-hover:scale-110 transition-transform">
+            <Play className="w-6 h-6 text-purple-600 fill-current" />
+          </div>
         </div>
-        <span className="text-sm text-gray-200 drop-shadow-lg">
-          {format(new Date(createdAt), 'd MMMM yyyy', { locale: tr })}
-        </span>
+
+        {/* Calendar Badge */}
+        {calendarUrl && (
+          <div className="absolute top-2 right-2 bg-blue-500 text-white p-1 rounded-full">
+            <Calendar className="w-4 h-4" />
+          </div>
+        )}
+      </div>
+
+      {/* Content */}
+      <div className="p-4">
+        <h3 className="font-semibold text-gray-900 mb-2 line-clamp-2 group-hover:text-purple-600 transition-colors">
+          {title}
+        </h3>
+        <div className="flex justify-between items-center text-sm text-gray-500">
+          <span>
+            {new Date(publishedAt).toLocaleDateString('tr-TR', {
+              day: 'numeric',
+              month: 'short',
+              year: 'numeric'
+            })}
+          </span>
+          {calendarUrl && (
+            <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs">
+              Takvim
+            </span>
+          )}
+        </div>
       </div>
     </div>
   );

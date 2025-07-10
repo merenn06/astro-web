@@ -4,13 +4,17 @@ import { ReelCard } from './ReelCard';
 import { VideoModal } from './VideoModal';
 
 export interface Reel {
-  id: number;
+  id: string;
   title: string;
+  description?: string;
   thumbnail: string;
-  embedUrl?: string;
-  embedHtml?: string;
-  videoUrl?: string;
+  videoUrl: string;
+  publishedAt: string | Date;
+  calendarUrl?: string;
+  isActive: boolean;
+  order: number;
   createdAt: string | Date;
+  updatedAt: string | Date;
 }
 
 export function ReelGrid({ reels }: { reels: Reel[] }) {
@@ -23,7 +27,8 @@ export function ReelGrid({ reels }: { reels: Reel[] }) {
             key={reel.id}
             title={reel.title}
             thumbnail={reel.thumbnail}
-            createdAt={reel.createdAt}
+            publishedAt={reel.publishedAt}
+            calendarUrl={reel.calendarUrl}
             onClick={() => setModal(reel)}
           />
         ))}
@@ -32,9 +37,9 @@ export function ReelGrid({ reels }: { reels: Reel[] }) {
         isOpen={!!modal}
         onClose={() => setModal(null)}
         videoUrl={modal?.videoUrl}
-        embedUrl={modal?.embedUrl}
-        embedHtml={modal?.embedHtml}
         title={modal?.title}
+        description={modal?.description}
+        calendarUrl={modal?.calendarUrl}
       />
     </>
   );

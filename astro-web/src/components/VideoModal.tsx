@@ -1,18 +1,19 @@
 'use client';
 
 import { motion, AnimatePresence } from 'framer-motion';
-import { X } from 'lucide-react';
+import { X, Calendar, ExternalLink } from 'lucide-react';
+import ReactPlayer from 'react-player';
 
 interface VideoModalProps {
   isOpen: boolean;
   onClose: () => void;
   videoUrl?: string;
-  embedUrl?: string;
-  embedHtml?: string;
   title?: string;
+  description?: string;
+  calendarUrl?: string;
 }
 
-export function VideoModal({ isOpen, onClose, videoUrl, embedUrl, embedHtml, title }: VideoModalProps) {
+export function VideoModal({ isOpen, onClose, videoUrl, title, description, calendarUrl }: VideoModalProps) {
   return (
     <AnimatePresence>
       {isOpen && (
@@ -36,29 +37,41 @@ export function VideoModal({ isOpen, onClose, videoUrl, embedUrl, embedHtml, tit
             >
               <X className="w-6 h-6" />
             </button>
-            <div className="w-full h-full flex flex-col items-center justify-center">
-              {title && <div className="text-white text-lg font-semibold mb-2 text-center px-2 truncate w-full">{title}</div>}
-              {embedHtml ? (
-                <div className="w-full h-full" dangerouslySetInnerHTML={{ __html: embedHtml }} />
-              ) : embedUrl ? (
-                <iframe
-                  src={embedUrl}
-                  className="w-full h-full min-h-[200px] rounded"
-                  allow="autoplay; encrypted-media"
-                  allowFullScreen
-                  title={title || 'Reel'}
-                />
-              ) : videoUrl ? (
-                <video
-                  src={videoUrl}
-                  controls
-                  autoPlay
-                  className="w-full h-full min-h-[200px] rounded"
-                  style={{ background: 'black' }}
-                />
-              ) : (
-                <div className="text-white">Video bulunamadı.</div>
-              )}
+            <div className="w-full h-full flex flex-col">
+              {/* Header */}
+              <div className="p-4 bg-gradient-to-r from-purple-900 to-blue-900 text-white">
+                {title && <h2 className="text-xl font-semibold mb-2">{title}</h2>}
+                {description && <p className="text-sm text-gray-200 mb-3">{description}</p>}
+                {calendarUrl && (
+                  <a
+                    href={calendarUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 bg-white bg-opacity-20 hover:bg-opacity-30 text-white px-3 py-1 rounded-full text-sm transition-colors"
+                  >
+                    <Calendar className="w-4 h-4" />
+                    Takvime Ekle
+                    <ExternalLink className="w-3 h-3" />
+                  </a>
+                )}
+              </div>
+              
+              {/* Video Player */}
+              <div className="flex-1 bg-black">
+                {videoUrl ? (
+                  <video
+                    src={videoUrl}
+                    controls
+                    autoPlay
+                    className="w-full h-full"
+                    style={{ background: 'black' }}
+                  />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center text-white">
+                    Video bulunamadı.
+                  </div>
+                )}
+              </div>
             </div>
           </motion.div>
         </motion.div>
