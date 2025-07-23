@@ -20,7 +20,6 @@ export async function GET(request: NextRequest) {
       { path: '/takvim', priority: '0.8' },
       { path: '/yorumlar', priority: '0.8' },
       { path: '/danismanlik', priority: '0.8' },
-      { path: '/reels', priority: '0.7' },
     ];
 
     // Generate XML
@@ -67,7 +66,6 @@ export async function GET(request: NextRequest) {
       { path: '/takvim', priority: '0.8' },
       { path: '/yorumlar', priority: '0.8' },
       { path: '/danismanlik', priority: '0.8' },
-      { path: '/reels', priority: '0.7' },
     ];
     
     const fallbackUrls = fallbackStaticPages.map((page: { path: string; priority: string }) => 

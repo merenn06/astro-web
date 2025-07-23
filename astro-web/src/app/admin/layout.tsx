@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 const SIDEBAR_LINKS = [
-  { href: '/admin/reels', label: 'Reels' },
   { href: '/admin/blog', label: 'Blog' },
   { href: '/admin/takvim', label: 'Takvim' },
   { href: '/admin/yorumlar', label: 'Yorumlar' },

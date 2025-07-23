@@ -20,8 +20,7 @@ Allow: /blog/
 Allow: /horoscope/
 Allow: /takvim/
 Allow: /yorumlar/
-Allow: /danismanlik/
-Allow: /reels/`;
+Allow: /danismanlik/`;
 
   return new Response(robotsTxt, {
     headers: {

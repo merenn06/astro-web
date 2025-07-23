@@ -24,6 +24,7 @@ const config: Config = {
       },
       fontFamily: {
         serif: ['Playfair Display', 'serif'],
+        feminine: ['Dancing Script', 'cursive'],
       },
       animation: {
         'fadein': 'fadeIn 0.5s ease-in-out',

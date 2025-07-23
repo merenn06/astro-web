@@ -7,7 +7,6 @@ import { Sun, Moon, Menu, X, ChevronDown } from 'lucide-react';
 const navLinks = [
   { href: '/', label: 'Hakkımda' },
   { href: '/takvim', label: 'Takvim' },
-  { href: '/reels', label: 'Reels' },
   { href: '/yorumlar', label: 'Yorumlar' },
   { href: '/danismanlik', label: 'Danışmanlık' },
   { href: '/blog', label: 'Blog' },
@@ -56,7 +55,7 @@ export default function NavBar() {
               <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white font-bold text-lg">
                 D
               </div>
-              <span className="text-xl font-serif font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              <span className="text-xl font-serif font-bold text-gray-900 dark:text-white">
                 Astrolog Dilek Alkan Kara
               </span>
             </Link>
@@ -69,15 +68,15 @@ export default function NavBar() {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className={`relative px-3 py-2 text-sm font-medium transition-colors ${
-                      isActive
-                        ? 'text-primary dark:text-primary'
-                        : 'text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary'
-                    }`}
+                    className={`relative px-3 py-2 text-base font-sans font-semibold rounded transition-colors duration-200
+                      ${isActive
+                        ? 'text-white dark:text-gray-900 bg-primary dark:bg-primary/80 shadow-sm'
+                        : 'text-gray-900 dark:text-gray-100 hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary dark:hover:text-primary'}
+                    `}
                   >
                     {link.label}
                     {isActive && (
-                      <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-primary to-accent rounded-full" />
+                      <div className="absolute bottom-0 left-2 right-2 h-0.5 bg-accent rounded-full" />
                     )}
                   </Link>
                 );
@@ -139,11 +138,11 @@ export default function NavBar() {
                       key={link.href}
                       href={link.href}
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className={`block px-4 py-3 text-lg font-medium transition-colors ${
-                        isActive
-                          ? 'text-primary dark:text-primary'
-                          : 'text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary'
-                      }`}
+                      className={`block px-4 py-3 text-lg font-sans font-semibold rounded transition-colors duration-200
+                        ${isActive
+                          ? 'text-white dark:text-gray-900 bg-primary dark:bg-primary/80 shadow-sm'
+                          : 'text-gray-900 dark:text-gray-100 hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary dark:hover:text-primary'}
+                      `}
                     >
                       {link.label}
                     </Link>

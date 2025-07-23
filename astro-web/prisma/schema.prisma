@@ -1,22 +1,10 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "sqlite"
-  url      = "file:./dev.db"
-}
-
-enum Category {
-  MONTHLY   // Aylık Yorum
-  RETRO     // Retro Rehberi
-  TIP       // Ritüel/İpucu
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
 }
 
 model User {
@@ -27,17 +15,17 @@ model User {
 }
 
 model Post {
-  id          String   @id @default(cuid())
+  id          String    @id @default(cuid())
   title       String
-  slug        String   @unique
+  slug        String    @unique
   excerpt     String?
-  content     Json     // tipografya-rich text (TipTap/Editor.js)
-  coverImage  String?  // CDN veya /uploads
-  isPublished Boolean  @default(false)
+  content     Json
+  coverImage  String?
+  isPublished Boolean   @default(false)
   publishedAt DateTime?
-  category    Category @default(MONTHLY)  // ⬅︎ yeni alan
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  category    Category  @default(MONTHLY)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
 }
 
 model Event {
@@ -46,20 +34,6 @@ model Event {
   date        DateTime
   type        String
   description String
-}
-
-model Reel {
-  id          String   @id @default(cuid())
-  title       String
-  description String?
-  videoUrl    String
-  thumbnail   String
-  publishedAt DateTime @default(now())
-  calendarUrl String?  // iCal link (opsiyonel)
-  isActive    Boolean  @default(true)
-  order       Int      @default(0)
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
 }
 
 model Horoscope {
@@ -96,7 +70,13 @@ model Comment {
 model Subscription {
   id        String   @id @default(cuid())
   endpoint  String   @unique
-  keys      String   // JSON string of p256dh and auth keys
+  keys      String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+}
+
+enum Category {
+  MONTHLY
+  RETRO
+  TIP
 }
