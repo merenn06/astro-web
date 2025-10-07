@@ -1,25 +1,42 @@
 [
-  { "date": "2026-01-20", "type": "Burç Geçişi", "emoji": "☀️", "description": "Güneş Kova burcuna geçer" },
-  { "date": "2026-02-18", "type": "Burç Geçişi", "emoji": "☀️", "description": "Güneş Balık burcuna geçer" },
-  { "date": "2026-03-20", "type": "Burç Geçişi", "emoji": "☀️", "description": "Güneş Koç burcuna geçer" },
-  { "date": "2026-04-20", "type": "Burç Geçişi", "emoji": "☀️", "description": "Güneş Boğa burcuna geçer" },
-  { "date": "2026-05-21", "type": "Burç Geçişi", "emoji": "☀️", "description": "Güneş İkizler burcuna geçer" },
-  { "date": "2026-06-21", "type": "Burç Geçişi", "emoji": "☀️", "description": "Güneş Yengeç burcuna geçer" },
-  { "date": "2026-07-22", "type": "Burç Geçişi", "emoji": "☀️", "description": "Güneş Aslan burcuna geçer" },
-  { "date": "2026-08-23", "type": "Burç Geçişi", "emoji": "☀️", "description": "Güneş Başak burcuna geçer" },
-  { "date": "2026-09-23", "type": "Burç Geçişi", "emoji": "☀️", "description": "Güneş Terazi burcuna geçer" },
-  { "date": "2026-10-23", "type": "Burç Geçişi", "emoji": "☀️", "description": "Güneş Akrep burcuna geçer" },
-  { "date": "2026-11-22", "type": "Burç Geçişi", "emoji": "☀️", "description": "Güneş Yay burcuna geçer" },
-  { "date": "2026-12-21", "type": "Burç Geçişi", "emoji": "☀️", "description": "Güneş Oğlak burcuna geçer" },
-  { "date": "2026-01-25", "type": "Merkür Retrosu", "emoji": "🔄", "description": "Merkür geriye doğru hareket etmeye başlar" },
-  { "date": "2026-03-20", "type": "Venüs Retrosu", "emoji": "🔄", "description": "Venüs geriye doğru hareket etmeye başlar" },
-  { "date": "2026-05-30", "type": "Mars Retrosu", "emoji": "🔄", "description": "Mars geriye doğru hareket etmeye başlar" },
-  { "date": "2026-08-10", "type": "Jüpiter Retrosu", "emoji": "🔄", "description": "Jüpiter geriye doğru hareket etmeye başlar" },
-  { "date": "2026-10-25", "type": "Satürn Retrosu", "emoji": "🔄", "description": "Satürn geriye doğru hareket etmeye başlar" },
-  { "date": "2026-02-17", "type": "Güneş Tutulması", "emoji": "🌑", "description": "Güneş tutulması gerçekleşir" },
-  { "date": "2026-08-12", "type": "Ay Tutulması", "emoji": "🌑", "description": "Ay tutulması gerçekleşir" },
-  { "date": "2026-08-12", "type": "Meteor Yağmuru", "emoji": "⭐", "description": "Perseid meteor yağmuru gözlemlenebilir" },
-  { "date": "2026-12-14", "type": "Meteor Yağmuru", "emoji": "⭐", "description": "Geminid meteor yağmuru gözlemlenebilir" },
+  { "date": "2026-01-20", "type": "Güneş Kova Burcuna Geçiş", "emoji": "☀️", "description": "Güneş Kova burcuna geçer" },
+  { "date": "2026-02-18", "type": "Güneş Balık Burcuna Geçiş", "emoji": "☀️", "description": "Güneş Balık burcuna geçer" },
+  { "date": "2026-03-20", "type": "Güneş Koç Burcuna Geçiş", "emoji": "☀️", "description": "Güneş Koç burcuna geçer" },
+  { "date": "2026-04-20", "type": "Güneş Boğa Burcuna Geçiş", "emoji": "☀️", "description": "Güneş Boğa burcuna geçer" },
+  { "date": "2026-05-21", "type": "Güneş İkizler Burcuna Geçiş", "emoji": "☀️", "description": "Güneş İkizler burcuna geçer" },
+  { "date": "2026-06-21", "type": "Güneş Yengeç Burcuna Geçiş", "emoji": "☀️", "description": "Güneş Yengeç burcuna geçer" },
+  { "date": "2026-07-22", "type": "Güneş Aslan Burcuna Geçiş", "emoji": "☀️", "description": "Güneş Aslan burcuna geçer" },
+  { "date": "2026-08-23", "type": "Güneş Başak Burcuna Geçiş", "emoji": "☀️", "description": "Güneş Başak burcuna geçer" },
+  { "date": "2026-09-23", "type": "Güneş Terazi Burcuna Geçiş", "emoji": "☀️", "description": "Güneş Terazi burcuna geçer" },
+  { "date": "2026-10-23", "type": "Güneş Akrep Burcuna Geçiş", "emoji": "☀️", "description": "Güneş Akrep burcuna geçer" },
+  { "date": "2026-11-22", "type": "Güneş Yay Burcuna Geçiş", "emoji": "☀️", "description": "Güneş Yay burcuna geçer" },
+  { "date": "2026-12-21", "type": "Güneş Oğlak Burcuna Geçiş", "emoji": "☀️", "description": "Güneş Oğlak burcuna geçer" },
+  
+  { "date": "2026-01-25", "type": "Merkür Retrosu Başlıyor", "emoji": "🔄", "description": "Merkür Kova burcunda geriye doğru hareket etmeye başlar" },
+  { "date": "2026-02-15", "type": "Merkür Retrosu Sona Eriyor", "emoji": "🔄", "description": "Merkür Kova burcunda düz harekete geçer" },
+  { "date": "2026-05-22", "type": "Merkür Retrosu Başlıyor", "emoji": "🔄", "description": "Merkür İkizler burcunda geriye doğru hareket etmeye başlar" },
+  { "date": "2026-06-15", "type": "Merkür Retrosu Sona Eriyor", "emoji": "🔄", "description": "Merkür İkizler burcunda düz harekete geçer" },
+  { "date": "2026-09-19", "type": "Merkür Retrosu Başlıyor", "emoji": "🔄", "description": "Merkür Terazi burcunda geriye doğru hareket etmeye başlar" },
+  { "date": "2026-10-11", "type": "Merkür Retrosu Sona Eriyor", "emoji": "🔄", "description": "Merkür Başak burcunda düz harekete geçer" },
+  
+  { "date": "2026-03-20", "type": "Venüs Retrosu Başlıyor", "emoji": "🔄", "description": "Venüs Koç burcunda geriye doğru hareket etmeye başlar" },
+  { "date": "2026-04-30", "type": "Venüs Retrosu Sona Eriyor", "emoji": "🔄", "description": "Venüs Balık burcunda düz harekete geçer" },
+  
+  { "date": "2026-05-30", "type": "Mars Retrosu Başlıyor", "emoji": "🔄", "description": "Mars Aslan burcunda geriye doğru hareket etmeye başlar" },
+  
+  { "date": "2026-08-10", "type": "Jüpiter Retrosu Başlıyor", "emoji": "🔄", "description": "Jüpiter Balık burcunda geriye doğru hareket etmeye başlar" },
+  
+  { "date": "2026-10-25", "type": "Satürn Retrosu Başlıyor", "emoji": "🔄", "description": "Satürn Oğlak burcunda geriye doğru hareket etmeye başlar" },
+  
+  { "date": "2026-02-17", "type": "Halkalı Güneş Tutulması", "emoji": "🌑", "description": "Akrep burcunda halkalı güneş tutulması gerçekleşir" },
+  { "date": "2026-08-12", "type": "Tam Güneş Tutulması", "emoji": "🌑", "description": "Aslan burcunda tam güneş tutulması gerçekleşir" },
+  { "date": "2026-02-11", "type": "Tam Ay Tutulması", "emoji": "🌑", "description": "Aslan burcunda tam ay tutulması gerçekleşir" },
+  { "date": "2026-08-06", "type": "Kısmi Ay Tutulması", "emoji": "🌑", "description": "Kova burcunda kısmi ay tutulması gerçekleşir" },
+  
+  { "date": "2026-08-12", "type": "Perseid Meteor Yağmuru", "emoji": "⭐", "description": "Perseid meteor yağmuru zirve yapar" },
+  { "date": "2026-12-14", "type": "Geminid Meteor Yağmuru", "emoji": "⭐", "description": "Geminid meteor yağmuru zirve yapar" },
+  { "date": "2026-10-21", "type": "Orionid Meteor Yağmuru", "emoji": "⭐", "description": "Orionid meteor yağmuru zirve yapar" },
+  
   { "date": "2026-02-15", "type": "Süper Ay", "emoji": "🌕", "description": "Ay Dünya'ya en yakın konumda" },
   { "date": "2026-08-30", "type": "Mavi Ay", "emoji": "🌕", "description": "Ayın ikinci dolunayı" }
 ] 
