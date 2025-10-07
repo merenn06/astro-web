@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import AstroCalendar, { AstroEvent } from '@/components/AstroCalendar';
 import { AstroApiEvent } from '@/lib/astroApis';
+import { CelestialEvent } from '@/lib/celestialEvents';
 
 // API'den gelen olayları AstroEvent formatına dönüştür
 function convertApiEventsToAstroEvents(apiEvents: AstroApiEvent[]): AstroEvent[] {

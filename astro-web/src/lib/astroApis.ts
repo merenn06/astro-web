@@ -1,4 +1,8 @@
-// AstroEvent interface'ini burada tanımlayalım
+import fs from 'fs';
+import path from 'path';
+import { CelestialEvent, generateEventLabel, getEventIcon, getEventColor } from './celestialEvents';
+
+// Legacy interface for backward compatibility
 export interface AstroEvent {
   id: string;
   title: string;
@@ -8,8 +12,6 @@ export interface AstroEvent {
   icon: string;
   color?: string;
 }
-import fs from 'fs';
-import path from 'path';
 
 export interface AstroApiEvent {
   id: string;
@@ -132,14 +134,48 @@ function loadStaticData(year: number, month: number): { moonPhases: AstroApiEven
   return { moonPhases, astronomical };
 }
 
+// Load celestial events from new format
+function loadCelestialEvents(year: number, month: number): AstroApiEvent[] {
+  const events: AstroApiEvent[] = [];
+  
+  try {
+    // Try to load new celestial events format first
+    const celestialPath = path.join(process.cwd(), 'data', `celestialEvents${year}.json`);
+    if (fs.existsSync(celestialPath)) {
+      const celestialData: CelestialEvent[] = JSON.parse(fs.readFileSync(celestialPath, 'utf8'));
+      
+      celestialData.forEach((event) => {
+        const eventDate = new Date(event.startUTC);
+        const eventMonth = eventDate.getMonth() + 1;
+        
+        // Filter by month
+        if (eventMonth === month) {
+          events.push({
+            id: event.id,
+            title: generateEventLabel(event),
+            date: event.startUTC,
+            type: event.type === 'moon_phase' ? 'moon_phase' : 'astronomical',
+            description: event.labelTR,
+            icon: getEventIcon(event),
+            color: getEventColor(event)
+          });
+        }
+      });
+      
+      return events;
+    }
+  } catch (error) {
+    console.warn('Error loading celestial events, falling back to legacy format:', error);
+  }
+  
+  // Fallback to legacy format
+  const { moonPhases, astronomical } = loadStaticData(year, month);
+  return [...moonPhases, ...astronomical];
+}
+
 // Tüm astrolojik olayları birleştir
 export async function fetchAllAstroEvents(year: number, month: number): Promise<AstroApiEvent[]> {
-  const { moonPhases, astronomical } = loadStaticData(year, month);
-  
-  const allEvents: AstroApiEvent[] = [
-    ...moonPhases,
-    ...astronomical
-  ];
+  const allEvents = loadCelestialEvents(year, month);
 
   // Tarihe göre sırala
   return allEvents.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
