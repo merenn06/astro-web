@@ -21,6 +21,8 @@ type AstroCalendarProps = {
   selectedDate?: Date;
   onViewTypeChange?: (view: ViewType) => void;
   onDateChange?: (date: Date) => void;
+  onYearChange?: (year: number) => void;
+  onMonthChange?: (month: number) => void;
 };
 
 function getEventsForDay(events: AstroEvent[], date: Date) {
@@ -53,6 +55,8 @@ export default function AstroCalendar({
   selectedDate: selectedDateProp,
   onViewTypeChange,
   onDateChange,
+  onYearChange,
+  onMonthChange,
 }: AstroCalendarProps) {
   // Dinamik ay/yıl state
   const today = new Date();
@@ -77,18 +81,28 @@ export default function AstroCalendar({
   // Ay/yıl ileri-geri
   const nextMonth = () => {
     if (currentMonth === 12) {
+      const newYear = currentYear + 1;
       setCurrentMonth(1);
-      setCurrentYear(currentYear + 1);
+      setCurrentYear(newYear);
+      onYearChange?.(newYear);
+      onMonthChange?.(1);
     } else {
-      setCurrentMonth(currentMonth + 1);
+      const newMonth = currentMonth + 1;
+      setCurrentMonth(newMonth);
+      onMonthChange?.(newMonth);
     }
   };
   const prevMonth = () => {
     if (currentMonth === 1) {
+      const newYear = currentYear - 1;
       setCurrentMonth(12);
-      setCurrentYear(currentYear - 1);
+      setCurrentYear(newYear);
+      onYearChange?.(newYear);
+      onMonthChange?.(12);
     } else {
-      setCurrentMonth(currentMonth - 1);
+      const newMonth = currentMonth - 1;
+      setCurrentMonth(newMonth);
+      onMonthChange?.(newMonth);
     }
   };
 
@@ -104,9 +118,10 @@ export default function AstroCalendar({
   if (internalView === "month") {
     const firstDay = new Date(currentYear, currentMonth - 1, 1);
     const daysInMonth = new Date(currentYear, currentMonth, 0).getDate();
-    const firstDayOfWeek = (firstDay.getDay() + 6) % 7; // Pazartesi=0, Pazar=6
+    const jsDay = firstDay.getDay(); // JavaScript: Pazar=0, Pazartesi=1, ..., Cumartesi=6
+    const offset = (jsDay === 0 ? 6 : jsDay - 1); // Pazartesi bazlı offset: Pazartesi=0, Pazar=6
     const weeks = [];
-    let day = 1 - firstDayOfWeek;
+    let day = 1 - offset;
     for (let w = 0; w < 6; w++) {
       const week = [];
       for (let d = 0; d < 7; d++, day++) {
@@ -115,7 +130,7 @@ export default function AstroCalendar({
         week.push(
           <td
             key={d}
-            className={`align-top min-w-[90px] min-h-[90px] border border-gray-200 dark:border-gray-700 cursor-pointer rounded-xl shadow-sm transition-all duration-200 bg-white/80 dark:bg-gray-900/80 hover:bg-purple-50 dark:hover:bg-purple-900 ${dayEvents[0]?.color ? '' : ''}`}
+            className={`align-top min-w-[90px] min-h-[90px] border border-gray-200 dark:border-gray-700 cursor-pointer rounded-xl shadow-sm transition-all duration-200 bg-white/80 dark:bg-gray-900/80 hover:bg-purple-50 dark:hover:bg-purple-900 relative group ${dayEvents[0]?.color ? '' : ''}`}
             style={{ background: dayEvents[0]?.color || undefined }}
             onClick={() => day > 0 && day <= daysInMonth && dayEvents.length > 0 && openEventModal(dayEvents)}
           >
@@ -126,6 +141,15 @@ export default function AstroCalendar({
                   <div key={i} className="text-2xl">{event.icon}</div>
                 ))}
                 <div className="text-xs text-center text-gray-700 dark:text-gray-300 leading-tight">{dayEvents.map(e => e.title).join(", ")}</div>
+                
+                {/* Tooltip */}
+                {dayEvents.length > 0 && (
+                  <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-3 px-4 py-3 bg-gradient-to-r from-purple-900 to-blue-900 dark:from-gray-800 dark:to-gray-700 text-white text-sm rounded-xl shadow-2xl opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none z-20 max-w-xs border border-purple-300/20 backdrop-blur-sm">
+                    <div className="font-bold mb-2 text-center text-purple-200">{dayEvents.map(e => e.title).join(", ")}</div>
+                    <div className="text-xs text-purple-100 text-center leading-relaxed">{dayEvents.map(e => e.description).join(", ")}</div>
+                    <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-purple-900 dark:border-t-gray-800"></div>
+                  </div>
+                )}
               </div>
             ) : null}
           </td>
@@ -207,7 +231,7 @@ export default function AstroCalendar({
               {days.map((date, i) => {
                 const dayEvents = getEventsForDay(events, date);
                 return (
-                  <td key={i} className={`align-top min-w-[90px] min-h-[90px] border border-gray-200 dark:border-gray-700 cursor-pointer rounded-xl shadow-sm transition-all duration-200 bg-white/80 dark:bg-gray-900/80 hover:bg-purple-50 dark:hover:bg-purple-900 ${dayEvents[0]?.color ? '' : ''}`}
+                  <td key={i} className={`align-top min-w-[90px] min-h-[90px] border border-gray-200 dark:border-gray-700 cursor-pointer rounded-xl shadow-sm transition-all duration-200 bg-white/80 dark:bg-gray-900/80 hover:bg-purple-50 dark:hover:bg-purple-900 relative group ${dayEvents[0]?.color ? '' : ''}`}
                     style={{ background: dayEvents[0]?.color || undefined }}
                     onClick={() => handleDateChange(date)}
                   >
@@ -217,6 +241,15 @@ export default function AstroCalendar({
                         <div key={j} className="text-2xl">{event.icon}</div>
                       ))}
                       <div className="text-xs text-center text-gray-700 dark:text-gray-300 leading-tight">{dayEvents.map(e => e.title).join(", ")}</div>
+                      
+                      {/* Tooltip */}
+                      {dayEvents.length > 0 && (
+                        <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-3 px-4 py-3 bg-gradient-to-r from-purple-900 to-blue-900 dark:from-gray-800 dark:to-gray-700 text-white text-sm rounded-xl shadow-2xl opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none z-20 max-w-xs border border-purple-300/20 backdrop-blur-sm">
+                          <div className="font-bold mb-2 text-center text-purple-200">{dayEvents.map(e => e.title).join(", ")}</div>
+                          <div className="text-xs text-purple-100 text-center leading-relaxed">{dayEvents.map(e => e.description).join(", ")}</div>
+                          <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-purple-900 dark:border-t-gray-800"></div>
+                        </div>
+                      )}
                     </div>
                   </td>
                 );

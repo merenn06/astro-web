@@ -1,62 +1,106 @@
 'use client';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import AstroCalendar, { AstroEvent } from '@/components/AstroCalendar';
+import { AstroApiEvent } from '@/lib/astroApis';
 
-const MOON_PHASE_ICONS: Record<string, string> = {
-  'New Moon': '🌑',
-  'First Quarter': '🌓',
-  'Full Moon': '🌕',
-  'Last Quarter': '🌗',
-};
-
-function parseUSNOMoonPhases(phases: any[], year: number, month: number): AstroEvent[] {
-  return phases.map((p, i) => {
-    const date = new Date(`${year}-${month.toString().padStart(2, '0')}-${p.day}`);
-    return {
-      id: 100000 + i,
-      title: p.phase,
-      date: date.toISOString(),
-      type: 'moon',
-      description: p.phase + ' fazı',
-      icon: MOON_PHASE_ICONS[p.phase] || '🌙',
-      color: '#f3e8ff',
-    };
-  });
+// API'den gelen olayları AstroEvent formatına dönüştür
+function convertApiEventsToAstroEvents(apiEvents: AstroApiEvent[]): AstroEvent[] {
+  return apiEvents.map(event => ({
+    id: parseInt(event.id.replace(/\D/g, '') || '0'),
+    title: event.title,
+    date: event.date,
+    type: event.type,
+    description: event.description,
+    icon: event.icon,
+    color: event.color,
+  }));
 }
 
 export default function TakvimClient() {
-  const [year, setYear] = React.useState(new Date().getFullYear());
-  const [month, setMonth] = React.useState(new Date().getMonth() + 1); // 1-12
-  const [events, setEvents] = React.useState<AstroEvent[]>([]);
+  const [year, setYear] = useState(new Date().getFullYear());
+  const [month, setMonth] = useState(new Date().getMonth() + 1); // 1-12
+  const [events, setEvents] = useState<AstroEvent[]>([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  React.useEffect(() => {
-    const startOfMonth = new Date(year, month - 1, 1);
-    const endOfMonth = new Date(year, month, 0, 23, 59, 59, 999);
-    // Fetch local events
-    fetch(`/api/events?start=${startOfMonth.toISOString()}&end=${endOfMonth.toISOString()}`)
-      .then(res => res.json())
-      .then(async data => {
-        let allEvents = data.events || [];
-        // Fetch moon phases from local API (proxy)
-        try {
-          const moonRes = await fetch(`/api/moonphases?year=${year}&month=${month}`);
-          const moonData = await moonRes.json();
-          if (moonData.phasedata) {
-            const moonEvents = parseUSNOMoonPhases(moonData.phasedata, year, month);
-            allEvents = [...allEvents, ...moonEvents];
-          }
-        } catch (e) {
-          // ignore moon phase errors
+  useEffect(() => {
+    const fetchEvents = async () => {
+      setLoading(true);
+      setError(null);
+      
+      try {
+        // Astrolojik API'den veri çek
+        const astroResponse = await fetch(`/api/astro-events?year=${year}&month=${month}`);
+        
+        if (!astroResponse.ok) {
+          throw new Error('Astrolojik olaylar alınamadı');
         }
-        setEvents(allEvents);
-      });
+        
+        const astroData = await astroResponse.json();
+        const astroEvents = convertApiEventsToAstroEvents(astroData.events || []);
+
+        // Mevcut yerel olayları da çek (varsa)
+        const startOfMonth = new Date(year, month - 1, 1);
+        const endOfMonth = new Date(year, month, 0, 23, 59, 59, 999);
+        
+        try {
+          const localResponse = await fetch(`/api/events?start=${startOfMonth.toISOString()}&end=${endOfMonth.toISOString()}`);
+          const localData = await localResponse.json();
+          const localEvents = localData.events || [];
+          
+          // Tüm olayları birleştir
+          setEvents([...localEvents, ...astroEvents]);
+        } catch (localError) {
+          // Yerel olaylar yoksa sadece astrolojik olayları kullan
+          setEvents(astroEvents);
+        }
+
+      } catch (err) {
+        console.error('Error fetching events:', err);
+        setError(err instanceof Error ? err.message : 'Bilinmeyen hata');
+        setEvents([]);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchEvents();
   }, [year, month]);
 
+  // Yıl/ay değişikliklerini handle et
+  const handleYearChange = (newYear: number) => {
+    setYear(newYear);
+  };
+
+  const handleMonthChange = (newMonth: number) => {
+    setMonth(newMonth);
+  };
+
   return (
-    <AstroCalendar
-      events={events}
-      year={year}
-      month={month}
-    />
+    <div>
+      {loading && (
+        <div className="text-center py-4">
+          <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-purple-600"></div>
+          <p className="mt-2 text-gray-600 dark:text-gray-400">Astrolojik olaylar yükleniyor...</p>
+        </div>
+      )}
+      
+      {error && (
+        <div className="text-center py-4">
+          <div className="bg-red-100 dark:bg-red-900/30 border border-red-400 text-red-700 dark:text-red-300 px-4 py-3 rounded">
+            <p>⚠️ {error}</p>
+            <p className="text-sm mt-1">Sabit veri dosyalarını kontrol edin</p>
+          </div>
+        </div>
+      )}
+
+      <AstroCalendar
+        events={events}
+        year={year}
+        month={month}
+        onYearChange={handleYearChange}
+        onMonthChange={handleMonthChange}
+      />
+    </div>
   );
 } 

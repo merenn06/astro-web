@@ -10,14 +10,18 @@ export default function MoonPhaseClient({ phases }: MoonPhaseClientProps) {
   const [activeTooltip, setActiveTooltip] = useState<string | null>(null);
 
   const formatDate = (date: Date) => {
-    return date.toLocaleDateString("tr-TR", {
+    // Convert UTC date to Turkey timezone for display
+    const turkeyDate = new Date(date.toLocaleString("en-US", {timeZone: "Europe/Istanbul"}));
+    return turkeyDate.toLocaleDateString("tr-TR", {
       day: "2-digit",
       month: "short"
     });
   };
 
   const formatFullDate = (date: Date) => {
-    return date.toLocaleDateString("tr-TR", {
+    // Convert UTC date to Turkey timezone for display
+    const turkeyDate = new Date(date.toLocaleString("en-US", {timeZone: "Europe/Istanbul"}));
+    return turkeyDate.toLocaleDateString("tr-TR", {
       day: "2-digit",
       month: "long",
       year: "numeric"
@@ -38,7 +42,10 @@ export default function MoonPhaseClient({ phases }: MoonPhaseClientProps) {
       <div className="flex gap-4 overflow-x-auto py-4 px-2 scrollbar-hide">
         {phases.map(({ date, phase, phaseName, phaseDescription }) => {
           const key = date.toISOString();
-          const isToday = date.toDateString() === new Date().toDateString();
+          // Compare dates in Turkey timezone for accurate "today" detection
+          const turkeyToday = new Date(new Date().toLocaleString("en-US", {timeZone: "Europe/Istanbul"}));
+          const turkeyDate = new Date(date.toLocaleString("en-US", {timeZone: "Europe/Istanbul"}));
+          const isToday = turkeyDate.toDateString() === turkeyToday.toDateString();
           
           return (
             <div 

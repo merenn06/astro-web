@@ -11,7 +11,8 @@
     "test:watch": "jest --watch",
     "lighthouse": "lhci autorun --url=http://localhost:3000",
     "db:seed": "tsx prisma/seed.ts",
-    "seed:blog": "tsx prisma/seed_blog.ts"
+    "seed:blog": "tsx prisma/seed_blog.ts",
+    "test:astro": "tsx scripts/testAstroApis.ts"
   },
   "dependencies": {
     "@auth/prisma-adapter": "^2.10.0",
