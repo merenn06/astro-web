@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { CelestialEvent, generateEventLabel, getEventIcon, getEventColor } from './celestialEvents';
-import { astroComService } from './astroComService';
+import { astronomyEngineService } from './astronomyEngineService';
 
 // Legacy interface for backward compatibility
 export interface AstroEvent {
@@ -175,12 +175,12 @@ function loadCelestialEvents(year: number, month: number): AstroApiEvent[] {
   return [...moonPhases, ...astronomical];
 }
 
-// Astro.com'dan veri yükle
-async function loadAstroComEvents(year: number, month: number): Promise<AstroApiEvent[]> {
+// Astronomy Engine'dan veri yükle
+async function loadAstronomyEngineEvents(year: number, month: number): Promise<AstroApiEvent[]> {
   try {
-    const astroComEvents = await astroComService.getAllEventsForMonth(year, month);
+    const astronomyEvents = await astronomyEngineService.getAllEventsForMonth(year, month);
     
-    return astroComEvents.map(event => ({
+    return astronomyEvents.map(event => ({
       id: event.id,
       title: event.labelTR,
       date: event.startUTC,
@@ -190,23 +190,23 @@ async function loadAstroComEvents(year: number, month: number): Promise<AstroApi
       color: getEventColor(event)
     }));
   } catch (error) {
-    console.warn('Astro.com data loading failed, falling back to static data:', error);
+    console.warn('Astronomy Engine data loading failed, falling back to static data:', error);
     return [];
   }
 }
 
 // Tüm astrolojik olayları birleştir
 export async function fetchAllAstroEvents(year: number, month: number): Promise<AstroApiEvent[]> {
-  // Önce Astro.com'dan veri almaya çalış
-  const astroComEvents = await loadAstroComEvents(year, month);
+  // Önce Astronomy Engine'dan veri almaya çalış
+  const astronomyEvents = await loadAstronomyEngineEvents(year, month);
   
-  if (astroComEvents.length > 0) {
-    console.log(`✅ Loaded ${astroComEvents.length} events from Astro.com for ${year}-${month}`);
-    return astroComEvents.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+  if (astronomyEvents.length > 0) {
+    console.log(`✅ Loaded ${astronomyEvents.length} events from Astronomy Engine for ${year}-${month}`);
+    return astronomyEvents.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
   }
 
   // Fallback to static data
-  console.log(`⚠️  Astro.com failed, using static data for ${year}-${month}`);
+  console.log(`⚠️  Astronomy Engine failed, using static data for ${year}-${month}`);
   const allEvents = loadCelestialEvents(year, month);
 
   // Tarihe göre sırala

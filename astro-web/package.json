@@ -34,6 +34,7 @@
     "@tiptap/react": "^2.25.0",
     "@tiptap/starter-kit": "^2.25.0",
     "@types/multer": "^2.0.0",
+    "astronomy-engine": "^2.1.19",
     "axios": "^1.10.0",
     "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
