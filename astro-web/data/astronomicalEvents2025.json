@@ -168,6 +168,12 @@
     "description": "Güneş Akrep Burcuna Geçiyor"
   },
   {
+    "date": "2025-11-09",
+    "type": "Merkür Retrosu Başlıyor",
+    "emoji": "🔄",
+    "description": "Merkür Retrosu Başlıyor"
+  },
+  {
     "date": "2025-11-17",
     "type": "Meteor Yağmuru",
     "emoji": "⭐",
@@ -178,6 +184,12 @@
     "type": "Burç Geçişi",
     "emoji": "☀️",
     "description": "Güneş Yay Burcuna Geçiyor"
+  },
+  {
+    "date": "2025-11-29",
+    "type": "Merkür Retrosu Sona Eriyor",
+    "emoji": "🔄",
+    "description": "Merkür Retrosu Sona Eriyor"
   },
   {
     "date": "2025-12-07",

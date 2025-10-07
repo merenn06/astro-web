@@ -122,8 +122,8 @@ describe('Celestial Events Source Validation', () => {
     it('should include all planetary retrogrades and stations (Mercury–Pluto)', () => {
       const planetStations = events.filter(e => e.type === 'planet_station');
       
-      // Should have exactly 14 planet stations
-      expect(planetStations.length).toBe(14);
+      // Should have exactly 16 planet stations (9 Mercury + 7 others)
+      expect(planetStations.length).toBe(16);
       
       // Check for all planets
       const planetTypes = planetStations.map(e => e.meta.planet);

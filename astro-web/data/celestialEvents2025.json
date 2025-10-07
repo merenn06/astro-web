@@ -938,6 +938,20 @@
     }
   },
   {
+    "id": "planet-station-mercury-retrograde_start-2025-7",
+    "type": "planet_station",
+    "subType": "mercury",
+    "startUTC": "2025-11-09T12:00:00.000Z",
+    "labelTR": "Merkür Retrosu Başlıyor",
+    "iconKey": "mercury_retrograde_start",
+    "source": "ephemeris",
+    "reliability": "high",
+    "meta": {
+      "planet": "mercury",
+      "stationType": "retrograde_start"
+    }
+  },
+  {
     "id": "moon-phase-nasa-2025-42",
     "type": "moon_phase",
     "subType": "first",
@@ -1004,6 +1018,20 @@
     "reliability": "high",
     "meta": {
       "phase": "last"
+    }
+  },
+  {
+    "id": "planet-station-mercury-retrograde_end-2025-8",
+    "type": "planet_station",
+    "subType": "mercury",
+    "startUTC": "2025-11-29T18:00:00.000Z",
+    "labelTR": "Merkür Retrosu Sona Eriyor",
+    "iconKey": "mercury_retrograde_end",
+    "source": "ephemeris",
+    "reliability": "high",
+    "meta": {
+      "planet": "mercury",
+      "stationType": "retrograde_end"
     }
   },
   {
@@ -1117,7 +1145,7 @@
     }
   },
   {
-    "id": "planet-station-mercury-retrograde_start-2025-7",
+    "id": "planet-station-mercury-retrograde_start-2025-9",
     "type": "planet_station",
     "subType": "mercury",
     "startUTC": "2025-12-29T18:00:00.000Z",
