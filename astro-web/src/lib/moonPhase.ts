@@ -27,8 +27,8 @@ export function getMoonPhases(start: Date = new Date(), days: number = 30): Moon
   // Synodic month (lunar month) in days - more accurate value
   const synodic = 29.53059;
   
-  // Reference new moon: October 22, 2025 19:29 UTC (aligned with known phases)
-  const ref = new Date(Date.UTC(2025, 9, 22, 19, 29));
+  // Reference new moon: October 21, 2025 19:29 UTC (aligned with SpaceWeatherLive data)
+  const ref = new Date(Date.UTC(2025, 9, 21, 19, 29));
   
   // Convert start date to UTC and set to noon to avoid timezone issues
   const startUTC = new Date(Date.UTC(
