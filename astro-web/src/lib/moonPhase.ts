@@ -24,6 +24,12 @@ const PHASE_DESCRIPTIONS = {
 export function getMoonPhases(start: Date = new Date(), days: number = 30): MoonPhase[] {
   const phases: MoonPhase[] = [];
   
+  // Synodic month (lunar month) in days - more accurate value
+  const synodic = 29.53059;
+  
+  // Reference new moon: October 22, 2025 19:29 UTC (aligned with known phases)
+  const ref = new Date(Date.UTC(2025, 9, 22, 19, 29));
+  
   // Convert start date to UTC and set to noon to avoid timezone issues
   const startUTC = new Date(Date.UTC(
     start.getUTCFullYear(),
@@ -42,29 +48,25 @@ export function getMoonPhases(start: Date = new Date(), days: number = 30): Moon
       12, 0, 0, 0
     ));
     
-    // Use a simple approach: determine phase based on day of lunar month
-    // This is more predictable and matches the static data better
-    const dayOfMonth = d.getUTCDate();
-    const month = d.getUTCMonth() + 1;
-    const year = d.getUTCFullYear();
-    
-    // Create a simple hash-like function to determine phase
-    // This ensures consistent phase assignment across the month
-    const dayHash = (year * 12 + month + dayOfMonth) % 29;
+    // Calculate lunar phase using astronomical formula
+    const lunations = (d.getTime() - ref.getTime()) / 86400000 / synodic;
+    const phase = lunations - Math.floor(lunations);
     
     let p: Phase | null = null;
     
-    // Distribute phases more evenly across the lunar cycle
-    if (dayHash < 2) {
+    // Normalized thresholds based on realistic lunar cycle timing:
+    // New Moon: ~2 days (0.0-0.07, 0.93-1.0)
+    // First Quarter: ~7 days (0.07-0.30) 
+    // Full Moon: ~14 days (0.30-0.77)
+    // Last Quarter: ~6 days (0.77-0.93)
+    if (phase < 0.07 || phase > 0.93) {
       p = "new";
-    } else if (dayHash < 8) {
+    } else if (phase >= 0.07 && phase < 0.30) {
       p = "first";
-    } else if (dayHash < 16) {
+    } else if (phase >= 0.30 && phase < 0.77) {
       p = "full";
-    } else if (dayHash < 24) {
+    } else if (phase >= 0.77 && phase < 0.93) {
       p = "last";
-    } else {
-      p = "new";
     }
     
     if (p) {
