@@ -129,8 +129,11 @@ export function getEventDisplayColor(event: any): string {
     'lilith_ingress': '#6B7280' // Gray
   };
   
-  if (event.type === 'moon_phase' && colors.moon_phase[event.subType]) {
-    return colors.moon_phase[event.subType];
+  // Ensure subType is a string
+  const subType = typeof event.subType === 'string' ? event.subType : String(event.subType);
+  
+  if (event.type === 'moon_phase' && colors.moon_phase[subType]) {
+    return colors.moon_phase[subType];
   }
   
   return colors[event.type] || '#6B7280';
@@ -153,8 +156,11 @@ export function getEventDisplayIcon(event: any): string {
     'lilith_ingress': '🌙'
   };
   
-  if (event.type === 'moon_phase' && icons.moon_phase[event.subType]) {
-    return icons.moon_phase[event.subType];
+  // Ensure subType is a string
+  const subType = typeof event.subType === 'string' ? event.subType : String(event.subType);
+  
+  if (event.type === 'moon_phase' && icons.moon_phase[subType]) {
+    return icons.moon_phase[subType];
   }
   
   return icons[event.type] || '✨';

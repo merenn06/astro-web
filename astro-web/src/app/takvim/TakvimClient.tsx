@@ -43,8 +43,44 @@ export default function TakvimClient() {
         const astroData = await astroResponse.json();
         const astroEvents = convertApiEventsToAstroEvents(astroData.events || []);
         
-        // Enhanced events for new calendar
-        setEnhancedEvents(astroData.events || []);
+        // Convert API events to enhanced format for new calendar
+        const enhancedEvents = (astroData.events || []).map((event: any) => ({
+          id: event.id,
+          type: event.type === 'moon_phase' ? 'moon_phase' : 
+                event.type === 'astronomical' ? 
+                  (event.title.includes('Retrosu') ? 'planet_station' :
+                   event.title.includes('Meteor') ? 'meteor_shower' :
+                   event.title.includes('Güneş') ? 'sun_ingress' : 'astronomical') : 
+                event.type,
+          subType: event.id.includes('new') ? 'new' :
+                   event.id.includes('first') ? 'first' :
+                   event.id.includes('full') ? 'full' :
+                   event.id.includes('last') ? 'last' :
+                   event.id.includes('r-') ? 'station_R' :
+                   event.id.includes('d-') ? 'station_D' :
+                   event.id.includes('meteor-') ? event.id.split('-')[1] :
+                   event.id.includes('sun-ingress-') ? event.id.split('-')[2] :
+                   'unknown',
+          body: event.title.includes('Merkür') ? 'Mercury' :
+                event.title.includes('Venüs') ? 'Venus' :
+                event.title.includes('Mars') ? 'Mars' :
+                event.title.includes('Jüpiter') ? 'Jupiter' :
+                event.title.includes('Satürn') ? 'Saturn' :
+                event.title.includes('Uranüs') ? 'Uranus' :
+                event.title.includes('Neptün') ? 'Neptune' :
+                event.title.includes('Plüton') ? 'Pluto' :
+                event.title.includes('Güneş') ? 'Sun' :
+                event.title.includes('Ay') ? 'Moon' :
+                'Unknown',
+          startUTC: event.date,
+          labelTR: event.title,
+          source: 'swiss',
+          meta: {
+            notes: 'Legacy API data'
+          }
+        }));
+        
+        setEnhancedEvents(enhancedEvents);
 
         // Mevcut yerel olayları da çek (varsa)
         const startOfMonth = new Date(year, month - 1, 1);
