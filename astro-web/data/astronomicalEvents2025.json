@@ -192,6 +192,12 @@
     "description": "Merkür Retrosu Sona Eriyor"
   },
   {
+    "date": "2025-12-05",
+    "type": "Güneş Açısı",
+    "emoji": "☀️",
+    "description": "Güneş-K.Düğüm Karesi"
+  },
+  {
     "date": "2025-12-07",
     "type": "Mars Retrosu Başlıyor",
     "emoji": "🔄",
@@ -202,6 +208,18 @@
     "type": "Meteor Yağmuru",
     "emoji": "⭐",
     "description": "Geminid Meteor Yağmuru Zirvesi"
+  },
+  {
+    "date": "2025-12-14",
+    "type": "Güneş Açısı",
+    "emoji": "☀️",
+    "description": "Güneş-Chiron Trini"
+  },
+  {
+    "date": "2025-12-20",
+    "type": "Lilith Geçişi",
+    "emoji": "🌙",
+    "description": "Lilith Yay Burcuna Geçiyor"
   },
   {
     "date": "2025-12-21",

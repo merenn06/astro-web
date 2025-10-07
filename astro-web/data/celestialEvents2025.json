@@ -1,42 +1,29 @@
 [
   {
-    "id": "meteor-quadrantids-2025",
+    "id": "meteor-quadrantids-2025-38",
     "type": "meteor_shower",
     "subType": "quadrantids",
     "startUTC": "2025-01-03T15:00:00.000Z",
     "endUTC": "2025-01-03T23:59:59.999Z",
     "labelTR": "Quadrantid Meteor Yağmuru Zirvesi",
     "iconKey": "quadrantids",
-    "source": "imo",
+    "source": "astro-seek",
     "reliability": "high",
     "meta": {
-      "radiant": "Quadrantids",
+      "radiant": "quadrantids",
       "peakWindow": "2025-01-03 gecesi",
-      "zhr": 120,
+      "zhr": 50,
       "moonInterference": "low"
     }
   },
   {
-    "id": "moon-phase-nasa-2025-1",
-    "type": "moon_phase",
-    "subType": "new",
-    "startUTC": "2025-01-13T22:27:00.000Z",
-    "labelTR": "Yeni Ay",
-    "iconKey": "new",
-    "source": "nasa",
-    "reliability": "high",
-    "meta": {
-      "phase": "new"
-    }
-  },
-  {
-    "id": "planet-station-mercury-retrograde_start-2025-1",
+    "id": "planet-station-mercury-retrograde_start-2025-23",
     "type": "planet_station",
     "subType": "mercury",
     "startUTC": "2025-01-15T02:00:00.000Z",
     "labelTR": "Merkür Retrosu Başlıyor",
     "iconKey": "mercury_retrograde_start",
-    "source": "ephemeris",
+    "source": "astro-seek",
     "reliability": "high",
     "meta": {
       "planet": "mercury",
@@ -44,65 +31,26 @@
     }
   },
   {
-    "id": "sun-ingress-aquarius-2025",
+    "id": "sun-ingress-aquarius-2025-12",
     "type": "sun_ingress",
     "subType": "aquarius",
     "startUTC": "2025-01-20T09:07:00.000Z",
     "labelTR": "Güneş Kova Burcuna Geçiyor",
     "iconKey": "sun_aquarius",
-    "source": "ephemeris",
+    "source": "astro-seek",
     "reliability": "high",
     "meta": {
       "sign": "aquarius"
     }
   },
   {
-    "id": "moon-phase-nasa-2025-2",
-    "type": "moon_phase",
-    "subType": "first",
-    "startUTC": "2025-01-21T20:31:00.000Z",
-    "labelTR": "İlk Dördün",
-    "iconKey": "first",
-    "source": "nasa",
-    "reliability": "high",
-    "meta": {
-      "phase": "first"
-    }
-  },
-  {
-    "id": "moon-phase-nasa-2025-3",
-    "type": "moon_phase",
-    "subType": "full",
-    "startUTC": "2025-01-28T19:19:00.000Z",
-    "labelTR": "Dolunay",
-    "iconKey": "full",
-    "source": "nasa",
-    "reliability": "high",
-    "meta": {
-      "phase": "full"
-    }
-  },
-  {
-    "id": "moon-phase-nasa-2025-4",
-    "type": "moon_phase",
-    "subType": "last",
-    "startUTC": "2025-02-05T01:02:00.000Z",
-    "labelTR": "Son Dördün",
-    "iconKey": "last",
-    "source": "nasa",
-    "reliability": "high",
-    "meta": {
-      "phase": "last"
-    }
-  },
-  {
-    "id": "planet-station-mercury-retrograde_end-2025-2",
+    "id": "planet-station-mercury-retrograde_end-2025-24",
     "type": "planet_station",
     "subType": "mercury",
     "startUTC": "2025-02-05T18:00:00.000Z",
     "labelTR": "Merkür Retrosu Sona Eriyor",
     "iconKey": "mercury_retrograde_end",
-    "source": "ephemeris",
+    "source": "astro-seek",
     "reliability": "high",
     "meta": {
       "planet": "mercury",
@@ -110,230 +58,87 @@
     }
   },
   {
-    "id": "moon-phase-nasa-2025-5",
-    "type": "moon_phase",
-    "subType": "new",
-    "startUTC": "2025-02-12T13:53:00.000Z",
-    "labelTR": "Yeni Ay",
-    "iconKey": "new",
-    "source": "nasa",
-    "reliability": "high",
-    "meta": {
-      "phase": "new"
-    }
-  },
-  {
-    "id": "sun-ingress-pisces-2025",
+    "id": "sun-ingress-pisces-2025-13",
     "type": "sun_ingress",
     "subType": "pisces",
     "startUTC": "2025-02-18T11:13:00.000Z",
     "labelTR": "Güneş Balık Burcuna Geçiyor",
     "iconKey": "sun_pisces",
-    "source": "ephemeris",
+    "source": "astro-seek",
     "reliability": "high",
     "meta": {
       "sign": "pisces"
     }
   },
   {
-    "id": "moon-phase-nasa-2025-6",
-    "type": "moon_phase",
-    "subType": "first",
-    "startUTC": "2025-02-20T17:33:00.000Z",
-    "labelTR": "İlk Dördün",
-    "iconKey": "first",
-    "source": "nasa",
-    "reliability": "high",
-    "meta": {
-      "phase": "first"
-    }
-  },
-  {
-    "id": "moon-phase-nasa-2025-7",
-    "type": "moon_phase",
-    "subType": "full",
-    "startUTC": "2025-02-27T12:45:00.000Z",
-    "labelTR": "Dolunay",
-    "iconKey": "full",
-    "source": "nasa",
-    "reliability": "high",
-    "meta": {
-      "phase": "full"
-    }
-  },
-  {
-    "id": "moon-phase-nasa-2025-8",
-    "type": "moon_phase",
-    "subType": "last",
-    "startUTC": "2025-03-06T16:32:00.000Z",
-    "labelTR": "Son Dördün",
-    "iconKey": "last",
-    "source": "nasa",
-    "reliability": "high",
-    "meta": {
-      "phase": "last"
-    }
-  },
-  {
-    "id": "moon-phase-nasa-2025-9",
-    "type": "moon_phase",
-    "subType": "new",
-    "startUTC": "2025-03-14T06:55:00.000Z",
-    "labelTR": "Yeni Ay",
-    "iconKey": "new",
-    "source": "nasa",
-    "reliability": "high",
-    "meta": {
-      "phase": "new"
-    }
-  },
-  {
-    "id": "sun-ingress-aries-2025",
+    "id": "sun-ingress-aries-2025-14",
     "type": "sun_ingress",
     "subType": "aries",
     "startUTC": "2025-03-20T09:01:00.000Z",
     "labelTR": "Güneş Koç Burcuna Geçiyor",
     "iconKey": "sun_aries",
-    "source": "ephemeris",
+    "source": "astro-seek",
     "reliability": "high",
     "meta": {
       "sign": "aries"
     }
   },
   {
-    "id": "moon-phase-nasa-2025-10",
-    "type": "moon_phase",
-    "subType": "first",
-    "startUTC": "2025-03-22T11:30:00.000Z",
-    "labelTR": "İlk Dördün",
-    "iconKey": "first",
-    "source": "nasa",
-    "reliability": "high",
-    "meta": {
-      "phase": "first"
-    }
-  },
-  {
-    "id": "moon-phase-nasa-2025-11",
-    "type": "moon_phase",
-    "subType": "full",
-    "startUTC": "2025-03-29T02:58:00.000Z",
-    "labelTR": "Dolunay",
-    "iconKey": "full",
-    "source": "nasa",
-    "reliability": "high",
-    "meta": {
-      "phase": "full"
-    }
-  },
-  {
-    "id": "eclipse-solar_partial-2025-1",
+    "id": "eclipse-solar_partial-2025-36",
     "type": "eclipse",
     "subType": "solar_partial",
     "startUTC": "2025-03-29T10:48:00.000Z",
     "labelTR": "Parçalı Güneş Tutulması",
     "iconKey": "solar_partial",
-    "source": "nasa",
+    "source": "astro-seek",
     "reliability": "high",
     "meta": {
       "eclipseType": "solar_partial",
       "visibility": {
         "turkey": true,
         "partial": true,
-        "notes": "Europe, North Africa, North America"
+        "notes": "Astro-Seek.com data"
       }
     }
   },
   {
-    "id": "moon-phase-nasa-2025-12",
-    "type": "moon_phase",
-    "subType": "last",
-    "startUTC": "2025-04-05T02:15:00.000Z",
-    "labelTR": "Son Dördün",
-    "iconKey": "last",
-    "source": "nasa",
-    "reliability": "high",
-    "meta": {
-      "phase": "last"
-    }
-  },
-  {
-    "id": "moon-phase-nasa-2025-13",
-    "type": "moon_phase",
-    "subType": "new",
-    "startUTC": "2025-04-12T21:22:00.000Z",
-    "labelTR": "Yeni Ay",
-    "iconKey": "new",
-    "source": "nasa",
-    "reliability": "high",
-    "meta": {
-      "phase": "new"
-    }
-  },
-  {
-    "id": "sun-ingress-taurus-2025",
+    "id": "sun-ingress-taurus-2025-15",
     "type": "sun_ingress",
     "subType": "taurus",
     "startUTC": "2025-04-20T02:55:00.000Z",
     "labelTR": "Güneş Boğa Burcuna Geçiyor",
     "iconKey": "sun_taurus",
-    "source": "ephemeris",
+    "source": "astro-seek",
     "reliability": "high",
     "meta": {
       "sign": "taurus"
     }
   },
   {
-    "id": "moon-phase-nasa-2025-14",
-    "type": "moon_phase",
-    "subType": "first",
-    "startUTC": "2025-04-20T06:27:00.000Z",
-    "labelTR": "İlk Dördün",
-    "iconKey": "first",
-    "source": "nasa",
-    "reliability": "high",
-    "meta": {
-      "phase": "first"
-    }
-  },
-  {
-    "id": "meteor-lyrids-2025",
+    "id": "meteor-lyrids-2025-39",
     "type": "meteor_shower",
     "subType": "lyrids",
     "startUTC": "2025-04-22T18:00:00.000Z",
     "endUTC": "2025-04-22T23:59:59.999Z",
     "labelTR": "Lyrid Meteor Yağmuru Zirvesi",
     "iconKey": "lyrids",
-    "source": "imo",
+    "source": "astro-seek",
     "reliability": "high",
     "meta": {
-      "radiant": "Lyrids",
+      "radiant": "lyrids",
       "peakWindow": "2025-04-22 gecesi",
-      "zhr": 18,
+      "zhr": 50,
       "moonInterference": "low"
     }
   },
   {
-    "id": "moon-phase-nasa-2025-15",
-    "type": "moon_phase",
-    "subType": "full",
-    "startUTC": "2025-04-27T19:31:00.000Z",
-    "labelTR": "Dolunay",
-    "iconKey": "full",
-    "source": "nasa",
-    "reliability": "high",
-    "meta": {
-      "phase": "full"
-    }
-  },
-  {
-    "id": "planet-station-pluto-retrograde_start-2025-14",
+    "id": "planet-station-pluto-retrograde_start-2025-35",
     "type": "planet_station",
     "subType": "pluto",
     "startUTC": "2025-05-02T10:00:00.000Z",
     "labelTR": "Plüton Retrosu Başlıyor",
     "iconKey": "pluto_retrograde_start",
-    "source": "ephemeris",
+    "source": "astro-seek",
     "reliability": "high",
     "meta": {
       "planet": "pluto",
@@ -341,56 +146,30 @@
     }
   },
   {
-    "id": "moon-phase-nasa-2025-16",
-    "type": "moon_phase",
-    "subType": "last",
-    "startUTC": "2025-05-05T11:22:00.000Z",
-    "labelTR": "Son Dördün",
-    "iconKey": "last",
-    "source": "nasa",
-    "reliability": "high",
-    "meta": {
-      "phase": "last"
-    }
-  },
-  {
-    "id": "meteor-eta-aquariids-2025",
+    "id": "meteor-eta_aquariids-2025-40",
     "type": "meteor_shower",
     "subType": "eta_aquariids",
     "startUTC": "2025-05-06T09:00:00.000Z",
     "endUTC": "2025-05-06T23:59:59.999Z",
     "labelTR": "Eta Aquariid Meteor Yağmuru Zirvesi",
     "iconKey": "eta_aquariids",
-    "source": "imo",
+    "source": "astro-seek",
     "reliability": "high",
     "meta": {
-      "radiant": "Eta Aquariids",
+      "radiant": "eta_aquariids",
       "peakWindow": "2025-05-06 gecesi",
       "zhr": 50,
       "moonInterference": "low"
     }
   },
   {
-    "id": "moon-phase-nasa-2025-17",
-    "type": "moon_phase",
-    "subType": "new",
-    "startUTC": "2025-05-12T16:56:00.000Z",
-    "labelTR": "Yeni Ay",
-    "iconKey": "new",
-    "source": "nasa",
-    "reliability": "high",
-    "meta": {
-      "phase": "new"
-    }
-  },
-  {
-    "id": "planet-station-mercury-retrograde_start-2025-3",
+    "id": "planet-station-mercury-retrograde_start-2025-25",
     "type": "planet_station",
     "subType": "mercury",
     "startUTC": "2025-05-19T06:00:00.000Z",
     "labelTR": "Merkür Retrosu Başlıyor",
     "iconKey": "mercury_retrograde_start",
-    "source": "ephemeris",
+    "source": "astro-seek",
     "reliability": "high",
     "meta": {
       "planet": "mercury",
@@ -398,78 +177,26 @@
     }
   },
   {
-    "id": "moon-phase-nasa-2025-18",
-    "type": "moon_phase",
-    "subType": "first",
-    "startUTC": "2025-05-19T23:54:00.000Z",
-    "labelTR": "İlk Dördün",
-    "iconKey": "first",
-    "source": "nasa",
-    "reliability": "high",
-    "meta": {
-      "phase": "first"
-    }
-  },
-  {
-    "id": "sun-ingress-gemini-2025",
+    "id": "sun-ingress-gemini-2025-16",
     "type": "sun_ingress",
     "subType": "gemini",
     "startUTC": "2025-05-21T03:00:00.000Z",
     "labelTR": "Güneş İkizler Burcuna Geçiyor",
     "iconKey": "sun_gemini",
-    "source": "ephemeris",
+    "source": "astro-seek",
     "reliability": "high",
     "meta": {
       "sign": "gemini"
     }
   },
   {
-    "id": "moon-phase-nasa-2025-19",
-    "type": "moon_phase",
-    "subType": "full",
-    "startUTC": "2025-05-27T11:02:00.000Z",
-    "labelTR": "Dolunay",
-    "iconKey": "full",
-    "source": "nasa",
-    "reliability": "high",
-    "meta": {
-      "phase": "full"
-    }
-  },
-  {
-    "id": "moon-phase-nasa-2025-20",
-    "type": "moon_phase",
-    "subType": "last",
-    "startUTC": "2025-06-03T19:41:00.000Z",
-    "labelTR": "Son Dördün",
-    "iconKey": "last",
-    "source": "nasa",
-    "reliability": "high",
-    "meta": {
-      "phase": "last"
-    }
-  },
-  {
-    "id": "moon-phase-nasa-2025-21",
-    "type": "moon_phase",
-    "subType": "new",
-    "startUTC": "2025-06-11T07:44:00.000Z",
-    "labelTR": "Yeni Ay",
-    "iconKey": "new",
-    "source": "nasa",
-    "reliability": "high",
-    "meta": {
-      "phase": "new"
-    }
-  },
-  {
-    "id": "planet-station-mercury-retrograde_end-2025-4",
+    "id": "planet-station-mercury-retrograde_end-2025-26",
     "type": "planet_station",
     "subType": "mercury",
     "startUTC": "2025-06-11T14:00:00.000Z",
     "labelTR": "Merkür Retrosu Sona Eriyor",
     "iconKey": "mercury_retrograde_end",
-    "source": "ephemeris",
+    "source": "astro-seek",
     "reliability": "high",
     "meta": {
       "planet": "mercury",
@@ -477,52 +204,26 @@
     }
   },
   {
-    "id": "moon-phase-nasa-2025-22",
-    "type": "moon_phase",
-    "subType": "first",
-    "startUTC": "2025-06-18T04:55:00.000Z",
-    "labelTR": "İlk Dördün",
-    "iconKey": "first",
-    "source": "nasa",
-    "reliability": "high",
-    "meta": {
-      "phase": "first"
-    }
-  },
-  {
-    "id": "sun-ingress-cancer-2025",
+    "id": "sun-ingress-cancer-2025-17",
     "type": "sun_ingress",
     "subType": "cancer",
     "startUTC": "2025-06-21T14:42:00.000Z",
     "labelTR": "Güneş Yengeç Burcuna Geçiyor",
     "iconKey": "sun_cancer",
-    "source": "ephemeris",
+    "source": "astro-seek",
     "reliability": "high",
     "meta": {
       "sign": "cancer"
     }
   },
   {
-    "id": "moon-phase-nasa-2025-23",
-    "type": "moon_phase",
-    "subType": "full",
-    "startUTC": "2025-06-25T22:31:00.000Z",
-    "labelTR": "Dolunay",
-    "iconKey": "full",
-    "source": "nasa",
-    "reliability": "high",
-    "meta": {
-      "phase": "full"
-    }
-  },
-  {
-    "id": "planet-station-saturn-retrograde_start-2025-11",
+    "id": "planet-station-saturn-retrograde_start-2025-31",
     "type": "planet_station",
     "subType": "saturn",
     "startUTC": "2025-06-29T12:00:00.000Z",
     "labelTR": "Satürn Retrosu Başlıyor",
     "iconKey": "saturn_retrograde_start",
-    "source": "ephemeris",
+    "source": "astro-seek",
     "reliability": "high",
     "meta": {
       "planet": "saturn",
@@ -530,13 +231,13 @@
     }
   },
   {
-    "id": "planet-station-neptune-retrograde_start-2025-13",
+    "id": "planet-station-neptune-retrograde_start-2025-32",
     "type": "planet_station",
     "subType": "neptune",
     "startUTC": "2025-07-02T16:00:00.000Z",
     "labelTR": "Neptün Retrosu Başlıyor",
     "iconKey": "neptune_retrograde_start",
-    "source": "ephemeris",
+    "source": "astro-seek",
     "reliability": "high",
     "meta": {
       "planet": "neptune",
@@ -544,160 +245,56 @@
     }
   },
   {
-    "id": "moon-phase-nasa-2025-24",
-    "type": "moon_phase",
-    "subType": "last",
-    "startUTC": "2025-07-03T02:30:00.000Z",
-    "labelTR": "Son Dördün",
-    "iconKey": "last",
-    "source": "nasa",
-    "reliability": "high",
-    "meta": {
-      "phase": "last"
-    }
-  },
-  {
-    "id": "moon-phase-nasa-2025-25",
-    "type": "moon_phase",
-    "subType": "new",
-    "startUTC": "2025-07-10T20:37:00.000Z",
-    "labelTR": "Yeni Ay",
-    "iconKey": "new",
-    "source": "nasa",
-    "reliability": "high",
-    "meta": {
-      "phase": "new"
-    }
-  },
-  {
-    "id": "moon-phase-nasa-2025-26",
-    "type": "moon_phase",
-    "subType": "first",
-    "startUTC": "2025-07-17T15:37:00.000Z",
-    "labelTR": "İlk Dördün",
-    "iconKey": "first",
-    "source": "nasa",
-    "reliability": "high",
-    "meta": {
-      "phase": "first"
-    }
-  },
-  {
-    "id": "sun-ingress-leo-2025",
+    "id": "sun-ingress-leo-2025-18",
     "type": "sun_ingress",
     "subType": "leo",
     "startUTC": "2025-07-22T22:17:00.000Z",
     "labelTR": "Güneş Aslan Burcuna Geçiyor",
     "iconKey": "sun_leo",
-    "source": "ephemeris",
+    "source": "astro-seek",
     "reliability": "high",
     "meta": {
       "sign": "leo"
     }
   },
   {
-    "id": "moon-phase-nasa-2025-27",
-    "type": "moon_phase",
-    "subType": "full",
-    "startUTC": "2025-07-25T06:37:00.000Z",
-    "labelTR": "Dolunay",
-    "iconKey": "full",
-    "source": "nasa",
-    "reliability": "high",
-    "meta": {
-      "phase": "full"
-    }
-  },
-  {
-    "id": "moon-phase-nasa-2025-28",
-    "type": "moon_phase",
-    "subType": "last",
-    "startUTC": "2025-08-01T12:41:00.000Z",
-    "labelTR": "Son Dördün",
-    "iconKey": "last",
-    "source": "nasa",
-    "reliability": "high",
-    "meta": {
-      "phase": "last"
-    }
-  },
-  {
-    "id": "moon-phase-nasa-2025-29",
-    "type": "moon_phase",
-    "subType": "new",
-    "startUTC": "2025-08-09T07:55:00.000Z",
-    "labelTR": "Yeni Ay",
-    "iconKey": "new",
-    "source": "nasa",
-    "reliability": "high",
-    "meta": {
-      "phase": "new"
-    }
-  },
-  {
-    "id": "meteor-perseids-2025",
+    "id": "meteor-perseids-2025-41",
     "type": "meteor_shower",
     "subType": "perseids",
     "startUTC": "2025-08-12T20:00:00.000Z",
     "endUTC": "2025-08-12T23:59:59.999Z",
     "labelTR": "Perseid Meteor Yağmuru Zirvesi",
     "iconKey": "perseids",
-    "source": "imo",
+    "source": "astro-seek",
     "reliability": "high",
     "meta": {
-      "radiant": "Perseids",
+      "radiant": "perseids",
       "peakWindow": "2025-08-12 gecesi",
       "zhr": 100,
       "moonInterference": "low"
     }
   },
   {
-    "id": "moon-phase-nasa-2025-30",
-    "type": "moon_phase",
-    "subType": "first",
-    "startUTC": "2025-08-16T05:12:00.000Z",
-    "labelTR": "İlk Dördün",
-    "iconKey": "first",
-    "source": "nasa",
-    "reliability": "high",
-    "meta": {
-      "phase": "first"
-    }
-  },
-  {
-    "id": "sun-ingress-virgo-2025",
+    "id": "sun-ingress-virgo-2025-19",
     "type": "sun_ingress",
     "subType": "virgo",
     "startUTC": "2025-08-23T05:06:00.000Z",
     "labelTR": "Güneş Başak Burcuna Geçiyor",
     "iconKey": "sun_virgo",
-    "source": "ephemeris",
+    "source": "astro-seek",
     "reliability": "high",
     "meta": {
       "sign": "virgo"
     }
   },
   {
-    "id": "moon-phase-nasa-2025-31",
-    "type": "moon_phase",
-    "subType": "full",
-    "startUTC": "2025-08-23T14:06:00.000Z",
-    "labelTR": "Dolunay",
-    "iconKey": "full",
-    "source": "nasa",
-    "reliability": "high",
-    "meta": {
-      "phase": "full"
-    }
-  },
-  {
-    "id": "planet-station-uranus-retrograde_start-2025-12",
+    "id": "planet-station-uranus-retrograde_start-2025-33",
     "type": "planet_station",
     "subType": "uranus",
     "startUTC": "2025-08-28T14:00:00.000Z",
     "labelTR": "Uranüs Retrosu Başlıyor",
     "iconKey": "uranus_retrograde_start",
-    "source": "ephemeris",
+    "source": "astro-seek",
     "reliability": "high",
     "meta": {
       "planet": "uranus",
@@ -705,39 +302,13 @@
     }
   },
   {
-    "id": "moon-phase-nasa-2025-32",
-    "type": "moon_phase",
-    "subType": "last",
-    "startUTC": "2025-08-30T23:25:00.000Z",
-    "labelTR": "Son Dördün",
-    "iconKey": "last",
-    "source": "nasa",
-    "reliability": "high",
-    "meta": {
-      "phase": "last"
-    }
-  },
-  {
-    "id": "moon-phase-nasa-2025-33",
-    "type": "moon_phase",
-    "subType": "new",
-    "startUTC": "2025-09-07T18:09:00.000Z",
-    "labelTR": "Yeni Ay",
-    "iconKey": "new",
-    "source": "nasa",
-    "reliability": "high",
-    "meta": {
-      "phase": "new"
-    }
-  },
-  {
-    "id": "planet-station-mercury-retrograde_start-2025-5",
+    "id": "planet-station-mercury-retrograde_start-2025-27",
     "type": "planet_station",
     "subType": "mercury",
     "startUTC": "2025-09-09T12:00:00.000Z",
     "labelTR": "Merkür Retrosu Başlıyor",
     "iconKey": "mercury_retrograde_start",
-    "source": "ephemeris",
+    "source": "astro-seek",
     "reliability": "high",
     "meta": {
       "planet": "mercury",
@@ -745,83 +316,44 @@
     }
   },
   {
-    "id": "moon-phase-nasa-2025-34",
-    "type": "moon_phase",
-    "subType": "first",
-    "startUTC": "2025-09-14T10:33:00.000Z",
-    "labelTR": "İlk Dördün",
-    "iconKey": "first",
-    "source": "nasa",
-    "reliability": "high",
-    "meta": {
-      "phase": "first"
-    }
-  },
-  {
-    "id": "eclipse-lunar_partial-2025-2",
+    "id": "eclipse-lunar_partial-2025-37",
     "type": "eclipse",
     "subType": "lunar_partial",
     "startUTC": "2025-09-21T19:43:00.000Z",
     "labelTR": "Parçalı Ay Tutulması",
     "iconKey": "lunar_partial",
-    "source": "nasa",
+    "source": "astro-seek",
     "reliability": "high",
     "meta": {
       "eclipseType": "lunar_partial",
       "visibility": {
         "turkey": true,
         "partial": true,
-        "notes": "Europe, Africa, Asia, Australia"
+        "notes": "Astro-Seek.com data"
       }
     }
   },
   {
-    "id": "moon-phase-nasa-2025-35",
-    "type": "moon_phase",
-    "subType": "full",
-    "startUTC": "2025-09-21T19:54:00.000Z",
-    "labelTR": "Dolunay",
-    "iconKey": "full",
-    "source": "nasa",
-    "reliability": "high",
-    "meta": {
-      "phase": "full"
-    }
-  },
-  {
-    "id": "sun-ingress-libra-2025",
+    "id": "sun-ingress-libra-2025-20",
     "type": "sun_ingress",
     "subType": "libra",
     "startUTC": "2025-09-23T01:19:00.000Z",
     "labelTR": "Güneş Terazi Burcuna Geçiyor",
     "iconKey": "sun_libra",
-    "source": "ephemeris",
+    "source": "astro-seek",
     "reliability": "high",
     "meta": {
       "sign": "libra"
     }
   },
   {
-    "id": "moon-phase-nasa-2025-36",
-    "type": "moon_phase",
-    "subType": "last",
-    "startUTC": "2025-09-29T09:54:00.000Z",
-    "labelTR": "Son Dördün",
-    "iconKey": "last",
-    "source": "nasa",
-    "reliability": "high",
-    "meta": {
-      "phase": "last"
-    }
-  },
-  {
-    "id": "planet-station-mercury-retrograde_end-2025-6",
+    "id": "planet-station-mercury-retrograde_end-2025-28",
     "type": "planet_station",
     "subType": "mercury",
     "startUTC": "2025-10-02T08:00:00.000Z",
     "labelTR": "Merkür Retrosu Sona Eriyor",
     "iconKey": "mercury_retrograde_end",
-    "source": "ephemeris",
+    "source": "astro-seek",
     "reliability": "high",
     "meta": {
       "planet": "mercury",
@@ -829,26 +361,13 @@
     }
   },
   {
-    "id": "moon-phase-nasa-2025-37",
-    "type": "moon_phase",
-    "subType": "new",
-    "startUTC": "2025-10-07T11:48:00.000Z",
-    "labelTR": "Yeni Ay",
-    "iconKey": "new",
-    "source": "nasa",
-    "reliability": "high",
-    "meta": {
-      "phase": "new"
-    }
-  },
-  {
-    "id": "planet-station-jupiter-retrograde_start-2025-10",
+    "id": "planet-station-jupiter-retrograde_start-2025-34",
     "type": "planet_station",
     "subType": "jupiter",
     "startUTC": "2025-10-09T18:00:00.000Z",
     "labelTR": "Jüpiter Retrosu Başlıyor",
     "iconKey": "jupiter_retrograde_start",
-    "source": "ephemeris",
+    "source": "astro-seek",
     "reliability": "high",
     "meta": {
       "planet": "jupiter",
@@ -856,95 +375,43 @@
     }
   },
   {
-    "id": "moon-phase-nasa-2025-38",
-    "type": "moon_phase",
-    "subType": "first",
-    "startUTC": "2025-10-14T10:55:00.000Z",
-    "labelTR": "İlk Dördün",
-    "iconKey": "first",
-    "source": "nasa",
-    "reliability": "high",
-    "meta": {
-      "phase": "first"
-    }
-  },
-  {
-    "id": "moon-phase-nasa-2025-39",
-    "type": "moon_phase",
-    "subType": "full",
-    "startUTC": "2025-10-21T12:25:00.000Z",
-    "labelTR": "Dolunay",
-    "iconKey": "full",
-    "source": "nasa",
-    "reliability": "high",
-    "meta": {
-      "phase": "full"
-    }
-  },
-  {
-    "id": "meteor-orionids-2025",
+    "id": "meteor-orionids-2025-42",
     "type": "meteor_shower",
     "subType": "orionids",
     "startUTC": "2025-10-21T23:00:00.000Z",
     "endUTC": "2025-10-21T23:59:59.999Z",
     "labelTR": "Orionid Meteor Yağmuru Zirvesi",
     "iconKey": "orionids",
-    "source": "imo",
+    "source": "astro-seek",
     "reliability": "high",
     "meta": {
-      "radiant": "Orionids",
+      "radiant": "orionids",
       "peakWindow": "2025-10-21 gecesi",
-      "zhr": 20,
+      "zhr": 50,
       "moonInterference": "low"
     }
   },
   {
-    "id": "sun-ingress-scorpio-2025",
+    "id": "sun-ingress-scorpio-2025-21",
     "type": "sun_ingress",
     "subType": "scorpio",
     "startUTC": "2025-10-23T10:03:00.000Z",
     "labelTR": "Güneş Akrep Burcuna Geçiyor",
     "iconKey": "sun_scorpio",
-    "source": "ephemeris",
+    "source": "astro-seek",
     "reliability": "high",
     "meta": {
       "sign": "scorpio"
     }
   },
   {
-    "id": "moon-phase-nasa-2025-40",
-    "type": "moon_phase",
-    "subType": "last",
-    "startUTC": "2025-10-29T16:21:00.000Z",
-    "labelTR": "Son Dördün",
-    "iconKey": "last",
-    "source": "nasa",
-    "reliability": "high",
-    "meta": {
-      "phase": "last"
-    }
-  },
-  {
-    "id": "moon-phase-nasa-2025-41",
-    "type": "moon_phase",
-    "subType": "new",
-    "startUTC": "2025-11-05T13:20:00.000Z",
-    "labelTR": "Yeni Ay",
-    "iconKey": "new",
-    "source": "nasa",
-    "reliability": "high",
-    "meta": {
-      "phase": "new"
-    }
-  },
-  {
-    "id": "planet-station-mercury-retrograde_start-2025-7",
+    "id": "planet-station-mercury-retrograde_start-2025-29",
     "type": "planet_station",
     "subType": "mercury",
     "startUTC": "2025-11-09T12:00:00.000Z",
     "labelTR": "Merkür Retrosu Başlıyor",
     "iconKey": "mercury_retrograde_start",
-    "source": "ephemeris",
+    "source": "astro-seek",
     "reliability": "high",
     "meta": {
       "planet": "mercury",
@@ -952,82 +419,43 @@
     }
   },
   {
-    "id": "moon-phase-nasa-2025-42",
-    "type": "moon_phase",
-    "subType": "first",
-    "startUTC": "2025-11-12T05:28:00.000Z",
-    "labelTR": "İlk Dördün",
-    "iconKey": "first",
-    "source": "nasa",
-    "reliability": "high",
-    "meta": {
-      "phase": "first"
-    }
-  },
-  {
-    "id": "meteor-leonids-2025",
+    "id": "meteor-leonids-2025-43",
     "type": "meteor_shower",
     "subType": "leonids",
     "startUTC": "2025-11-17T12:00:00.000Z",
     "endUTC": "2025-11-17T23:59:59.999Z",
     "labelTR": "Leonid Meteor Yağmuru Zirvesi",
     "iconKey": "leonids",
-    "source": "imo",
+    "source": "astro-seek",
     "reliability": "high",
     "meta": {
-      "radiant": "Leonids",
+      "radiant": "leonids",
       "peakWindow": "2025-11-17 gecesi",
-      "zhr": 15,
+      "zhr": 50,
       "moonInterference": "low"
     }
   },
   {
-    "id": "moon-phase-nasa-2025-43",
-    "type": "moon_phase",
-    "subType": "full",
-    "startUTC": "2025-11-20T06:47:00.000Z",
-    "labelTR": "Dolunay",
-    "iconKey": "full",
-    "source": "nasa",
-    "reliability": "high",
-    "meta": {
-      "phase": "full"
-    }
-  },
-  {
-    "id": "sun-ingress-sagittarius-2025",
+    "id": "sun-ingress-sagittarius-2025-22",
     "type": "sun_ingress",
     "subType": "sagittarius",
     "startUTC": "2025-11-22T21:35:00.000Z",
     "labelTR": "Güneş Yay Burcuna Geçiyor",
     "iconKey": "sun_sagittarius",
-    "source": "ephemeris",
+    "source": "astro-seek",
     "reliability": "high",
     "meta": {
       "sign": "sagittarius"
     }
   },
   {
-    "id": "moon-phase-nasa-2025-44",
-    "type": "moon_phase",
-    "subType": "last",
-    "startUTC": "2025-11-28T06:59:00.000Z",
-    "labelTR": "Son Dördün",
-    "iconKey": "last",
-    "source": "nasa",
-    "reliability": "high",
-    "meta": {
-      "phase": "last"
-    }
-  },
-  {
-    "id": "planet-station-mercury-retrograde_end-2025-8",
+    "id": "planet-station-mercury-retrograde_end-2025-30",
     "type": "planet_station",
     "subType": "mercury",
     "startUTC": "2025-11-29T18:00:00.000Z",
     "labelTR": "Merkür Retrosu Sona Eriyor",
     "iconKey": "mercury_retrograde_end",
-    "source": "ephemeris",
+    "source": "astro-seek",
     "reliability": "high",
     "meta": {
       "planet": "mercury",
@@ -1035,26 +463,40 @@
     }
   },
   {
-    "id": "moon-phase-nasa-2025-45",
+    "id": "moon-phase-astro-seek-2025-7",
     "type": "moon_phase",
     "subType": "new",
     "startUTC": "2025-12-05T00:14:00.000Z",
     "labelTR": "Yeni Ay",
     "iconKey": "new",
-    "source": "nasa",
+    "source": "astro-seek",
     "reliability": "high",
     "meta": {
       "phase": "new"
     }
   },
   {
-    "id": "planet-station-mars-retrograde_start-2025-9",
+    "id": "sun-aspect-north_node-square-2025-1",
+    "type": "sun_aspect",
+    "subType": "square_north_node",
+    "startUTC": "2025-12-05T11:21:00.000Z",
+    "labelTR": "Güneş-K.Düğüm Karesi",
+    "iconKey": "sun_square_north_node",
+    "source": "astro-seek",
+    "reliability": "high",
+    "meta": {
+      "aspect": "square",
+      "planet": "north_node"
+    }
+  },
+  {
+    "id": "planet-station-mars-retrograde_start-2025-4",
     "type": "planet_station",
     "subType": "mars",
     "startUTC": "2025-12-07T12:00:00.000Z",
     "labelTR": "Mars Retrosu Başlıyor",
     "iconKey": "mars_retrograde_start",
-    "source": "ephemeris",
+    "source": "astro-seek",
     "reliability": "high",
     "meta": {
       "planet": "mars",
@@ -1062,56 +504,83 @@
     }
   },
   {
-    "id": "moon-phase-nasa-2025-46",
+    "id": "moon-phase-astro-seek-2025-8",
     "type": "moon_phase",
     "subType": "first",
     "startUTC": "2025-12-12T01:52:00.000Z",
     "labelTR": "İlk Dördün",
     "iconKey": "first",
-    "source": "nasa",
+    "source": "astro-seek",
     "reliability": "high",
     "meta": {
       "phase": "first"
     }
   },
   {
-    "id": "meteor-geminids-2025",
+    "id": "meteor-geminids-2025-11",
     "type": "meteor_shower",
     "subType": "geminids",
     "startUTC": "2025-12-13T20:00:00.000Z",
     "endUTC": "2025-12-13T23:59:59.999Z",
     "labelTR": "Geminid Meteor Yağmuru Zirvesi",
     "iconKey": "geminids",
-    "source": "imo",
+    "source": "astro-seek",
     "reliability": "high",
     "meta": {
-      "radiant": "Geminids",
+      "radiant": "geminids",
       "peakWindow": "2025-12-13 gecesi",
       "zhr": 150,
       "moonInterference": "low"
     }
   },
   {
-    "id": "moon-phase-nasa-2025-47",
+    "id": "sun-aspect-chiron-trine-2025-2",
+    "type": "sun_aspect",
+    "subType": "trine_chiron",
+    "startUTC": "2025-12-14T12:36:00.000Z",
+    "labelTR": "Güneş-Chiron Trini",
+    "iconKey": "sun_trine_chiron",
+    "source": "astro-seek",
+    "reliability": "high",
+    "meta": {
+      "aspect": "trine",
+      "planet": "chiron"
+    }
+  },
+  {
+    "id": "moon-phase-astro-seek-2025-9",
     "type": "moon_phase",
     "subType": "full",
     "startUTC": "2025-12-19T23:43:00.000Z",
     "labelTR": "Dolunay",
     "iconKey": "full",
-    "source": "nasa",
+    "source": "astro-seek",
     "reliability": "high",
     "meta": {
       "phase": "full"
     }
   },
   {
-    "id": "planet-station-venus-retrograde_start-2025-8",
+    "id": "lilith-ingress-sagittarius-2025-3",
+    "type": "lilith_ingress",
+    "subType": "sagittarius",
+    "startUTC": "2025-12-20T19:11:00.000Z",
+    "labelTR": "Lilith Yay Burcuna Geçiyor",
+    "iconKey": "lilith_sagittarius",
+    "source": "astro-seek",
+    "reliability": "high",
+    "meta": {
+      "sign": "sagittarius"
+    }
+  },
+  {
+    "id": "planet-station-venus-retrograde_start-2025-5",
     "type": "planet_station",
     "subType": "venus",
     "startUTC": "2025-12-21T06:00:00.000Z",
     "labelTR": "Venüs Retrosu Başlıyor",
     "iconKey": "venus_retrograde_start",
-    "source": "ephemeris",
+    "source": "astro-seek",
     "reliability": "high",
     "meta": {
       "planet": "venus",
@@ -1119,39 +588,39 @@
     }
   },
   {
-    "id": "sun-ingress-capricorn-2025",
+    "id": "sun-ingress-capricorn-2025-0",
     "type": "sun_ingress",
     "subType": "capricorn",
-    "startUTC": "2025-12-21T09:03:00.000Z",
+    "startUTC": "2025-12-21T15:03:00.000Z",
     "labelTR": "Güneş Oğlak Burcuna Geçiyor",
     "iconKey": "sun_capricorn",
-    "source": "ephemeris",
+    "source": "astro-seek",
     "reliability": "high",
     "meta": {
       "sign": "capricorn"
     }
   },
   {
-    "id": "moon-phase-nasa-2025-48",
+    "id": "moon-phase-astro-seek-2025-10",
     "type": "moon_phase",
     "subType": "last",
     "startUTC": "2025-12-27T19:10:00.000Z",
     "labelTR": "Son Dördün",
     "iconKey": "last",
-    "source": "nasa",
+    "source": "astro-seek",
     "reliability": "high",
     "meta": {
       "phase": "last"
     }
   },
   {
-    "id": "planet-station-mercury-retrograde_start-2025-9",
+    "id": "planet-station-mercury-retrograde_start-2025-6",
     "type": "planet_station",
     "subType": "mercury",
     "startUTC": "2025-12-29T18:00:00.000Z",
     "labelTR": "Merkür Retrosu Başlıyor",
     "iconKey": "mercury_retrograde_start",
-    "source": "ephemeris",
+    "source": "astro-seek",
     "reliability": "high",
     "meta": {
       "planet": "mercury",
