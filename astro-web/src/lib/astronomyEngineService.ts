@@ -6,17 +6,15 @@
  */
 
 import { 
-  Astronomy, 
+  AstroTime,
+  MakeTime,
   MoonPhase, 
-  Planet, 
   Body, 
   SearchMoonPhase, 
   SearchPlanetApsis, 
-  SearchPlanetRetrograde,
   SearchSunLongitude,
-  Time,
-  AngleFromLongitude,
-  LongitudeFromAngle
+  Illumination,
+  SearchMaxElongation
 } from 'astronomy-engine';
 
 export interface AstronomyEngineEvent {
@@ -53,8 +51,8 @@ class AstronomyEngineService {
 
     try {
       const events: AstronomyEngineEvent[] = [];
-      const startTime = new Time(year, month, 1, 0, 0, 0);
-      const endTime = new Time(year, month + 1, 1, 0, 0, 0);
+      const startTime = MakeTime(year, month, 1, 0, 0, 0);
+      const endTime = MakeTime(year, month + 1, 1, 0, 0, 0);
 
       // Find all moon phases in the month
       let searchTime = startTime;
@@ -86,11 +84,11 @@ class AstronomyEngineService {
           });
 
           // Move to next phase
-          searchTime = new Time(phaseTime.ut + 7.4, phaseTime.date); // ~7.4 days between phases
+          searchTime = MakeTime(phaseTime.date.year, phaseTime.date.month, phaseTime.date.day + 7, 0, 0, 0); // ~7.4 days between phases
           phaseCount++;
         } catch (error) {
           console.warn(`Error finding moon phase at ${searchTime.date}:`, error);
-          searchTime = new Time(searchTime.ut + 1, searchTime.date); // Move forward 1 day
+          searchTime = MakeTime(searchTime.date.year, searchTime.date.month, searchTime.date.day + 1, 0, 0, 0); // Move forward 1 day
         }
       }
 
@@ -123,20 +121,20 @@ class AstronomyEngineService {
         { body: Body.Pluto, name: 'Pluto', nameTR: 'Plüton' }
       ];
 
-      const startTime = new Time(year, month, 1, 0, 0, 0);
-      const endTime = new Time(year, month + 1, 1, 0, 0, 0);
+      const startTime = MakeTime(year, month, 1, 0, 0, 0);
+      const endTime = MakeTime(year, month + 1, 1, 0, 0, 0);
 
       for (const planet of planets) {
         try {
-          // Find retrograde start
-          const retrogradeStart = SearchPlanetRetrograde(planet.body, startTime, 30);
-          if (retrogradeStart.ut >= startTime.ut && retrogradeStart.ut < endTime.ut) {
+          // Find retrograde start using elongation search
+          const retrogradeStart = SearchMaxElongation(planet.body, startTime, 30);
+          if (retrogradeStart && retrogradeStart.time.ut >= startTime.ut && retrogradeStart.time.ut < endTime.ut) {
             events.push({
-              id: `${planet.name.toLowerCase()}-station_R-${year}-${String(month).padStart(2, '0')}-${retrogradeStart.date.day}`,
+              id: `${planet.name.toLowerCase()}-station_R-${year}-${String(month).padStart(2, '0')}-${retrogradeStart.time.date.day}`,
               type: 'planet_station',
               subType: 'station_R',
               body: planet.name,
-              startUTC: retrogradeStart.date.toISOString(),
+              startUTC: retrogradeStart.time.date.toISOString(),
               labelTR: `${planet.nameTR} Retrosu Başlıyor`,
               source: 'astronomy_engine',
               meta: {
@@ -147,14 +145,14 @@ class AstronomyEngineService {
           }
 
           // Find retrograde end
-          const retrogradeEnd = SearchPlanetRetrograde(planet.body, new Time(retrogradeStart.ut + 1, retrogradeStart.date), 30);
-          if (retrogradeEnd.ut >= startTime.ut && retrogradeEnd.ut < endTime.ut) {
+          const retrogradeEnd = SearchMaxElongation(planet.body, MakeTime(retrogradeStart.time.date.year, retrogradeStart.time.date.month, retrogradeStart.time.date.day + 1, 0, 0, 0), 30);
+          if (retrogradeEnd && retrogradeEnd.time.ut >= startTime.ut && retrogradeEnd.time.ut < endTime.ut) {
             events.push({
-              id: `${planet.name.toLowerCase()}-station_D-${year}-${String(month).padStart(2, '0')}-${retrogradeEnd.date.day}`,
+              id: `${planet.name.toLowerCase()}-station_D-${year}-${String(month).padStart(2, '0')}-${retrogradeEnd.time.date.day}`,
               type: 'planet_station',
               subType: 'station_D',
               body: planet.name,
-              startUTC: retrogradeEnd.date.toISOString(),
+              startUTC: retrogradeEnd.time.date.toISOString(),
               labelTR: `${planet.nameTR} Retrosu Sona Eriyor`,
               source: 'astronomy_engine',
               meta: {
@@ -201,12 +199,12 @@ class AstronomyEngineService {
         { longitude: 330, name: 'Pisces', nameTR: 'Balık' }
       ];
 
-      const startTime = new Time(year, month, 1, 0, 0, 0);
-      const endTime = new Time(year, month + 1, 1, 0, 0, 0);
+      const startTime = MakeTime(year, month, 1, 0, 0, 0);
+      const endTime = MakeTime(year, month + 1, 1, 0, 0, 0);
 
       for (const sign of signs) {
         try {
-          const ingressTime = SearchSunLongitude(AngleFromLongitude(sign.longitude), startTime, 30);
+          const ingressTime = SearchSunLongitude(sign.longitude, startTime, 30);
           
           if (ingressTime.ut >= startTime.ut && ingressTime.ut < endTime.ut) {
             events.push({
@@ -269,9 +267,9 @@ class AstronomyEngineService {
    * Get detailed moon phase information for a specific date
    */
   async getMoonPhaseForDate(date: Date): Promise<MoonPhaseData> {
-    const time = new Time(date);
-    const phase = Astronomy.MoonPhase(time);
-    const illumination = Astronomy.Illumination(Body.Moon, time).phase;
+    const time = MakeTime(date.getFullYear(), date.getMonth() + 1, date.getDate(), date.getHours(), date.getMinutes(), date.getSeconds());
+    const phase = MoonPhase(time);
+    const illumination = Illumination(Body.Moon, time).phase;
     const age = (phase / 360) * 29.53059; // Synodic month length
 
     // Find next phase
