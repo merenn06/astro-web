@@ -1,112 +1,46 @@
 [
   {
-    "id": "moon-phase-2025-1-0",
-    "type": "moon_phase",
-    "subType": "new",
-    "startUTC": "2024-12-31T12:00:00.000Z",
-    "labelTR": "Yeni Ay",
-    "iconKey": "new",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "new"
-    }
-  },
-  {
-    "id": "moon-phase-2025-1-1",
-    "type": "moon_phase",
-    "subType": "new",
-    "startUTC": "2025-01-01T12:00:00.000Z",
-    "labelTR": "Yeni Ay",
-    "iconKey": "new",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "new"
-    }
-  },
-  {
     "id": "meteor-quadrantids-2025",
     "type": "meteor_shower",
     "subType": "quadrantids",
     "startUTC": "2025-01-03T15:00:00.000Z",
-    "endUTC": "2025-01-04T15:00:00.000Z",
+    "endUTC": "2025-01-03T23:59:59.999Z",
     "labelTR": "Quadrantid Meteor Yağmuru Zirvesi",
     "iconKey": "quadrantids",
     "source": "imo",
     "reliability": "high",
     "meta": {
-      "radiant": "Boötes",
-      "peakWindow": "3-4 Ocak gecesi",
+      "radiant": "Quadrantids",
+      "peakWindow": "2025-01-03 gecesi",
       "zhr": 120,
       "moonInterference": "low"
     }
   },
   {
-    "id": "moon-phase-2025-1-8",
+    "id": "moon-phase-nasa-2025-1",
     "type": "moon_phase",
-    "subType": "first",
-    "startUTC": "2025-01-08T12:00:00.000Z",
-    "labelTR": "İlk Dördün",
-    "iconKey": "first",
-    "source": "calculated",
+    "subType": "new",
+    "startUTC": "2025-01-13T22:27:00.000Z",
+    "labelTR": "Yeni Ay",
+    "iconKey": "new",
+    "source": "nasa",
     "reliability": "high",
     "meta": {
-      "phase": "first"
+      "phase": "new"
     }
   },
   {
-    "id": "moon-phase-2025-1-14",
-    "type": "moon_phase",
-    "subType": "full",
-    "startUTC": "2025-01-14T12:00:00.000Z",
-    "labelTR": "Dolunay",
-    "iconKey": "full",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "full"
-    }
-  },
-  {
-    "id": "mercury-retro-start-2025-01",
+    "id": "planet-station-mercury-retrograde_start-2025-1",
     "type": "planet_station",
     "subType": "mercury",
     "startUTC": "2025-01-15T02:00:00.000Z",
     "labelTR": "Merkür Retrosu Başlıyor",
-    "iconKey": "mercury_retro_start",
+    "iconKey": "mercury_retrograde_start",
     "source": "ephemeris",
     "reliability": "high",
     "meta": {
       "planet": "mercury",
-      "stationType": "retrograde_start",
-      "longitude": 8
-    }
-  },
-  {
-    "id": "moon-phase-2025-1-15",
-    "type": "moon_phase",
-    "subType": "full",
-    "startUTC": "2025-01-15T12:00:00.000Z",
-    "labelTR": "Dolunay",
-    "iconKey": "full",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "full"
-    }
-  },
-  {
-    "id": "moon-phase-2025-1-16",
-    "type": "moon_phase",
-    "subType": "full",
-    "startUTC": "2025-01-16T12:00:00.000Z",
-    "labelTR": "Dolunay",
-    "iconKey": "full",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "full"
+      "stationType": "retrograde_start"
     }
   },
   {
@@ -119,166 +53,73 @@
     "source": "ephemeris",
     "reliability": "high",
     "meta": {
-      "sign": "aquarius",
-      "longitude": 300
+      "sign": "aquarius"
     }
   },
   {
-    "id": "moon-phase-2025-1-23",
+    "id": "moon-phase-nasa-2025-2",
+    "type": "moon_phase",
+    "subType": "first",
+    "startUTC": "2025-01-21T20:31:00.000Z",
+    "labelTR": "İlk Dördün",
+    "iconKey": "first",
+    "source": "nasa",
+    "reliability": "high",
+    "meta": {
+      "phase": "first"
+    }
+  },
+  {
+    "id": "moon-phase-nasa-2025-3",
+    "type": "moon_phase",
+    "subType": "full",
+    "startUTC": "2025-01-28T19:19:00.000Z",
+    "labelTR": "Dolunay",
+    "iconKey": "full",
+    "source": "nasa",
+    "reliability": "high",
+    "meta": {
+      "phase": "full"
+    }
+  },
+  {
+    "id": "moon-phase-nasa-2025-4",
     "type": "moon_phase",
     "subType": "last",
-    "startUTC": "2025-01-23T12:00:00.000Z",
+    "startUTC": "2025-02-05T01:02:00.000Z",
     "labelTR": "Son Dördün",
     "iconKey": "last",
-    "source": "calculated",
+    "source": "nasa",
     "reliability": "high",
     "meta": {
       "phase": "last"
     }
   },
   {
-    "id": "moon-phase-2025-1-24",
-    "type": "moon_phase",
-    "subType": "last",
-    "startUTC": "2025-01-24T12:00:00.000Z",
-    "labelTR": "Son Dördün",
-    "iconKey": "last",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "last"
-    }
-  },
-  {
-    "id": "moon-phase-2025-1-25",
-    "type": "moon_phase",
-    "subType": "last",
-    "startUTC": "2025-01-25T12:00:00.000Z",
-    "labelTR": "Son Dördün",
-    "iconKey": "last",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "last"
-    }
-  },
-  {
-    "id": "moon-phase-2025-1-29",
-    "type": "moon_phase",
-    "subType": "new",
-    "startUTC": "2025-01-29T12:00:00.000Z",
-    "labelTR": "Yeni Ay",
-    "iconKey": "new",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "new"
-    }
-  },
-  {
-    "id": "moon-phase-2025-1-30",
-    "type": "moon_phase",
-    "subType": "new",
-    "startUTC": "2025-01-30T12:00:00.000Z",
-    "labelTR": "Yeni Ay",
-    "iconKey": "new",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "new"
-    }
-  },
-  {
-    "id": "moon-phase-2025-2-0",
-    "type": "moon_phase",
-    "subType": "new",
-    "startUTC": "2025-01-31T12:00:00.000Z",
-    "labelTR": "Yeni Ay",
-    "iconKey": "new",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "new"
-    }
-  },
-  {
-    "id": "mercury-retro-end-2025-01",
+    "id": "planet-station-mercury-retrograde_end-2025-2",
     "type": "planet_station",
     "subType": "mercury",
     "startUTC": "2025-02-05T18:00:00.000Z",
     "labelTR": "Merkür Retrosu Sona Eriyor",
-    "iconKey": "mercury_retro_end",
+    "iconKey": "mercury_retrograde_end",
     "source": "ephemeris",
     "reliability": "high",
     "meta": {
       "planet": "mercury",
-      "stationType": "retrograde_end",
-      "longitude": 24
+      "stationType": "retrograde_end"
     }
   },
   {
-    "id": "moon-phase-2025-2-6",
+    "id": "moon-phase-nasa-2025-5",
     "type": "moon_phase",
-    "subType": "first",
-    "startUTC": "2025-02-06T12:00:00.000Z",
-    "labelTR": "İlk Dördün",
-    "iconKey": "first",
-    "source": "calculated",
+    "subType": "new",
+    "startUTC": "2025-02-12T13:53:00.000Z",
+    "labelTR": "Yeni Ay",
+    "iconKey": "new",
+    "source": "nasa",
     "reliability": "high",
     "meta": {
-      "phase": "first"
-    }
-  },
-  {
-    "id": "moon-phase-2025-2-7",
-    "type": "moon_phase",
-    "subType": "first",
-    "startUTC": "2025-02-07T12:00:00.000Z",
-    "labelTR": "İlk Dördün",
-    "iconKey": "first",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "first"
-    }
-  },
-  {
-    "id": "moon-phase-2025-2-13",
-    "type": "moon_phase",
-    "subType": "full",
-    "startUTC": "2025-02-13T12:00:00.000Z",
-    "labelTR": "Dolunay",
-    "iconKey": "full",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "full"
-    }
-  },
-  {
-    "id": "moon-phase-2025-2-14",
-    "type": "moon_phase",
-    "subType": "full",
-    "startUTC": "2025-02-14T12:00:00.000Z",
-    "labelTR": "Dolunay",
-    "iconKey": "full",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "full"
-    }
-  },
-  {
-    "id": "moon-phase-2025-2-15",
-    "type": "moon_phase",
-    "subType": "full",
-    "startUTC": "2025-02-15T12:00:00.000Z",
-    "labelTR": "Dolunay",
-    "iconKey": "full",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "full"
+      "phase": "new"
     }
   },
   {
@@ -291,164 +132,59 @@
     "source": "ephemeris",
     "reliability": "high",
     "meta": {
-      "sign": "pisces",
-      "longitude": 330
+      "sign": "pisces"
     }
   },
   {
-    "id": "moon-phase-2025-2-21",
-    "type": "moon_phase",
-    "subType": "last",
-    "startUTC": "2025-02-21T12:00:00.000Z",
-    "labelTR": "Son Dördün",
-    "iconKey": "last",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "last"
-    }
-  },
-  {
-    "id": "moon-phase-2025-2-22",
-    "type": "moon_phase",
-    "subType": "last",
-    "startUTC": "2025-02-22T12:00:00.000Z",
-    "labelTR": "Son Dördün",
-    "iconKey": "last",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "last"
-    }
-  },
-  {
-    "id": "moon-phase-2025-2-23",
-    "type": "moon_phase",
-    "subType": "last",
-    "startUTC": "2025-02-23T12:00:00.000Z",
-    "labelTR": "Son Dördün",
-    "iconKey": "last",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "last"
-    }
-  },
-  {
-    "id": "moon-phase-2025-2-27",
-    "type": "moon_phase",
-    "subType": "new",
-    "startUTC": "2025-02-27T12:00:00.000Z",
-    "labelTR": "Yeni Ay",
-    "iconKey": "new",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "new"
-    }
-  },
-  {
-    "id": "moon-phase-2025-2-28",
-    "type": "moon_phase",
-    "subType": "new",
-    "startUTC": "2025-02-28T12:00:00.000Z",
-    "labelTR": "Yeni Ay",
-    "iconKey": "new",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "new"
-    }
-  },
-  {
-    "id": "moon-phase-2025-3-0",
-    "type": "moon_phase",
-    "subType": "new",
-    "startUTC": "2025-02-28T12:00:00.000Z",
-    "labelTR": "Yeni Ay",
-    "iconKey": "new",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "new"
-    }
-  },
-  {
-    "id": "moon-phase-2025-2-29",
-    "type": "moon_phase",
-    "subType": "new",
-    "startUTC": "2025-03-01T12:00:00.000Z",
-    "labelTR": "Yeni Ay",
-    "iconKey": "new",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "new"
-    }
-  },
-  {
-    "id": "moon-phase-2025-3-1",
-    "type": "moon_phase",
-    "subType": "new",
-    "startUTC": "2025-03-01T12:00:00.000Z",
-    "labelTR": "Yeni Ay",
-    "iconKey": "new",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "new"
-    }
-  },
-  {
-    "id": "moon-phase-2025-3-8",
+    "id": "moon-phase-nasa-2025-6",
     "type": "moon_phase",
     "subType": "first",
-    "startUTC": "2025-03-08T12:00:00.000Z",
+    "startUTC": "2025-02-20T17:33:00.000Z",
     "labelTR": "İlk Dördün",
     "iconKey": "first",
-    "source": "calculated",
+    "source": "nasa",
     "reliability": "high",
     "meta": {
       "phase": "first"
     }
   },
   {
-    "id": "moon-phase-2025-3-14",
+    "id": "moon-phase-nasa-2025-7",
     "type": "moon_phase",
     "subType": "full",
-    "startUTC": "2025-03-14T12:00:00.000Z",
+    "startUTC": "2025-02-27T12:45:00.000Z",
     "labelTR": "Dolunay",
     "iconKey": "full",
-    "source": "calculated",
+    "source": "nasa",
     "reliability": "high",
     "meta": {
       "phase": "full"
     }
   },
   {
-    "id": "moon-phase-2025-3-15",
+    "id": "moon-phase-nasa-2025-8",
     "type": "moon_phase",
-    "subType": "full",
-    "startUTC": "2025-03-15T12:00:00.000Z",
-    "labelTR": "Dolunay",
-    "iconKey": "full",
-    "source": "calculated",
+    "subType": "last",
+    "startUTC": "2025-03-06T16:32:00.000Z",
+    "labelTR": "Son Dördün",
+    "iconKey": "last",
+    "source": "nasa",
     "reliability": "high",
     "meta": {
-      "phase": "full"
+      "phase": "last"
     }
   },
   {
-    "id": "moon-phase-2025-3-16",
+    "id": "moon-phase-nasa-2025-9",
     "type": "moon_phase",
-    "subType": "full",
-    "startUTC": "2025-03-16T12:00:00.000Z",
-    "labelTR": "Dolunay",
-    "iconKey": "full",
-    "source": "calculated",
+    "subType": "new",
+    "startUTC": "2025-03-14T06:55:00.000Z",
+    "labelTR": "Yeni Ay",
+    "iconKey": "new",
+    "source": "nasa",
     "reliability": "high",
     "meta": {
-      "phase": "full"
+      "phase": "new"
     }
   },
   {
@@ -461,51 +197,37 @@
     "source": "ephemeris",
     "reliability": "high",
     "meta": {
-      "sign": "aries",
-      "longitude": 0
+      "sign": "aries"
     }
   },
   {
-    "id": "moon-phase-2025-3-23",
+    "id": "moon-phase-nasa-2025-10",
     "type": "moon_phase",
-    "subType": "last",
-    "startUTC": "2025-03-23T12:00:00.000Z",
-    "labelTR": "Son Dördün",
-    "iconKey": "last",
-    "source": "calculated",
+    "subType": "first",
+    "startUTC": "2025-03-22T11:30:00.000Z",
+    "labelTR": "İlk Dördün",
+    "iconKey": "first",
+    "source": "nasa",
     "reliability": "high",
     "meta": {
-      "phase": "last"
+      "phase": "first"
     }
   },
   {
-    "id": "moon-phase-2025-3-24",
+    "id": "moon-phase-nasa-2025-11",
     "type": "moon_phase",
-    "subType": "last",
-    "startUTC": "2025-03-24T12:00:00.000Z",
-    "labelTR": "Son Dördün",
-    "iconKey": "last",
-    "source": "calculated",
+    "subType": "full",
+    "startUTC": "2025-03-29T02:58:00.000Z",
+    "labelTR": "Dolunay",
+    "iconKey": "full",
+    "source": "nasa",
     "reliability": "high",
     "meta": {
-      "phase": "last"
+      "phase": "full"
     }
   },
   {
-    "id": "moon-phase-2025-3-25",
-    "type": "moon_phase",
-    "subType": "last",
-    "startUTC": "2025-03-25T12:00:00.000Z",
-    "labelTR": "Son Dördün",
-    "iconKey": "last",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "last"
-    }
-  },
-  {
-    "id": "eclipse-2025-03-29-solar-partial",
+    "id": "eclipse-solar_partial-2025-1",
     "type": "eclipse",
     "subType": "solar_partial",
     "startUTC": "2025-03-29T10:48:00.000Z",
@@ -516,114 +238,36 @@
     "meta": {
       "eclipseType": "solar_partial",
       "visibility": {
-        "turkey": false,
-        "partial": false,
-        "notes": "Kuzey Amerika, Avrupa, Kuzey Afrika"
+        "turkey": true,
+        "partial": true,
+        "notes": "Europe, North Africa, North America"
       }
     }
   },
   {
-    "id": "moon-phase-2025-3-29",
+    "id": "moon-phase-nasa-2025-12",
+    "type": "moon_phase",
+    "subType": "last",
+    "startUTC": "2025-04-05T02:15:00.000Z",
+    "labelTR": "Son Dördün",
+    "iconKey": "last",
+    "source": "nasa",
+    "reliability": "high",
+    "meta": {
+      "phase": "last"
+    }
+  },
+  {
+    "id": "moon-phase-nasa-2025-13",
     "type": "moon_phase",
     "subType": "new",
-    "startUTC": "2025-03-29T12:00:00.000Z",
+    "startUTC": "2025-04-12T21:22:00.000Z",
     "labelTR": "Yeni Ay",
     "iconKey": "new",
-    "source": "calculated",
+    "source": "nasa",
     "reliability": "high",
     "meta": {
       "phase": "new"
-    }
-  },
-  {
-    "id": "moon-phase-2025-3-30",
-    "type": "moon_phase",
-    "subType": "new",
-    "startUTC": "2025-03-30T12:00:00.000Z",
-    "labelTR": "Yeni Ay",
-    "iconKey": "new",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "new"
-    }
-  },
-  {
-    "id": "moon-phase-2025-4-0",
-    "type": "moon_phase",
-    "subType": "new",
-    "startUTC": "2025-03-31T12:00:00.000Z",
-    "labelTR": "Yeni Ay",
-    "iconKey": "new",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "new"
-    }
-  },
-  {
-    "id": "moon-phase-2025-4-6",
-    "type": "moon_phase",
-    "subType": "first",
-    "startUTC": "2025-04-06T12:00:00.000Z",
-    "labelTR": "İlk Dördün",
-    "iconKey": "first",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "first"
-    }
-  },
-  {
-    "id": "moon-phase-2025-4-7",
-    "type": "moon_phase",
-    "subType": "first",
-    "startUTC": "2025-04-07T12:00:00.000Z",
-    "labelTR": "İlk Dördün",
-    "iconKey": "first",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "first"
-    }
-  },
-  {
-    "id": "moon-phase-2025-4-13",
-    "type": "moon_phase",
-    "subType": "full",
-    "startUTC": "2025-04-13T12:00:00.000Z",
-    "labelTR": "Dolunay",
-    "iconKey": "full",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "full"
-    }
-  },
-  {
-    "id": "moon-phase-2025-4-14",
-    "type": "moon_phase",
-    "subType": "full",
-    "startUTC": "2025-04-14T12:00:00.000Z",
-    "labelTR": "Dolunay",
-    "iconKey": "full",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "full"
-    }
-  },
-  {
-    "id": "moon-phase-2025-4-15",
-    "type": "moon_phase",
-    "subType": "full",
-    "startUTC": "2025-04-15T12:00:00.000Z",
-    "labelTR": "Dolunay",
-    "iconKey": "full",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "full"
     }
   },
   {
@@ -636,153 +280,134 @@
     "source": "ephemeris",
     "reliability": "high",
     "meta": {
-      "sign": "taurus",
-      "longitude": 30
+      "sign": "taurus"
     }
   },
   {
-    "id": "moon-phase-2025-4-21",
-    "type": "moon_phase",
-    "subType": "last",
-    "startUTC": "2025-04-21T12:00:00.000Z",
-    "labelTR": "Son Dördün",
-    "iconKey": "last",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "last"
-    }
-  },
-  {
-    "id": "moon-phase-2025-4-22",
-    "type": "moon_phase",
-    "subType": "last",
-    "startUTC": "2025-04-22T12:00:00.000Z",
-    "labelTR": "Son Dördün",
-    "iconKey": "last",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "last"
-    }
-  },
-  {
-    "id": "moon-phase-2025-4-23",
-    "type": "moon_phase",
-    "subType": "last",
-    "startUTC": "2025-04-23T12:00:00.000Z",
-    "labelTR": "Son Dördün",
-    "iconKey": "last",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "last"
-    }
-  },
-  {
-    "id": "moon-phase-2025-4-27",
-    "type": "moon_phase",
-    "subType": "new",
-    "startUTC": "2025-04-27T12:00:00.000Z",
-    "labelTR": "Yeni Ay",
-    "iconKey": "new",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "new"
-    }
-  },
-  {
-    "id": "moon-phase-2025-4-28",
-    "type": "moon_phase",
-    "subType": "new",
-    "startUTC": "2025-04-28T12:00:00.000Z",
-    "labelTR": "Yeni Ay",
-    "iconKey": "new",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "new"
-    }
-  },
-  {
-    "id": "moon-phase-2025-4-29",
-    "type": "moon_phase",
-    "subType": "new",
-    "startUTC": "2025-04-29T12:00:00.000Z",
-    "labelTR": "Yeni Ay",
-    "iconKey": "new",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "new"
-    }
-  },
-  {
-    "id": "moon-phase-2025-5-6",
+    "id": "moon-phase-nasa-2025-14",
     "type": "moon_phase",
     "subType": "first",
-    "startUTC": "2025-05-06T12:00:00.000Z",
+    "startUTC": "2025-04-20T06:27:00.000Z",
     "labelTR": "İlk Dördün",
     "iconKey": "first",
-    "source": "calculated",
+    "source": "nasa",
     "reliability": "high",
     "meta": {
       "phase": "first"
     }
   },
   {
-    "id": "moon-phase-2025-5-12",
+    "id": "meteor-lyrids-2025",
+    "type": "meteor_shower",
+    "subType": "lyrids",
+    "startUTC": "2025-04-22T18:00:00.000Z",
+    "endUTC": "2025-04-22T23:59:59.999Z",
+    "labelTR": "Lyrid Meteor Yağmuru Zirvesi",
+    "iconKey": "lyrids",
+    "source": "imo",
+    "reliability": "high",
+    "meta": {
+      "radiant": "Lyrids",
+      "peakWindow": "2025-04-22 gecesi",
+      "zhr": 18,
+      "moonInterference": "low"
+    }
+  },
+  {
+    "id": "moon-phase-nasa-2025-15",
     "type": "moon_phase",
     "subType": "full",
-    "startUTC": "2025-05-12T12:00:00.000Z",
+    "startUTC": "2025-04-27T19:31:00.000Z",
     "labelTR": "Dolunay",
     "iconKey": "full",
-    "source": "calculated",
+    "source": "nasa",
     "reliability": "high",
     "meta": {
       "phase": "full"
     }
   },
   {
-    "id": "moon-phase-2025-5-13",
-    "type": "moon_phase",
-    "subType": "full",
-    "startUTC": "2025-05-13T12:00:00.000Z",
-    "labelTR": "Dolunay",
-    "iconKey": "full",
-    "source": "calculated",
+    "id": "planet-station-pluto-retrograde_start-2025-14",
+    "type": "planet_station",
+    "subType": "pluto",
+    "startUTC": "2025-05-02T10:00:00.000Z",
+    "labelTR": "Plüton Retrosu Başlıyor",
+    "iconKey": "pluto_retrograde_start",
+    "source": "ephemeris",
     "reliability": "high",
     "meta": {
-      "phase": "full"
+      "planet": "pluto",
+      "stationType": "retrograde_start"
     }
   },
   {
-    "id": "moon-phase-2025-5-14",
+    "id": "moon-phase-nasa-2025-16",
     "type": "moon_phase",
-    "subType": "full",
-    "startUTC": "2025-05-14T12:00:00.000Z",
-    "labelTR": "Dolunay",
-    "iconKey": "full",
-    "source": "calculated",
+    "subType": "last",
+    "startUTC": "2025-05-05T11:22:00.000Z",
+    "labelTR": "Son Dördün",
+    "iconKey": "last",
+    "source": "nasa",
     "reliability": "high",
     "meta": {
-      "phase": "full"
+      "phase": "last"
     }
   },
   {
-    "id": "mercury-retro-start-2025-05",
+    "id": "meteor-eta-aquariids-2025",
+    "type": "meteor_shower",
+    "subType": "eta_aquariids",
+    "startUTC": "2025-05-06T09:00:00.000Z",
+    "endUTC": "2025-05-06T23:59:59.999Z",
+    "labelTR": "Eta Aquariid Meteor Yağmuru Zirvesi",
+    "iconKey": "eta_aquariids",
+    "source": "imo",
+    "reliability": "high",
+    "meta": {
+      "radiant": "Eta Aquariids",
+      "peakWindow": "2025-05-06 gecesi",
+      "zhr": 50,
+      "moonInterference": "low"
+    }
+  },
+  {
+    "id": "moon-phase-nasa-2025-17",
+    "type": "moon_phase",
+    "subType": "new",
+    "startUTC": "2025-05-12T16:56:00.000Z",
+    "labelTR": "Yeni Ay",
+    "iconKey": "new",
+    "source": "nasa",
+    "reliability": "high",
+    "meta": {
+      "phase": "new"
+    }
+  },
+  {
+    "id": "planet-station-mercury-retrograde_start-2025-3",
     "type": "planet_station",
     "subType": "mercury",
     "startUTC": "2025-05-19T06:00:00.000Z",
     "labelTR": "Merkür Retrosu Başlıyor",
-    "iconKey": "mercury_retro_start",
+    "iconKey": "mercury_retrograde_start",
     "source": "ephemeris",
     "reliability": "high",
     "meta": {
       "planet": "mercury",
-      "stationType": "retrograde_start",
-      "longitude": 4
+      "stationType": "retrograde_start"
+    }
+  },
+  {
+    "id": "moon-phase-nasa-2025-18",
+    "type": "moon_phase",
+    "subType": "first",
+    "startUTC": "2025-05-19T23:54:00.000Z",
+    "labelTR": "İlk Dördün",
+    "iconKey": "first",
+    "source": "nasa",
+    "reliability": "high",
+    "meta": {
+      "phase": "first"
     }
   },
   {
@@ -795,205 +420,73 @@
     "source": "ephemeris",
     "reliability": "high",
     "meta": {
-      "sign": "gemini",
-      "longitude": 60
+      "sign": "gemini"
     }
   },
   {
-    "id": "moon-phase-2025-5-21",
-    "type": "moon_phase",
-    "subType": "last",
-    "startUTC": "2025-05-21T12:00:00.000Z",
-    "labelTR": "Son Dördün",
-    "iconKey": "last",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "last"
-    }
-  },
-  {
-    "id": "moon-phase-2025-5-22",
-    "type": "moon_phase",
-    "subType": "last",
-    "startUTC": "2025-05-22T12:00:00.000Z",
-    "labelTR": "Son Dördün",
-    "iconKey": "last",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "last"
-    }
-  },
-  {
-    "id": "moon-phase-2025-5-23",
-    "type": "moon_phase",
-    "subType": "last",
-    "startUTC": "2025-05-23T12:00:00.000Z",
-    "labelTR": "Son Dördün",
-    "iconKey": "last",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "last"
-    }
-  },
-  {
-    "id": "moon-phase-2025-5-27",
-    "type": "moon_phase",
-    "subType": "new",
-    "startUTC": "2025-05-27T12:00:00.000Z",
-    "labelTR": "Yeni Ay",
-    "iconKey": "new",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "new"
-    }
-  },
-  {
-    "id": "moon-phase-2025-5-28",
-    "type": "moon_phase",
-    "subType": "new",
-    "startUTC": "2025-05-28T12:00:00.000Z",
-    "labelTR": "Yeni Ay",
-    "iconKey": "new",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "new"
-    }
-  },
-  {
-    "id": "moon-phase-2025-5-29",
-    "type": "moon_phase",
-    "subType": "new",
-    "startUTC": "2025-05-29T12:00:00.000Z",
-    "labelTR": "Yeni Ay",
-    "iconKey": "new",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "new"
-    }
-  },
-  {
-    "id": "moon-phase-2025-6-4",
-    "type": "moon_phase",
-    "subType": "first",
-    "startUTC": "2025-06-04T12:00:00.000Z",
-    "labelTR": "İlk Dördün",
-    "iconKey": "first",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "first"
-    }
-  },
-  {
-    "id": "moon-phase-2025-6-5",
-    "type": "moon_phase",
-    "subType": "first",
-    "startUTC": "2025-06-05T12:00:00.000Z",
-    "labelTR": "İlk Dördün",
-    "iconKey": "first",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "first"
-    }
-  },
-  {
-    "id": "moon-phase-2025-6-11",
+    "id": "moon-phase-nasa-2025-19",
     "type": "moon_phase",
     "subType": "full",
-    "startUTC": "2025-06-11T12:00:00.000Z",
+    "startUTC": "2025-05-27T11:02:00.000Z",
     "labelTR": "Dolunay",
     "iconKey": "full",
-    "source": "calculated",
+    "source": "nasa",
     "reliability": "high",
     "meta": {
       "phase": "full"
     }
   },
   {
-    "id": "mercury-retro-end-2025-05",
+    "id": "moon-phase-nasa-2025-20",
+    "type": "moon_phase",
+    "subType": "last",
+    "startUTC": "2025-06-03T19:41:00.000Z",
+    "labelTR": "Son Dördün",
+    "iconKey": "last",
+    "source": "nasa",
+    "reliability": "high",
+    "meta": {
+      "phase": "last"
+    }
+  },
+  {
+    "id": "moon-phase-nasa-2025-21",
+    "type": "moon_phase",
+    "subType": "new",
+    "startUTC": "2025-06-11T07:44:00.000Z",
+    "labelTR": "Yeni Ay",
+    "iconKey": "new",
+    "source": "nasa",
+    "reliability": "high",
+    "meta": {
+      "phase": "new"
+    }
+  },
+  {
+    "id": "planet-station-mercury-retrograde_end-2025-4",
     "type": "planet_station",
     "subType": "mercury",
     "startUTC": "2025-06-11T14:00:00.000Z",
     "labelTR": "Merkür Retrosu Sona Eriyor",
-    "iconKey": "mercury_retro_end",
+    "iconKey": "mercury_retrograde_end",
     "source": "ephemeris",
     "reliability": "high",
     "meta": {
       "planet": "mercury",
-      "stationType": "retrograde_end",
-      "longitude": 26
+      "stationType": "retrograde_end"
     }
   },
   {
-    "id": "moon-phase-2025-6-12",
+    "id": "moon-phase-nasa-2025-22",
     "type": "moon_phase",
-    "subType": "full",
-    "startUTC": "2025-06-12T12:00:00.000Z",
-    "labelTR": "Dolunay",
-    "iconKey": "full",
-    "source": "calculated",
+    "subType": "first",
+    "startUTC": "2025-06-18T04:55:00.000Z",
+    "labelTR": "İlk Dördün",
+    "iconKey": "first",
+    "source": "nasa",
     "reliability": "high",
     "meta": {
-      "phase": "full"
-    }
-  },
-  {
-    "id": "moon-phase-2025-6-13",
-    "type": "moon_phase",
-    "subType": "full",
-    "startUTC": "2025-06-13T12:00:00.000Z",
-    "labelTR": "Dolunay",
-    "iconKey": "full",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "full"
-    }
-  },
-  {
-    "id": "moon-phase-2025-6-19",
-    "type": "moon_phase",
-    "subType": "last",
-    "startUTC": "2025-06-19T12:00:00.000Z",
-    "labelTR": "Son Dördün",
-    "iconKey": "last",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "last"
-    }
-  },
-  {
-    "id": "moon-phase-2025-6-20",
-    "type": "moon_phase",
-    "subType": "last",
-    "startUTC": "2025-06-20T12:00:00.000Z",
-    "labelTR": "Son Dördün",
-    "iconKey": "last",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "last"
-    }
-  },
-  {
-    "id": "moon-phase-2025-6-21",
-    "type": "moon_phase",
-    "subType": "last",
-    "startUTC": "2025-06-21T12:00:00.000Z",
-    "labelTR": "Son Dördün",
-    "iconKey": "last",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "last"
+      "phase": "first"
     }
   },
   {
@@ -1006,166 +499,87 @@
     "source": "ephemeris",
     "reliability": "high",
     "meta": {
-      "sign": "cancer",
-      "longitude": 90
+      "sign": "cancer"
     }
   },
   {
-    "id": "moon-phase-2025-6-25",
+    "id": "moon-phase-nasa-2025-23",
     "type": "moon_phase",
-    "subType": "new",
-    "startUTC": "2025-06-25T12:00:00.000Z",
-    "labelTR": "Yeni Ay",
-    "iconKey": "new",
-    "source": "calculated",
+    "subType": "full",
+    "startUTC": "2025-06-25T22:31:00.000Z",
+    "labelTR": "Dolunay",
+    "iconKey": "full",
+    "source": "nasa",
     "reliability": "high",
     "meta": {
-      "phase": "new"
+      "phase": "full"
     }
   },
   {
-    "id": "moon-phase-2025-6-26",
-    "type": "moon_phase",
-    "subType": "new",
-    "startUTC": "2025-06-26T12:00:00.000Z",
-    "labelTR": "Yeni Ay",
-    "iconKey": "new",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "new"
-    }
-  },
-  {
-    "id": "moon-phase-2025-6-27",
-    "type": "moon_phase",
-    "subType": "new",
-    "startUTC": "2025-06-27T12:00:00.000Z",
-    "labelTR": "Yeni Ay",
-    "iconKey": "new",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "new"
-    }
-  },
-  {
-    "id": "saturn-retro-start-2025",
+    "id": "planet-station-saturn-retrograde_start-2025-11",
     "type": "planet_station",
     "subType": "saturn",
     "startUTC": "2025-06-29T12:00:00.000Z",
     "labelTR": "Satürn Retrosu Başlıyor",
-    "iconKey": "saturn_retro_start",
+    "iconKey": "saturn_retrograde_start",
     "source": "ephemeris",
     "reliability": "high",
     "meta": {
       "planet": "saturn",
-      "stationType": "retrograde_start",
-      "longitude": 19
+      "stationType": "retrograde_start"
     }
   },
   {
-    "id": "moon-phase-2025-7-4",
+    "id": "planet-station-neptune-retrograde_start-2025-13",
+    "type": "planet_station",
+    "subType": "neptune",
+    "startUTC": "2025-07-02T16:00:00.000Z",
+    "labelTR": "Neptün Retrosu Başlıyor",
+    "iconKey": "neptune_retrograde_start",
+    "source": "ephemeris",
+    "reliability": "high",
+    "meta": {
+      "planet": "neptune",
+      "stationType": "retrograde_start"
+    }
+  },
+  {
+    "id": "moon-phase-nasa-2025-24",
+    "type": "moon_phase",
+    "subType": "last",
+    "startUTC": "2025-07-03T02:30:00.000Z",
+    "labelTR": "Son Dördün",
+    "iconKey": "last",
+    "source": "nasa",
+    "reliability": "high",
+    "meta": {
+      "phase": "last"
+    }
+  },
+  {
+    "id": "moon-phase-nasa-2025-25",
+    "type": "moon_phase",
+    "subType": "new",
+    "startUTC": "2025-07-10T20:37:00.000Z",
+    "labelTR": "Yeni Ay",
+    "iconKey": "new",
+    "source": "nasa",
+    "reliability": "high",
+    "meta": {
+      "phase": "new"
+    }
+  },
+  {
+    "id": "moon-phase-nasa-2025-26",
     "type": "moon_phase",
     "subType": "first",
-    "startUTC": "2025-07-04T12:00:00.000Z",
+    "startUTC": "2025-07-17T15:37:00.000Z",
     "labelTR": "İlk Dördün",
     "iconKey": "first",
-    "source": "calculated",
+    "source": "nasa",
     "reliability": "high",
     "meta": {
       "phase": "first"
-    }
-  },
-  {
-    "id": "moon-phase-2025-7-5",
-    "type": "moon_phase",
-    "subType": "first",
-    "startUTC": "2025-07-05T12:00:00.000Z",
-    "labelTR": "İlk Dördün",
-    "iconKey": "first",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "first"
-    }
-  },
-  {
-    "id": "moon-phase-2025-7-10",
-    "type": "moon_phase",
-    "subType": "full",
-    "startUTC": "2025-07-10T12:00:00.000Z",
-    "labelTR": "Dolunay",
-    "iconKey": "full",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "full"
-    }
-  },
-  {
-    "id": "moon-phase-2025-7-11",
-    "type": "moon_phase",
-    "subType": "full",
-    "startUTC": "2025-07-11T12:00:00.000Z",
-    "labelTR": "Dolunay",
-    "iconKey": "full",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "full"
-    }
-  },
-  {
-    "id": "moon-phase-2025-7-12",
-    "type": "moon_phase",
-    "subType": "full",
-    "startUTC": "2025-07-12T12:00:00.000Z",
-    "labelTR": "Dolunay",
-    "iconKey": "full",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "full"
-    }
-  },
-  {
-    "id": "moon-phase-2025-7-19",
-    "type": "moon_phase",
-    "subType": "last",
-    "startUTC": "2025-07-19T12:00:00.000Z",
-    "labelTR": "Son Dördün",
-    "iconKey": "last",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "last"
-    }
-  },
-  {
-    "id": "moon-phase-2025-7-20",
-    "type": "moon_phase",
-    "subType": "last",
-    "startUTC": "2025-07-20T12:00:00.000Z",
-    "labelTR": "Son Dördün",
-    "iconKey": "last",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "last"
-    }
-  },
-  {
-    "id": "moon-phase-2025-7-21",
-    "type": "moon_phase",
-    "subType": "last",
-    "startUTC": "2025-07-21T12:00:00.000Z",
-    "labelTR": "Son Dördün",
-    "iconKey": "last",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "last"
     }
   },
   {
@@ -1178,112 +592,46 @@
     "source": "ephemeris",
     "reliability": "high",
     "meta": {
-      "sign": "leo",
-      "longitude": 120
+      "sign": "leo"
     }
   },
   {
-    "id": "moon-phase-2025-7-25",
-    "type": "moon_phase",
-    "subType": "new",
-    "startUTC": "2025-07-25T12:00:00.000Z",
-    "labelTR": "Yeni Ay",
-    "iconKey": "new",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "new"
-    }
-  },
-  {
-    "id": "moon-phase-2025-7-26",
-    "type": "moon_phase",
-    "subType": "new",
-    "startUTC": "2025-07-26T12:00:00.000Z",
-    "labelTR": "Yeni Ay",
-    "iconKey": "new",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "new"
-    }
-  },
-  {
-    "id": "moon-phase-2025-7-27",
-    "type": "moon_phase",
-    "subType": "new",
-    "startUTC": "2025-07-27T12:00:00.000Z",
-    "labelTR": "Yeni Ay",
-    "iconKey": "new",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "new"
-    }
-  },
-  {
-    "id": "moon-phase-2025-8-2",
-    "type": "moon_phase",
-    "subType": "first",
-    "startUTC": "2025-08-02T12:00:00.000Z",
-    "labelTR": "İlk Dördün",
-    "iconKey": "first",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "first"
-    }
-  },
-  {
-    "id": "moon-phase-2025-8-3",
-    "type": "moon_phase",
-    "subType": "first",
-    "startUTC": "2025-08-03T12:00:00.000Z",
-    "labelTR": "İlk Dördün",
-    "iconKey": "first",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "first"
-    }
-  },
-  {
-    "id": "moon-phase-2025-8-9",
+    "id": "moon-phase-nasa-2025-27",
     "type": "moon_phase",
     "subType": "full",
-    "startUTC": "2025-08-09T12:00:00.000Z",
+    "startUTC": "2025-07-25T06:37:00.000Z",
     "labelTR": "Dolunay",
     "iconKey": "full",
-    "source": "calculated",
+    "source": "nasa",
     "reliability": "high",
     "meta": {
       "phase": "full"
     }
   },
   {
-    "id": "moon-phase-2025-8-10",
+    "id": "moon-phase-nasa-2025-28",
     "type": "moon_phase",
-    "subType": "full",
-    "startUTC": "2025-08-10T12:00:00.000Z",
-    "labelTR": "Dolunay",
-    "iconKey": "full",
-    "source": "calculated",
+    "subType": "last",
+    "startUTC": "2025-08-01T12:41:00.000Z",
+    "labelTR": "Son Dördün",
+    "iconKey": "last",
+    "source": "nasa",
     "reliability": "high",
     "meta": {
-      "phase": "full"
+      "phase": "last"
     }
   },
   {
-    "id": "moon-phase-2025-8-11",
+    "id": "moon-phase-nasa-2025-29",
     "type": "moon_phase",
-    "subType": "full",
-    "startUTC": "2025-08-11T12:00:00.000Z",
-    "labelTR": "Dolunay",
-    "iconKey": "full",
-    "source": "calculated",
+    "subType": "new",
+    "startUTC": "2025-08-09T07:55:00.000Z",
+    "labelTR": "Yeni Ay",
+    "iconKey": "new",
+    "source": "nasa",
     "reliability": "high",
     "meta": {
-      "phase": "full"
+      "phase": "new"
     }
   },
   {
@@ -1291,42 +639,29 @@
     "type": "meteor_shower",
     "subType": "perseids",
     "startUTC": "2025-08-12T20:00:00.000Z",
-    "endUTC": "2025-08-13T20:00:00.000Z",
+    "endUTC": "2025-08-12T23:59:59.999Z",
     "labelTR": "Perseid Meteor Yağmuru Zirvesi",
     "iconKey": "perseids",
     "source": "imo",
     "reliability": "high",
     "meta": {
-      "radiant": "Perseus",
-      "peakWindow": "12-13 Ağustos gecesi",
+      "radiant": "Perseids",
+      "peakWindow": "2025-08-12 gecesi",
       "zhr": 100,
-      "moonInterference": "medium"
+      "moonInterference": "low"
     }
   },
   {
-    "id": "moon-phase-2025-8-18",
+    "id": "moon-phase-nasa-2025-30",
     "type": "moon_phase",
-    "subType": "last",
-    "startUTC": "2025-08-18T12:00:00.000Z",
-    "labelTR": "Son Dördün",
-    "iconKey": "last",
-    "source": "calculated",
+    "subType": "first",
+    "startUTC": "2025-08-16T05:12:00.000Z",
+    "labelTR": "İlk Dördün",
+    "iconKey": "first",
+    "source": "nasa",
     "reliability": "high",
     "meta": {
-      "phase": "last"
-    }
-  },
-  {
-    "id": "moon-phase-2025-8-19",
-    "type": "moon_phase",
-    "subType": "last",
-    "startUTC": "2025-08-19T12:00:00.000Z",
-    "labelTR": "Son Dördün",
-    "iconKey": "last",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "last"
+      "phase": "first"
     }
   },
   {
@@ -1339,170 +674,91 @@
     "source": "ephemeris",
     "reliability": "high",
     "meta": {
-      "sign": "virgo",
-      "longitude": 150
+      "sign": "virgo"
     }
   },
   {
-    "id": "moon-phase-2025-8-23",
-    "type": "moon_phase",
-    "subType": "new",
-    "startUTC": "2025-08-23T12:00:00.000Z",
-    "labelTR": "Yeni Ay",
-    "iconKey": "new",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "new"
-    }
-  },
-  {
-    "id": "moon-phase-2025-8-24",
-    "type": "moon_phase",
-    "subType": "new",
-    "startUTC": "2025-08-24T12:00:00.000Z",
-    "labelTR": "Yeni Ay",
-    "iconKey": "new",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "new"
-    }
-  },
-  {
-    "id": "moon-phase-2025-8-25",
-    "type": "moon_phase",
-    "subType": "new",
-    "startUTC": "2025-08-25T12:00:00.000Z",
-    "labelTR": "Yeni Ay",
-    "iconKey": "new",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "new"
-    }
-  },
-  {
-    "id": "moon-phase-2025-9-1",
-    "type": "moon_phase",
-    "subType": "first",
-    "startUTC": "2025-09-01T12:00:00.000Z",
-    "labelTR": "İlk Dördün",
-    "iconKey": "first",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "first"
-    }
-  },
-  {
-    "id": "moon-phase-2025-9-2",
-    "type": "moon_phase",
-    "subType": "first",
-    "startUTC": "2025-09-02T12:00:00.000Z",
-    "labelTR": "İlk Dördün",
-    "iconKey": "first",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "first"
-    }
-  },
-  {
-    "id": "moon-phase-2025-9-7",
+    "id": "moon-phase-nasa-2025-31",
     "type": "moon_phase",
     "subType": "full",
-    "startUTC": "2025-09-07T12:00:00.000Z",
+    "startUTC": "2025-08-23T14:06:00.000Z",
     "labelTR": "Dolunay",
     "iconKey": "full",
-    "source": "calculated",
+    "source": "nasa",
     "reliability": "high",
     "meta": {
       "phase": "full"
     }
   },
   {
-    "id": "moon-phase-2025-9-8",
-    "type": "moon_phase",
-    "subType": "full",
-    "startUTC": "2025-09-08T12:00:00.000Z",
-    "labelTR": "Dolunay",
-    "iconKey": "full",
-    "source": "calculated",
+    "id": "planet-station-uranus-retrograde_start-2025-12",
+    "type": "planet_station",
+    "subType": "uranus",
+    "startUTC": "2025-08-28T14:00:00.000Z",
+    "labelTR": "Uranüs Retrosu Başlıyor",
+    "iconKey": "uranus_retrograde_start",
+    "source": "ephemeris",
     "reliability": "high",
     "meta": {
-      "phase": "full"
+      "planet": "uranus",
+      "stationType": "retrograde_start"
     }
   },
   {
-    "id": "moon-phase-2025-9-9",
+    "id": "moon-phase-nasa-2025-32",
     "type": "moon_phase",
-    "subType": "full",
-    "startUTC": "2025-09-09T12:00:00.000Z",
-    "labelTR": "Dolunay",
-    "iconKey": "full",
-    "source": "calculated",
+    "subType": "last",
+    "startUTC": "2025-08-30T23:25:00.000Z",
+    "labelTR": "Son Dördün",
+    "iconKey": "last",
+    "source": "nasa",
     "reliability": "high",
     "meta": {
-      "phase": "full"
+      "phase": "last"
     }
   },
   {
-    "id": "mercury-retro-start-2025-09",
+    "id": "moon-phase-nasa-2025-33",
+    "type": "moon_phase",
+    "subType": "new",
+    "startUTC": "2025-09-07T18:09:00.000Z",
+    "labelTR": "Yeni Ay",
+    "iconKey": "new",
+    "source": "nasa",
+    "reliability": "high",
+    "meta": {
+      "phase": "new"
+    }
+  },
+  {
+    "id": "planet-station-mercury-retrograde_start-2025-5",
     "type": "planet_station",
     "subType": "mercury",
     "startUTC": "2025-09-09T12:00:00.000Z",
     "labelTR": "Merkür Retrosu Başlıyor",
-    "iconKey": "mercury_retro_start",
+    "iconKey": "mercury_retrograde_start",
     "source": "ephemeris",
     "reliability": "high",
     "meta": {
       "planet": "mercury",
-      "stationType": "retrograde_start",
-      "longitude": 8
+      "stationType": "retrograde_start"
     }
   },
   {
-    "id": "moon-phase-2025-9-16",
+    "id": "moon-phase-nasa-2025-34",
     "type": "moon_phase",
-    "subType": "last",
-    "startUTC": "2025-09-16T12:00:00.000Z",
-    "labelTR": "Son Dördün",
-    "iconKey": "last",
-    "source": "calculated",
+    "subType": "first",
+    "startUTC": "2025-09-14T10:33:00.000Z",
+    "labelTR": "İlk Dördün",
+    "iconKey": "first",
+    "source": "nasa",
     "reliability": "high",
     "meta": {
-      "phase": "last"
+      "phase": "first"
     }
   },
   {
-    "id": "moon-phase-2025-9-17",
-    "type": "moon_phase",
-    "subType": "last",
-    "startUTC": "2025-09-17T12:00:00.000Z",
-    "labelTR": "Son Dördün",
-    "iconKey": "last",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "last"
-    }
-  },
-  {
-    "id": "moon-phase-2025-9-18",
-    "type": "moon_phase",
-    "subType": "last",
-    "startUTC": "2025-09-18T12:00:00.000Z",
-    "labelTR": "Son Dördün",
-    "iconKey": "last",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "last"
-    }
-  },
-  {
-    "id": "eclipse-2025-09-21-lunar-partial",
+    "id": "eclipse-lunar_partial-2025-2",
     "type": "eclipse",
     "subType": "lunar_partial",
     "startUTC": "2025-09-21T19:43:00.000Z",
@@ -1515,21 +771,21 @@
       "visibility": {
         "turkey": true,
         "partial": true,
-        "notes": "Türkiye'den görülebilir"
+        "notes": "Europe, Africa, Asia, Australia"
       }
     }
   },
   {
-    "id": "moon-phase-2025-9-22",
+    "id": "moon-phase-nasa-2025-35",
     "type": "moon_phase",
-    "subType": "new",
-    "startUTC": "2025-09-22T12:00:00.000Z",
-    "labelTR": "Yeni Ay",
-    "iconKey": "new",
-    "source": "calculated",
+    "subType": "full",
+    "startUTC": "2025-09-21T19:54:00.000Z",
+    "labelTR": "Dolunay",
+    "iconKey": "full",
+    "source": "nasa",
     "reliability": "high",
     "meta": {
-      "phase": "new"
+      "phase": "full"
     }
   },
   {
@@ -1542,194 +798,104 @@
     "source": "ephemeris",
     "reliability": "high",
     "meta": {
-      "sign": "libra",
-      "longitude": 180
+      "sign": "libra"
     }
   },
   {
-    "id": "moon-phase-2025-9-23",
+    "id": "moon-phase-nasa-2025-36",
     "type": "moon_phase",
-    "subType": "new",
-    "startUTC": "2025-09-23T12:00:00.000Z",
-    "labelTR": "Yeni Ay",
-    "iconKey": "new",
-    "source": "calculated",
+    "subType": "last",
+    "startUTC": "2025-09-29T09:54:00.000Z",
+    "labelTR": "Son Dördün",
+    "iconKey": "last",
+    "source": "nasa",
     "reliability": "high",
     "meta": {
-      "phase": "new"
+      "phase": "last"
     }
   },
   {
-    "id": "moon-phase-2025-9-24",
-    "type": "moon_phase",
-    "subType": "new",
-    "startUTC": "2025-09-24T12:00:00.000Z",
-    "labelTR": "Yeni Ay",
-    "iconKey": "new",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "new"
-    }
-  },
-  {
-    "id": "moon-phase-2025-9-30",
-    "type": "moon_phase",
-    "subType": "first",
-    "startUTC": "2025-09-30T12:00:00.000Z",
-    "labelTR": "İlk Dördün",
-    "iconKey": "first",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "first"
-    }
-  },
-  {
-    "id": "moon-phase-2025-10-0",
-    "type": "moon_phase",
-    "subType": "first",
-    "startUTC": "2025-09-30T12:00:00.000Z",
-    "labelTR": "İlk Dördün",
-    "iconKey": "first",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "first"
-    }
-  },
-  {
-    "id": "moon-phase-2025-10-1",
-    "type": "moon_phase",
-    "subType": "first",
-    "startUTC": "2025-10-01T12:00:00.000Z",
-    "labelTR": "İlk Dördün",
-    "iconKey": "first",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "first"
-    }
-  },
-  {
-    "id": "mercury-retro-end-2025-09",
+    "id": "planet-station-mercury-retrograde_end-2025-6",
     "type": "planet_station",
     "subType": "mercury",
     "startUTC": "2025-10-02T08:00:00.000Z",
     "labelTR": "Merkür Retrosu Sona Eriyor",
-    "iconKey": "mercury_retro_end",
+    "iconKey": "mercury_retrograde_end",
     "source": "ephemeris",
     "reliability": "high",
     "meta": {
       "planet": "mercury",
-      "stationType": "retrograde_end",
-      "longitude": 24
+      "stationType": "retrograde_end"
     }
   },
   {
-    "id": "moon-phase-2025-10-7",
+    "id": "moon-phase-nasa-2025-37",
     "type": "moon_phase",
-    "subType": "full",
-    "startUTC": "2025-10-07T12:00:00.000Z",
-    "labelTR": "Dolunay",
-    "iconKey": "full",
-    "source": "calculated",
+    "subType": "new",
+    "startUTC": "2025-10-07T11:48:00.000Z",
+    "labelTR": "Yeni Ay",
+    "iconKey": "new",
+    "source": "nasa",
     "reliability": "high",
     "meta": {
-      "phase": "full"
+      "phase": "new"
     }
   },
   {
-    "id": "moon-phase-2025-10-8",
-    "type": "moon_phase",
-    "subType": "full",
-    "startUTC": "2025-10-08T12:00:00.000Z",
-    "labelTR": "Dolunay",
-    "iconKey": "full",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "full"
-    }
-  },
-  {
-    "id": "moon-phase-2025-10-9",
-    "type": "moon_phase",
-    "subType": "full",
-    "startUTC": "2025-10-09T12:00:00.000Z",
-    "labelTR": "Dolunay",
-    "iconKey": "full",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "full"
-    }
-  },
-  {
-    "id": "jupiter-retro-start-2025",
+    "id": "planet-station-jupiter-retrograde_start-2025-10",
     "type": "planet_station",
     "subType": "jupiter",
     "startUTC": "2025-10-09T18:00:00.000Z",
     "labelTR": "Jüpiter Retrosu Başlıyor",
-    "iconKey": "jupiter_retro_start",
+    "iconKey": "jupiter_retrograde_start",
     "source": "ephemeris",
     "reliability": "high",
     "meta": {
       "planet": "jupiter",
-      "stationType": "retrograde_start",
-      "longitude": 21
+      "stationType": "retrograde_start"
     }
   },
   {
-    "id": "moon-phase-2025-10-16",
+    "id": "moon-phase-nasa-2025-38",
     "type": "moon_phase",
-    "subType": "last",
-    "startUTC": "2025-10-16T12:00:00.000Z",
-    "labelTR": "Son Dördün",
-    "iconKey": "last",
-    "source": "calculated",
+    "subType": "first",
+    "startUTC": "2025-10-14T10:55:00.000Z",
+    "labelTR": "İlk Dördün",
+    "iconKey": "first",
+    "source": "nasa",
     "reliability": "high",
     "meta": {
-      "phase": "last"
+      "phase": "first"
     }
   },
   {
-    "id": "moon-phase-2025-10-17",
+    "id": "moon-phase-nasa-2025-39",
     "type": "moon_phase",
-    "subType": "last",
-    "startUTC": "2025-10-17T12:00:00.000Z",
-    "labelTR": "Son Dördün",
-    "iconKey": "last",
-    "source": "calculated",
+    "subType": "full",
+    "startUTC": "2025-10-21T12:25:00.000Z",
+    "labelTR": "Dolunay",
+    "iconKey": "full",
+    "source": "nasa",
     "reliability": "high",
     "meta": {
-      "phase": "last"
+      "phase": "full"
     }
   },
   {
-    "id": "moon-phase-2025-10-21",
-    "type": "moon_phase",
-    "subType": "new",
-    "startUTC": "2025-10-21T12:00:00.000Z",
-    "labelTR": "Yeni Ay",
-    "iconKey": "new",
-    "source": "calculated",
+    "id": "meteor-orionids-2025",
+    "type": "meteor_shower",
+    "subType": "orionids",
+    "startUTC": "2025-10-21T23:00:00.000Z",
+    "endUTC": "2025-10-21T23:59:59.999Z",
+    "labelTR": "Orionid Meteor Yağmuru Zirvesi",
+    "iconKey": "orionids",
+    "source": "imo",
     "reliability": "high",
     "meta": {
-      "phase": "new"
-    }
-  },
-  {
-    "id": "moon-phase-2025-10-22",
-    "type": "moon_phase",
-    "subType": "new",
-    "startUTC": "2025-10-22T12:00:00.000Z",
-    "labelTR": "Yeni Ay",
-    "iconKey": "new",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "new"
+      "radiant": "Orionids",
+      "peakWindow": "2025-10-21 gecesi",
+      "zhr": 20,
+      "moonInterference": "low"
     }
   },
   {
@@ -1742,177 +908,76 @@
     "source": "ephemeris",
     "reliability": "high",
     "meta": {
-      "sign": "scorpio",
-      "longitude": 210
+      "sign": "scorpio"
     }
   },
   {
-    "id": "moon-phase-2025-10-23",
+    "id": "moon-phase-nasa-2025-40",
+    "type": "moon_phase",
+    "subType": "last",
+    "startUTC": "2025-10-29T16:21:00.000Z",
+    "labelTR": "Son Dördün",
+    "iconKey": "last",
+    "source": "nasa",
+    "reliability": "high",
+    "meta": {
+      "phase": "last"
+    }
+  },
+  {
+    "id": "moon-phase-nasa-2025-41",
     "type": "moon_phase",
     "subType": "new",
-    "startUTC": "2025-10-23T12:00:00.000Z",
+    "startUTC": "2025-11-05T13:20:00.000Z",
     "labelTR": "Yeni Ay",
     "iconKey": "new",
-    "source": "calculated",
+    "source": "nasa",
     "reliability": "high",
     "meta": {
       "phase": "new"
     }
   },
   {
-    "id": "moon-phase-2025-10-30",
+    "id": "moon-phase-nasa-2025-42",
     "type": "moon_phase",
     "subType": "first",
-    "startUTC": "2025-10-30T12:00:00.000Z",
+    "startUTC": "2025-11-12T05:28:00.000Z",
     "labelTR": "İlk Dördün",
     "iconKey": "first",
-    "source": "calculated",
+    "source": "nasa",
     "reliability": "high",
     "meta": {
       "phase": "first"
     }
   },
   {
-    "id": "moon-phase-2025-11-0",
-    "type": "moon_phase",
-    "subType": "first",
-    "startUTC": "2025-10-31T12:00:00.000Z",
-    "labelTR": "İlk Dördün",
-    "iconKey": "first",
-    "source": "calculated",
+    "id": "meteor-leonids-2025",
+    "type": "meteor_shower",
+    "subType": "leonids",
+    "startUTC": "2025-11-17T12:00:00.000Z",
+    "endUTC": "2025-11-17T23:59:59.999Z",
+    "labelTR": "Leonid Meteor Yağmuru Zirvesi",
+    "iconKey": "leonids",
+    "source": "imo",
     "reliability": "high",
     "meta": {
-      "phase": "first"
+      "radiant": "Leonids",
+      "peakWindow": "2025-11-17 gecesi",
+      "zhr": 15,
+      "moonInterference": "low"
     }
   },
   {
-    "id": "moon-phase-2025-11-5",
+    "id": "moon-phase-nasa-2025-43",
     "type": "moon_phase",
     "subType": "full",
-    "startUTC": "2025-11-05T12:00:00.000Z",
+    "startUTC": "2025-11-20T06:47:00.000Z",
     "labelTR": "Dolunay",
     "iconKey": "full",
-    "source": "calculated",
+    "source": "nasa",
     "reliability": "high",
     "meta": {
       "phase": "full"
-    }
-  },
-  {
-    "id": "moon-phase-2025-11-6",
-    "type": "moon_phase",
-    "subType": "full",
-    "startUTC": "2025-11-06T12:00:00.000Z",
-    "labelTR": "Dolunay",
-    "iconKey": "full",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "full"
-    }
-  },
-  {
-    "id": "moon-phase-2025-11-7",
-    "type": "moon_phase",
-    "subType": "full",
-    "startUTC": "2025-11-07T12:00:00.000Z",
-    "labelTR": "Dolunay",
-    "iconKey": "full",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "full"
-    }
-  },
-  {
-    "id": "moon-phase-2025-11-9",
-    "type": "moon_phase",
-    "subType": "full",
-    "startUTC": "2025-11-09T12:00:00.000Z",
-    "labelTR": "Dolunay",
-    "iconKey": "full",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "full"
-    }
-  },
-  {
-    "id": "moon-phase-2025-11-14",
-    "type": "moon_phase",
-    "subType": "last",
-    "startUTC": "2025-11-14T12:00:00.000Z",
-    "labelTR": "Son Dördün",
-    "iconKey": "last",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "last"
-    }
-  },
-  {
-    "id": "moon-phase-2025-11-15",
-    "type": "moon_phase",
-    "subType": "last",
-    "startUTC": "2025-11-15T12:00:00.000Z",
-    "labelTR": "Son Dördün",
-    "iconKey": "last",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "last"
-    }
-  },
-  {
-    "id": "moon-phase-2025-11-16",
-    "type": "moon_phase",
-    "subType": "last",
-    "startUTC": "2025-11-16T12:00:00.000Z",
-    "labelTR": "Son Dördün",
-    "iconKey": "last",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "last"
-    }
-  },
-  {
-    "id": "moon-phase-2025-11-20",
-    "type": "moon_phase",
-    "subType": "new",
-    "startUTC": "2025-11-20T12:00:00.000Z",
-    "labelTR": "Yeni Ay",
-    "iconKey": "new",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "new"
-    }
-  },
-  {
-    "id": "moon-phase-2025-11-21",
-    "type": "moon_phase",
-    "subType": "new",
-    "startUTC": "2025-11-21T12:00:00.000Z",
-    "labelTR": "Yeni Ay",
-    "iconKey": "new",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "new"
-    }
-  },
-  {
-    "id": "moon-phase-2025-11-22",
-    "type": "moon_phase",
-    "subType": "new",
-    "startUTC": "2025-11-22T12:00:00.000Z",
-    "labelTR": "Yeni Ay",
-    "iconKey": "new",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "new"
     }
   },
   {
@@ -1925,88 +990,60 @@
     "source": "ephemeris",
     "reliability": "high",
     "meta": {
-      "sign": "sagittarius",
-      "longitude": 240
+      "sign": "sagittarius"
     }
   },
   {
-    "id": "moon-phase-2025-11-28",
+    "id": "moon-phase-nasa-2025-44",
     "type": "moon_phase",
-    "subType": "first",
-    "startUTC": "2025-11-28T12:00:00.000Z",
-    "labelTR": "İlk Dördün",
-    "iconKey": "first",
-    "source": "calculated",
+    "subType": "last",
+    "startUTC": "2025-11-28T06:59:00.000Z",
+    "labelTR": "Son Dördün",
+    "iconKey": "last",
+    "source": "nasa",
     "reliability": "high",
     "meta": {
-      "phase": "first"
+      "phase": "last"
     }
   },
   {
-    "id": "moon-phase-2025-11-29",
+    "id": "moon-phase-nasa-2025-45",
     "type": "moon_phase",
-    "subType": "first",
-    "startUTC": "2025-11-29T12:00:00.000Z",
-    "labelTR": "İlk Dördün",
-    "iconKey": "first",
-    "source": "calculated",
+    "subType": "new",
+    "startUTC": "2025-12-05T00:14:00.000Z",
+    "labelTR": "Yeni Ay",
+    "iconKey": "new",
+    "source": "nasa",
     "reliability": "high",
     "meta": {
-      "phase": "first"
+      "phase": "new"
     }
   },
   {
-    "id": "moon-phase-2025-12-5",
-    "type": "moon_phase",
-    "subType": "full",
-    "startUTC": "2025-12-05T12:00:00.000Z",
-    "labelTR": "Dolunay",
-    "iconKey": "full",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "full"
-    }
-  },
-  {
-    "id": "moon-phase-2025-12-6",
-    "type": "moon_phase",
-    "subType": "full",
-    "startUTC": "2025-12-06T12:00:00.000Z",
-    "labelTR": "Dolunay",
-    "iconKey": "full",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "full"
-    }
-  },
-  {
-    "id": "moon-phase-2025-12-7",
-    "type": "moon_phase",
-    "subType": "full",
-    "startUTC": "2025-12-07T12:00:00.000Z",
-    "labelTR": "Dolunay",
-    "iconKey": "full",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "full"
-    }
-  },
-  {
-    "id": "mars-retro-start-2025",
+    "id": "planet-station-mars-retrograde_start-2025-9",
     "type": "planet_station",
     "subType": "mars",
     "startUTC": "2025-12-07T12:00:00.000Z",
     "labelTR": "Mars Retrosu Başlıyor",
-    "iconKey": "mars_retro_start",
+    "iconKey": "mars_retrograde_start",
     "source": "ephemeris",
     "reliability": "high",
     "meta": {
       "planet": "mars",
-      "stationType": "retrograde_start",
-      "longitude": 6
+      "stationType": "retrograde_start"
+    }
+  },
+  {
+    "id": "moon-phase-nasa-2025-46",
+    "type": "moon_phase",
+    "subType": "first",
+    "startUTC": "2025-12-12T01:52:00.000Z",
+    "labelTR": "İlk Dördün",
+    "iconKey": "first",
+    "source": "nasa",
+    "reliability": "high",
+    "meta": {
+      "phase": "first"
     }
   },
   {
@@ -2014,96 +1051,43 @@
     "type": "meteor_shower",
     "subType": "geminids",
     "startUTC": "2025-12-13T20:00:00.000Z",
-    "endUTC": "2025-12-14T20:00:00.000Z",
+    "endUTC": "2025-12-13T23:59:59.999Z",
     "labelTR": "Geminid Meteor Yağmuru Zirvesi",
     "iconKey": "geminids",
     "source": "imo",
     "reliability": "high",
     "meta": {
-      "radiant": "Gemini",
-      "peakWindow": "13-14 Aralık gecesi",
+      "radiant": "Geminids",
+      "peakWindow": "2025-12-13 gecesi",
       "zhr": 150,
       "moonInterference": "low"
     }
   },
   {
-    "id": "moon-phase-2025-12-14",
+    "id": "moon-phase-nasa-2025-47",
     "type": "moon_phase",
-    "subType": "last",
-    "startUTC": "2025-12-14T12:00:00.000Z",
-    "labelTR": "Son Dördün",
-    "iconKey": "last",
-    "source": "calculated",
+    "subType": "full",
+    "startUTC": "2025-12-19T23:43:00.000Z",
+    "labelTR": "Dolunay",
+    "iconKey": "full",
+    "source": "nasa",
     "reliability": "high",
     "meta": {
-      "phase": "last"
+      "phase": "full"
     }
   },
   {
-    "id": "moon-phase-2025-12-15",
-    "type": "moon_phase",
-    "subType": "last",
-    "startUTC": "2025-12-15T12:00:00.000Z",
-    "labelTR": "Son Dördün",
-    "iconKey": "last",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "last"
-    }
-  },
-  {
-    "id": "moon-phase-2025-12-16",
-    "type": "moon_phase",
-    "subType": "last",
-    "startUTC": "2025-12-16T12:00:00.000Z",
-    "labelTR": "Son Dördün",
-    "iconKey": "last",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "last"
-    }
-  },
-  {
-    "id": "moon-phase-2025-12-19",
-    "type": "moon_phase",
-    "subType": "new",
-    "startUTC": "2025-12-19T12:00:00.000Z",
-    "labelTR": "Yeni Ay",
-    "iconKey": "new",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "new"
-    }
-  },
-  {
-    "id": "moon-phase-2025-12-20",
-    "type": "moon_phase",
-    "subType": "new",
-    "startUTC": "2025-12-20T12:00:00.000Z",
-    "labelTR": "Yeni Ay",
-    "iconKey": "new",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "new"
-    }
-  },
-  {
-    "id": "venus-retro-start-2025",
+    "id": "planet-station-venus-retrograde_start-2025-8",
     "type": "planet_station",
     "subType": "venus",
     "startUTC": "2025-12-21T06:00:00.000Z",
     "labelTR": "Venüs Retrosu Başlıyor",
-    "iconKey": "venus_retro_start",
+    "iconKey": "venus_retrograde_start",
     "source": "ephemeris",
     "reliability": "high",
     "meta": {
       "planet": "venus",
-      "stationType": "retrograde_start",
-      "longitude": 9
+      "stationType": "retrograde_start"
     }
   },
   {
@@ -2116,62 +1100,34 @@
     "source": "ephemeris",
     "reliability": "high",
     "meta": {
-      "sign": "capricorn",
-      "longitude": 270
+      "sign": "capricorn"
     }
   },
   {
-    "id": "moon-phase-2025-12-21",
+    "id": "moon-phase-nasa-2025-48",
     "type": "moon_phase",
-    "subType": "new",
-    "startUTC": "2025-12-21T12:00:00.000Z",
-    "labelTR": "Yeni Ay",
-    "iconKey": "new",
-    "source": "calculated",
+    "subType": "last",
+    "startUTC": "2025-12-27T19:10:00.000Z",
+    "labelTR": "Son Dördün",
+    "iconKey": "last",
+    "source": "nasa",
     "reliability": "high",
     "meta": {
-      "phase": "new"
+      "phase": "last"
     }
   },
   {
-    "id": "moon-phase-2025-12-28",
-    "type": "moon_phase",
-    "subType": "first",
-    "startUTC": "2025-12-28T12:00:00.000Z",
-    "labelTR": "İlk Dördün",
-    "iconKey": "first",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "first"
-    }
-  },
-  {
-    "id": "moon-phase-2025-12-29",
-    "type": "moon_phase",
-    "subType": "first",
-    "startUTC": "2025-12-29T12:00:00.000Z",
-    "labelTR": "İlk Dördün",
-    "iconKey": "first",
-    "source": "calculated",
-    "reliability": "high",
-    "meta": {
-      "phase": "first"
-    }
-  },
-  {
-    "id": "mercury-retro-start-2025-12",
+    "id": "planet-station-mercury-retrograde_start-2025-7",
     "type": "planet_station",
     "subType": "mercury",
     "startUTC": "2025-12-29T18:00:00.000Z",
     "labelTR": "Merkür Retrosu Başlıyor",
-    "iconKey": "mercury_retro_start",
+    "iconKey": "mercury_retrograde_start",
     "source": "ephemeris",
     "reliability": "high",
     "meta": {
       "planet": "mercury",
-      "stationType": "retrograde_start",
-      "longitude": 8
+      "stationType": "retrograde_start"
     }
   }
 ]
