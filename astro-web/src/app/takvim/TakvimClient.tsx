@@ -1,6 +1,7 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import AstroCalendar, { AstroEvent } from '@/components/AstroCalendar';
+import EnhancedAstroCalendar from '@/components/EnhancedAstroCalendar';
 import { AstroApiEvent } from '@/lib/astroApis';
 import { CelestialEvent } from '@/lib/celestialEvents';
 
@@ -21,8 +22,10 @@ export default function TakvimClient() {
   const [year, setYear] = useState(new Date().getFullYear());
   const [month, setMonth] = useState(new Date().getMonth() + 1); // 1-12
   const [events, setEvents] = useState<AstroEvent[]>([]);
+  const [enhancedEvents, setEnhancedEvents] = useState<any[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [useEnhancedView, setUseEnhancedView] = useState(true);
 
   useEffect(() => {
     const fetchEvents = async () => {
@@ -39,6 +42,9 @@ export default function TakvimClient() {
         
         const astroData = await astroResponse.json();
         const astroEvents = convertApiEventsToAstroEvents(astroData.events || []);
+        
+        // Enhanced events for new calendar
+        setEnhancedEvents(astroData.events || []);
 
         // Mevcut yerel olayları da çek (varsa)
         const startOfMonth = new Date(year, month - 1, 1);
@@ -95,13 +101,52 @@ export default function TakvimClient() {
         </div>
       )}
 
-      <AstroCalendar
-        events={events}
-        year={year}
-        month={month}
-        onYearChange={handleYearChange}
-        onMonthChange={handleMonthChange}
-      />
+      {/* View Toggle */}
+      <div className="mb-4 flex justify-center">
+        <div className="bg-gray-100 rounded-lg p-1">
+          <button
+            onClick={() => setUseEnhancedView(true)}
+            className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+              useEnhancedView 
+                ? 'bg-white text-gray-900 shadow-sm' 
+                : 'text-gray-600 hover:text-gray-900'
+            }`}
+          >
+            Gelişmiş Görünüm
+          </button>
+          <button
+            onClick={() => setUseEnhancedView(false)}
+            className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+              !useEnhancedView 
+                ? 'bg-white text-gray-900 shadow-sm' 
+                : 'text-gray-600 hover:text-gray-900'
+            }`}
+          >
+            Klasik Görünüm
+          </button>
+        </div>
+      </div>
+
+      {useEnhancedView ? (
+        <EnhancedAstroCalendar
+          events={enhancedEvents}
+          year={year}
+          month={month}
+          onDateClick={(date, events) => {
+            console.log('Date clicked:', date, events);
+          }}
+          onYearChange={handleYearChange}
+          onMonthChange={handleMonthChange}
+        />
+      ) : (
+        <AstroCalendar
+          events={events}
+          year={year}
+          month={month}
+          onYearChange={handleYearChange}
+          onMonthChange={handleMonthChange}
+        />
+      )}
     </div>
   );
 } 
