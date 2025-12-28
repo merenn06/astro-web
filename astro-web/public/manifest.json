@@ -1,0 +1,115 @@
+{
+  "name": "Astroloji Rehberim",
+  "short_name": "AstroRehber",
+  "description": "Gökyüzünün sırlarını keşfedin, geleceğinizi aydınlatın",
+  "theme_color": "#4c1d95",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "orientation": "portrait",
+  "start_url": "/",
+  "scope": "/",
+  "lang": "tr",
+  "icons": [
+    {
+      "src": "/icons/icon-72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "categories": ["lifestyle", "education", "entertainment"],
+  "screenshots": [
+    {
+      "src": "/screenshots/desktop.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "/screenshots/mobile.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Günlük Burç",
+      "short_name": "Burç",
+      "description": "Günlük burç yorumlarını görüntüle",
+      "url": "/horoscope/daily",
+      "icons": [
+        {
+          "src": "/icons/shortcut-burc.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Astroloji Reels",
+      "short_name": "Reels",
+      "description": "Kısa astroloji videolarını izle",
+      "url": "/reels",
+      "icons": [
+        {
+          "src": "/icons/shortcut-reels.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Danışmanlık",
+      "short_name": "Danışmanlık",
+      "description": "Astroloji danışmanlığı al",
+      "url": "/danismanlik",
+      "icons": [
+        {
+          "src": "/icons/shortcut-danismanlik.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ]
+} 

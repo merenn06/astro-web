@@ -1,0 +1,26 @@
+[
+  {
+    "date": "2025-12-05",
+    "type": "Yeni Ay",
+    "emoji": "🌑",
+    "description": "Yeni Ay"
+  },
+  {
+    "date": "2025-12-12",
+    "type": "İlk Dördün",
+    "emoji": "🌓",
+    "description": "İlk Dördün"
+  },
+  {
+    "date": "2025-12-19",
+    "type": "Dolunay",
+    "emoji": "🌕",
+    "description": "Dolunay"
+  },
+  {
+    "date": "2025-12-27",
+    "type": "Son Dördün",
+    "emoji": "🌗",
+    "description": "Son Dördün"
+  }
+]

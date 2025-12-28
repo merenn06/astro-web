@@ -1,0 +1,188 @@
+'use client';
+import React, { useState, useEffect } from 'react';
+import AstroCalendar, { AstroEvent } from '@/components/AstroCalendar';
+import EnhancedAstroCalendar from '@/components/EnhancedAstroCalendar';
+import { AstroApiEvent } from '@/lib/astroApis';
+import { CelestialEvent } from '@/lib/celestialEvents';
+
+// API'den gelen olayları AstroEvent formatına dönüştür
+function convertApiEventsToAstroEvents(apiEvents: AstroApiEvent[]): AstroEvent[] {
+  return apiEvents.map(event => ({
+    id: parseInt(event.id.replace(/\D/g, '') || '0'),
+    title: event.title,
+    date: event.date,
+    type: event.type,
+    description: event.description,
+    icon: event.icon,
+    color: event.color,
+  }));
+}
+
+export default function TakvimClient() {
+  const [year, setYear] = useState(new Date().getFullYear());
+  const [month, setMonth] = useState(new Date().getMonth() + 1); // 1-12
+  const [events, setEvents] = useState<AstroEvent[]>([]);
+  const [enhancedEvents, setEnhancedEvents] = useState<any[]>([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [useEnhancedView, setUseEnhancedView] = useState(true);
+
+  useEffect(() => {
+    const fetchEvents = async () => {
+      setLoading(true);
+      setError(null);
+      
+      try {
+        // Astrolojik API'den veri çek
+        const astroResponse = await fetch(`/api/astro-events?year=${year}&month=${month}`);
+        
+        if (!astroResponse.ok) {
+          throw new Error('Astrolojik olaylar alınamadı');
+        }
+        
+        const astroData = await astroResponse.json();
+        const astroEvents = convertApiEventsToAstroEvents(astroData.events || []);
+        
+        // Convert API events to enhanced format for new calendar
+        const enhancedEvents = (astroData.events || []).map((event: any) => ({
+          id: event.id,
+          type: event.type === 'moon_phase' ? 'moon_phase' : 
+                event.type === 'astronomical' ? 
+                  (event.title.includes('Retrosu') ? 'planet_station' :
+                   event.title.includes('Meteor') ? 'meteor_shower' :
+                   event.title.includes('Güneş') ? 'sun_ingress' : 'astronomical') : 
+                event.type,
+          subType: event.id.includes('new') ? 'new' :
+                   event.id.includes('first') ? 'first' :
+                   event.id.includes('full') ? 'full' :
+                   event.id.includes('last') ? 'last' :
+                   event.id.includes('r-') ? 'station_R' :
+                   event.id.includes('d-') ? 'station_D' :
+                   event.id.includes('meteor-') ? event.id.split('-')[1] :
+                   event.id.includes('sun-ingress-') ? event.id.split('-')[2] :
+                   'unknown',
+          body: event.title.includes('Merkür') ? 'Mercury' :
+                event.title.includes('Venüs') ? 'Venus' :
+                event.title.includes('Mars') ? 'Mars' :
+                event.title.includes('Jüpiter') ? 'Jupiter' :
+                event.title.includes('Satürn') ? 'Saturn' :
+                event.title.includes('Uranüs') ? 'Uranus' :
+                event.title.includes('Neptün') ? 'Neptune' :
+                event.title.includes('Plüton') ? 'Pluto' :
+                event.title.includes('Güneş') ? 'Sun' :
+                event.title.includes('Ay') ? 'Moon' :
+                'Unknown',
+          startUTC: event.date,
+          labelTR: event.title,
+          source: 'swiss',
+          meta: {
+            notes: 'Legacy API data'
+          }
+        }));
+        
+        setEnhancedEvents(enhancedEvents);
+
+        // Mevcut yerel olayları da çek (varsa)
+        const startOfMonth = new Date(year, month - 1, 1);
+        const endOfMonth = new Date(year, month, 0, 23, 59, 59, 999);
+        
+        try {
+          const localResponse = await fetch(`/api/events?start=${startOfMonth.toISOString()}&end=${endOfMonth.toISOString()}`);
+          const localData = await localResponse.json();
+          const localEvents = localData.events || [];
+          
+          // Tüm olayları birleştir
+          setEvents([...localEvents, ...astroEvents]);
+        } catch (localError) {
+          // Yerel olaylar yoksa sadece astrolojik olayları kullan
+          setEvents(astroEvents);
+        }
+
+      } catch (err) {
+        console.error('Error fetching events:', err);
+        setError(err instanceof Error ? err.message : 'Bilinmeyen hata');
+        setEvents([]);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchEvents();
+  }, [year, month]);
+
+  // Yıl/ay değişikliklerini handle et
+  const handleYearChange = (newYear: number) => {
+    setYear(newYear);
+  };
+
+  const handleMonthChange = (newMonth: number) => {
+    setMonth(newMonth);
+  };
+
+  return (
+    <div>
+      {loading && (
+        <div className="text-center py-4">
+          <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-purple-600"></div>
+          <p className="mt-2 text-gray-600 dark:text-gray-400">Astrolojik olaylar yükleniyor...</p>
+        </div>
+      )}
+      
+      {error && (
+        <div className="text-center py-4">
+          <div className="bg-red-100 dark:bg-red-900/30 border border-red-400 text-red-700 dark:text-red-300 px-4 py-3 rounded">
+            <p>⚠️ {error}</p>
+            <p className="text-sm mt-1">Sabit veri dosyalarını kontrol edin</p>
+          </div>
+        </div>
+      )}
+
+      {/* View Toggle */}
+      <div className="mb-4 flex justify-center">
+        <div className="bg-gray-100 rounded-lg p-1">
+          <button
+            onClick={() => setUseEnhancedView(true)}
+            className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+              useEnhancedView 
+                ? 'bg-white text-gray-900 shadow-sm' 
+                : 'text-gray-600 hover:text-gray-900'
+            }`}
+          >
+            Gelişmiş Görünüm
+          </button>
+          <button
+            onClick={() => setUseEnhancedView(false)}
+            className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+              !useEnhancedView 
+                ? 'bg-white text-gray-900 shadow-sm' 
+                : 'text-gray-600 hover:text-gray-900'
+            }`}
+          >
+            Klasik Görünüm
+          </button>
+        </div>
+      </div>
+
+      {useEnhancedView ? (
+        <EnhancedAstroCalendar
+          events={enhancedEvents}
+          year={year}
+          month={month}
+          onDateClick={(date, events) => {
+            console.log('Date clicked:', date, events);
+          }}
+          onYearChange={handleYearChange}
+          onMonthChange={handleMonthChange}
+        />
+      ) : (
+        <AstroCalendar
+          events={events}
+          year={year}
+          month={month}
+          onYearChange={handleYearChange}
+          onMonthChange={handleMonthChange}
+        />
+      )}
+    </div>
+  );
+} 

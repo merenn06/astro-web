@@ -1,0 +1,242 @@
+[
+  {
+    "date": "2025-01-03",
+    "type": "Meteor Yağmuru",
+    "emoji": "⭐",
+    "description": "Quadrantid Meteor Yağmuru Zirvesi"
+  },
+  {
+    "date": "2025-01-15",
+    "type": "Merkür Retrosu Başlıyor",
+    "emoji": "🔄",
+    "description": "Merkür Retrosu Başlıyor"
+  },
+  {
+    "date": "2025-01-20",
+    "type": "Burç Geçişi",
+    "emoji": "☀️",
+    "description": "Güneş Kova Burcuna Geçiyor"
+  },
+  {
+    "date": "2025-02-05",
+    "type": "Merkür Retrosu Sona Eriyor",
+    "emoji": "🔄",
+    "description": "Merkür Retrosu Sona Eriyor"
+  },
+  {
+    "date": "2025-02-18",
+    "type": "Burç Geçişi",
+    "emoji": "☀️",
+    "description": "Güneş Balık Burcuna Geçiyor"
+  },
+  {
+    "date": "2025-03-20",
+    "type": "Burç Geçişi",
+    "emoji": "☀️",
+    "description": "Güneş Koç Burcuna Geçiyor"
+  },
+  {
+    "date": "2025-03-29",
+    "type": "Parçalı Güneş Tutulması",
+    "emoji": "🌑",
+    "description": "Parçalı Güneş Tutulması"
+  },
+  {
+    "date": "2025-04-20",
+    "type": "Burç Geçişi",
+    "emoji": "☀️",
+    "description": "Güneş Boğa Burcuna Geçiyor"
+  },
+  {
+    "date": "2025-04-22",
+    "type": "Meteor Yağmuru",
+    "emoji": "⭐",
+    "description": "Lyrid Meteor Yağmuru Zirvesi"
+  },
+  {
+    "date": "2025-05-02",
+    "type": "Plüton Retrosu Başlıyor",
+    "emoji": "🔄",
+    "description": "Plüton Retrosu Başlıyor"
+  },
+  {
+    "date": "2025-05-06",
+    "type": "Meteor Yağmuru",
+    "emoji": "⭐",
+    "description": "Eta Aquariid Meteor Yağmuru Zirvesi"
+  },
+  {
+    "date": "2025-05-19",
+    "type": "Merkür Retrosu Başlıyor",
+    "emoji": "🔄",
+    "description": "Merkür Retrosu Başlıyor"
+  },
+  {
+    "date": "2025-05-21",
+    "type": "Burç Geçişi",
+    "emoji": "☀️",
+    "description": "Güneş İkizler Burcuna Geçiyor"
+  },
+  {
+    "date": "2025-06-11",
+    "type": "Merkür Retrosu Sona Eriyor",
+    "emoji": "🔄",
+    "description": "Merkür Retrosu Sona Eriyor"
+  },
+  {
+    "date": "2025-06-21",
+    "type": "Burç Geçişi",
+    "emoji": "☀️",
+    "description": "Güneş Yengeç Burcuna Geçiyor"
+  },
+  {
+    "date": "2025-06-29",
+    "type": "Satürn Retrosu Başlıyor",
+    "emoji": "🔄",
+    "description": "Satürn Retrosu Başlıyor"
+  },
+  {
+    "date": "2025-07-02",
+    "type": "Neptün Retrosu Başlıyor",
+    "emoji": "🔄",
+    "description": "Neptün Retrosu Başlıyor"
+  },
+  {
+    "date": "2025-07-22",
+    "type": "Burç Geçişi",
+    "emoji": "☀️",
+    "description": "Güneş Aslan Burcuna Geçiyor"
+  },
+  {
+    "date": "2025-08-12",
+    "type": "Meteor Yağmuru",
+    "emoji": "⭐",
+    "description": "Perseid Meteor Yağmuru Zirvesi"
+  },
+  {
+    "date": "2025-08-23",
+    "type": "Burç Geçişi",
+    "emoji": "☀️",
+    "description": "Güneş Başak Burcuna Geçiyor"
+  },
+  {
+    "date": "2025-08-28",
+    "type": "Uranüs Retrosu Başlıyor",
+    "emoji": "🔄",
+    "description": "Uranüs Retrosu Başlıyor"
+  },
+  {
+    "date": "2025-09-09",
+    "type": "Merkür Retrosu Başlıyor",
+    "emoji": "🔄",
+    "description": "Merkür Retrosu Başlıyor"
+  },
+  {
+    "date": "2025-09-21",
+    "type": "Parçalı Ay Tutulması",
+    "emoji": "🌑",
+    "description": "Parçalı Ay Tutulması"
+  },
+  {
+    "date": "2025-09-23",
+    "type": "Burç Geçişi",
+    "emoji": "☀️",
+    "description": "Güneş Terazi Burcuna Geçiyor"
+  },
+  {
+    "date": "2025-10-02",
+    "type": "Merkür Retrosu Sona Eriyor",
+    "emoji": "🔄",
+    "description": "Merkür Retrosu Sona Eriyor"
+  },
+  {
+    "date": "2025-10-09",
+    "type": "Jüpiter Retrosu Başlıyor",
+    "emoji": "🔄",
+    "description": "Jüpiter Retrosu Başlıyor"
+  },
+  {
+    "date": "2025-10-21",
+    "type": "Meteor Yağmuru",
+    "emoji": "⭐",
+    "description": "Orionid Meteor Yağmuru Zirvesi"
+  },
+  {
+    "date": "2025-10-23",
+    "type": "Burç Geçişi",
+    "emoji": "☀️",
+    "description": "Güneş Akrep Burcuna Geçiyor"
+  },
+  {
+    "date": "2025-11-09",
+    "type": "Merkür Retrosu Başlıyor",
+    "emoji": "🔄",
+    "description": "Merkür Retrosu Başlıyor"
+  },
+  {
+    "date": "2025-11-17",
+    "type": "Meteor Yağmuru",
+    "emoji": "⭐",
+    "description": "Leonid Meteor Yağmuru Zirvesi"
+  },
+  {
+    "date": "2025-11-22",
+    "type": "Burç Geçişi",
+    "emoji": "☀️",
+    "description": "Güneş Yay Burcuna Geçiyor"
+  },
+  {
+    "date": "2025-11-29",
+    "type": "Merkür Retrosu Sona Eriyor",
+    "emoji": "🔄",
+    "description": "Merkür Retrosu Sona Eriyor"
+  },
+  {
+    "date": "2025-12-05",
+    "type": "Güneş Açısı",
+    "emoji": "☀️",
+    "description": "Güneş-K.Düğüm Karesi"
+  },
+  {
+    "date": "2025-12-07",
+    "type": "Mars Retrosu Başlıyor",
+    "emoji": "🔄",
+    "description": "Mars Retrosu Başlıyor"
+  },
+  {
+    "date": "2025-12-13",
+    "type": "Meteor Yağmuru",
+    "emoji": "⭐",
+    "description": "Geminid Meteor Yağmuru Zirvesi"
+  },
+  {
+    "date": "2025-12-14",
+    "type": "Güneş Açısı",
+    "emoji": "☀️",
+    "description": "Güneş-Chiron Trini"
+  },
+  {
+    "date": "2025-12-20",
+    "type": "Lilith Geçişi",
+    "emoji": "🌙",
+    "description": "Lilith Yay Burcuna Geçiyor"
+  },
+  {
+    "date": "2025-12-21",
+    "type": "Venüs Retrosu Başlıyor",
+    "emoji": "🔄",
+    "description": "Venüs Retrosu Başlıyor"
+  },
+  {
+    "date": "2025-12-21",
+    "type": "Burç Geçişi",
+    "emoji": "☀️",
+    "description": "Güneş Oğlak Burcuna Geçiyor"
+  },
+  {
+    "date": "2025-12-29",
+    "type": "Merkür Retrosu Başlıyor",
+    "emoji": "🔄",
+    "description": "Merkür Retrosu Başlıyor"
+  }
+]

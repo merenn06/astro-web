@@ -1,0 +1,23 @@
+[
+  { "date": "2024-01-20", "type": "Burç Geçişi", "emoji": "☀️", "description": "Güneş Kova burcuna geçer" },
+  { "date": "2024-02-18", "type": "Burç Geçişi", "emoji": "☀️", "description": "Güneş Balık burcuna geçer" },
+  { "date": "2024-03-20", "type": "Burç Geçişi", "emoji": "☀️", "description": "Güneş Koç burcuna geçer" },
+  { "date": "2024-04-20", "type": "Burç Geçişi", "emoji": "☀️", "description": "Güneş Boğa burcuna geçer" },
+  { "date": "2024-05-21", "type": "Burç Geçişi", "emoji": "☀️", "description": "Güneş İkizler burcuna geçer" },
+  { "date": "2024-06-21", "type": "Burç Geçişi", "emoji": "☀️", "description": "Güneş Yengeç burcuna geçer" },
+  { "date": "2024-07-22", "type": "Burç Geçişi", "emoji": "☀️", "description": "Güneş Aslan burcuna geçer" },
+  { "date": "2024-08-23", "type": "Burç Geçişi", "emoji": "☀️", "description": "Güneş Başak burcuna geçer" },
+  { "date": "2024-09-23", "type": "Burç Geçişi", "emoji": "☀️", "description": "Güneş Terazi burcuna geçer" },
+  { "date": "2024-10-23", "type": "Burç Geçişi", "emoji": "☀️", "description": "Güneş Akrep burcuna geçer" },
+  { "date": "2024-11-22", "type": "Burç Geçişi", "emoji": "☀️", "description": "Güneş Yay burcuna geçer" },
+  { "date": "2024-12-21", "type": "Burç Geçişi", "emoji": "☀️", "description": "Güneş Oğlak burcuna geçer" },
+  { "date": "2024-01-15", "type": "Merkür Retrosu", "emoji": "🔄", "description": "Merkür geriye doğru hareket etmeye başlar" },
+  { "date": "2024-03-10", "type": "Venüs Retrosu", "emoji": "🔄", "description": "Venüs geriye doğru hareket etmeye başlar" },
+  { "date": "2024-05-05", "type": "Mars Retrosu", "emoji": "🔄", "description": "Mars geriye doğru hareket etmeye başlar" },
+  { "date": "2024-07-20", "type": "Jüpiter Retrosu", "emoji": "🔄", "description": "Jüpiter geriye doğru hareket etmeye başlar" },
+  { "date": "2024-09-15", "type": "Satürn Retrosu", "emoji": "🔄", "description": "Satürn geriye doğru hareket etmeye başlar" },
+  { "date": "2024-04-08", "type": "Güneş Tutulması", "emoji": "🌑", "description": "Güneş tutulması gerçekleşir" },
+  { "date": "2024-10-02", "type": "Ay Tutulması", "emoji": "🌑", "description": "Ay tutulması gerçekleşir" },
+  { "date": "2024-08-12", "type": "Meteor Yağmuru", "emoji": "⭐", "description": "Perseid meteor yağmuru gözlemlenebilir" },
+  { "date": "2024-12-14", "type": "Meteor Yağmuru", "emoji": "⭐", "description": "Geminid meteor yağmuru gözlemlenebilir" }
+] 
